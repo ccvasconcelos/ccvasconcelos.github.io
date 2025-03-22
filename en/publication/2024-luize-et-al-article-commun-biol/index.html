@@ -1,0 +1,3275 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Caroline C. Vasconcelos" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="We describe the geographical variation in tree species composition across Amazonian forests and show how environmental conditions are associated with species turnover. Our analyses are based on 2023 forest inventory plots (1 ha) that provide abundance data for a total of 5188 tree species. Within-plot species composition reflected both local environmental conditions (especially soil nutrients and hydrology) and geographical regions. A broader-scale view of species turnover was obtained by interpolating the relative tree species abundances over Amazonia into 47,441 0.1-degree grid cells. Two main dimensions of spatial change in tree species composition were identified. The first was a gradient between western Amazonia at the Andean forelands (with young geology and relatively nutrient-rich soils) and central–eastern Amazonia associated with the Guiana and Brazilian Shields (with more ancient geology and poor soils). The second gradient was between the wet forests of the northwest and the drier forests in southern Amazonia. Isolines linking cells of similar composition crossed major Amazonian rivers, suggesting that tree species distributions are not limited by rivers. Even though some areas of relatively sharp species turnover were identified, mostly the tree species composition changed gradually over large extents, which does not support delimiting clear discrete biogeographic regions within Amazonia." />
+
+  
+    <link rel="alternate" hreflang="pt" href="https://ccvasconcelos.github.io/pt/publication/2024-luize-et-al-article-commun-biol/" />
+  
+  <link rel="alternate" hreflang="en-us" href="https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="hsl(339, 90%, 68%)" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'">
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono&display=swap">
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.b700e43662bb99635d836030594f20ed.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144860931-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-144860931-1', { 'anonymize_ip': true });
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/en/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@cc_vasconcelos" />
+    <meta property="twitter:creator" content="@cc_vasconcelos" />
+  
+  <meta property="og:site_name" content="Caroline C. Vasconcelos" />
+  <meta property="og:url" content="https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/" />
+  <meta property="og:title" content="The biogeography of the Amazonian tree flora | Caroline C. Vasconcelos" />
+  <meta property="og:description" content="We describe the geographical variation in tree species composition across Amazonian forests and show how environmental conditions are associated with species turnover. Our analyses are based on 2023 forest inventory plots (1 ha) that provide abundance data for a total of 5188 tree species. Within-plot species composition reflected both local environmental conditions (especially soil nutrients and hydrology) and geographical regions. A broader-scale view of species turnover was obtained by interpolating the relative tree species abundances over Amazonia into 47,441 0.1-degree grid cells. Two main dimensions of spatial change in tree species composition were identified. The first was a gradient between western Amazonia at the Andean forelands (with young geology and relatively nutrient-rich soils) and central–eastern Amazonia associated with the Guiana and Brazilian Shields (with more ancient geology and poor soils). The second gradient was between the wet forests of the northwest and the drier forests in southern Amazonia. Isolines linking cells of similar composition crossed major Amazonian rivers, suggesting that tree species distributions are not limited by rivers. Even though some areas of relatively sharp species turnover were identified, mostly the tree species composition changed gradually over large extents, which does not support delimiting clear discrete biogeographic regions within Amazonia." /><meta property="og:image" content="https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/featured.jpg" />
+    <meta property="twitter:image" content="https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/featured.jpg" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2024-10-02T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2024-10-02T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/"
+  },
+  "headline": "The biogeography of the Amazonian tree flora",
+  
+  "image": [
+    "https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/featured.jpg"
+  ],
+  
+  "datePublished": "2024-10-02T00:00:00Z",
+  "dateModified": "2024-10-02T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Bruno G. Luize"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Caroline C. Vasconcelos",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "We describe the geographical variation in tree species composition across Amazonian forests and show how environmental conditions are associated with species turnover. Our analyses are based on 2023 forest inventory plots (1 ha) that provide abundance data for a total of 5188 tree species. Within-plot species composition reflected both local environmental conditions (especially soil nutrients and hydrology) and geographical regions. A broader-scale view of species turnover was obtained by interpolating the relative tree species abundances over Amazonia into 47,441 0.1-degree grid cells. Two main dimensions of spatial change in tree species composition were identified. The first was a gradient between western Amazonia at the Andean forelands (with young geology and relatively nutrient-rich soils) and central–eastern Amazonia associated with the Guiana and Brazilian Shields (with more ancient geology and poor soils). The second gradient was between the wet forests of the northwest and the drier forests in southern Amazonia. Isolines linking cells of similar composition crossed major Amazonian rivers, suggesting that tree species distributions are not limited by rivers. Even though some areas of relatively sharp species turnover were identified, mostly the tree species composition changed gradually over large extents, which does not support delimiting clear discrete biogeographic regions within Amazonia."
+}
+</script>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "hsl(339, 90%, 68%)",
+          "text": "rgb(255, 255, 255)"
+        },
+        "button": {
+          "background": "rgb(255, 255, 255)",
+          "text": "hsl(339, 90%, 68%)"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "This website uses cookies to ensure you get the best experience on our website.",
+        "dismiss": "Got it!",
+        "link": "Learn more",
+        "href": "/en/privacy/"
+      }
+    })});
+  </script>
+
+
+  
+
+
+
+
+
+  <title>The biogeography of the Amazonian tree flora | Caroline C. Vasconcelos</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  dark " data-wc-page-id="8e3b0170d707ed78f30611ab061d33eb" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.afb024698bed5f6611e02ca728372e06.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/en/">Caroline C. Vasconcelos</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/en/">Caroline C. Vasconcelos</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#experience"><span>Experience</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#skills"><span>Skills</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#accomplishments"><span>Awards</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/#contact"><span>Contact Me</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/en/uploads/CV_CarolineVasconcelos_en.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="/en/"  aria-label="">
+              <i class="fas fa-" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown i18n-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+           aria-haspopup="true" aria-label="Languages">
+          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">English</span></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-item dropdown-item-active">
+            <span>English</span>
+          </div>
+          
+          <a class="dropdown-item" href="https://ccvasconcelos.github.io/pt/publication/2024-luize-et-al-article-commun-biol/">
+            <span>Português</span>
+          </a>
+          
+        </div>
+      </li>
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+
+
+
+<div class="pub">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>The biogeography of the Amazonian tree flora</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      <a href="/en/author/bruno-g.-luize/">Bruno G. Luize</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Estadual de Campinas"></i>, <span >
+      <a href="/en/author/hanna-tuomisto/">Hanna Tuomisto</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Aarhus University"></i>, <span >
+      <a href="/en/author/robin-ekelschot/">Robin Ekelschot</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Naturalis Biodiversity Center"></i>, <span >
+      <a href="/en/author/kyle-g.-dexter/">Kyle G. Dexter</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Turin; Royal Botanic Garden Edinburgh"></i>, <span >
+      <a href="/en/author/ieda-l.-amaral/">Iêda L. Amaral</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/luiz-s.-coelho/">Luiz S. Coelho</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/francisca-d.-a.-matos/">Francisca D. A. Matos</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/diogenes-a.-lima-filho/">Diógenes A. Lima-Filho</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/rafael-p.-salomao/">Rafael P. Salomão</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal Rural da Amazônia; Museu Paraense Emílio Goeldi"></i>, <span >
+      <a href="/en/author/florian-wittmann/">Florian Wittmann</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Karlsruhe Institute of Technology; Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/carolina-v.-castilho/">Carolina V. Castilho</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Embrapa Roraima"></i>, <span >
+      <a href="/en/author/marcelo-j.-v.-carim/">Marcelo J. V. Carim</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto de Pesquisas Científicas e Tecnológicas do Amapá"></i>, <span >
+      <a href="/en/author/juan-e.-guevara/">Juan E. Guevara</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de las Américas"></i>, <span >
+      <a href="/en/author/oliver-l.-phillips/">Oliver L. Phillips</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Leeds"></i>, <span >
+      <a href="/en/author/william-e.-magnusson/">William E. Magnusson</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/daniel-sabatier/">Daniel Sabatier</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Université de Montpellier"></i>, <span >
+      <a href="/en/author/juan-d.-c.-revilla/">Juan D. C. Revilla</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/jean-francois-molino/">Jean-François Molino</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Université de Montpellier"></i>, <span >
+      <a href="/en/author/mariana-v.-irume/">Mariana V. Irume</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/maria-p.-martins/">Maria P. Martins</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/jose-r.-s.-guimaraes/">José R. S. Guimarães</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Amcel Amapá Florestal e Celulose S.A."></i>, <span >
+      <a href="/en/author/jose-f.-ramos/">José F. Ramos</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/olaf-s.-banki/">Olaf S. Bánki</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Naturalis Biodiversity Center"></i>, <span >
+      <a href="/en/author/maria-t.-f.-piedade/">Maria T. F. Piedade</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/dairon-cardenas-lopez/">Dairon Cárdenas-López</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto SINCHI"></i>, <span >
+      <a href="/en/author/nigel-c.-a.-pitman/">Nigel C. A. Pitman</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="The Field Museum"></i>, <span >
+      <a href="/en/author/layon-o.-demarchi/">Layon O. Demarchi</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/jochen-schongart/">Jochen Schöngart</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/evlyn-m.-m.-l.-novo/">Evlyn M. M. L. Novo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas Espaciais"></i>, <span >
+      <a href="/en/author/percy-nunez-vargas/">Percy Núñez Vargas</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de San Antonio Abad del Cusco"></i>, <span >
+      <a href="/en/author/thiago-s.-f.-silva/">Thiago S. F. Silva</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Stirling"></i>, <span >
+      <a href="/en/author/eduardo-m.-venticinque/">Eduardo M. Venticinque</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal do Rio Grande do Norte"></i>, <span >
+      <a href="/en/author/angelo-g.-manzatto/">Angelo G. Manzatto</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal de Rondônia"></i>, <span >
+      <a href="/en/author/neidiane-f.-c.-reis/">Neidiane F. C. Reis</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal de Rondônia"></i>, <span >
+      <a href="/en/author/john-terborgh/">John Terborgh</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Florida; James Cook University"></i>, <span >
+      <a href="/en/author/katia-r.-casula/">Katia R. Casula</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal de Rondônia"></i>, <span >
+      <a href="/en/author/euridice-n.-h.-coronado/">Euridice N. H. Coronado</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto de Investigaciones de la Amazonía Peruana; University of St Andrews"></i>, <span >
+      <a href="/en/author/abel-m.-mendoza/">Abel M. Mendoza</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de San Antonio Abad del Cusco; Jardín Botánico de Missouri"></i>, <span >
+      <a href="/en/author/juan-c.-montero/">Juan C. Montero</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia; Instituto Boliviano de Investigacion Forestal"></i>, <span >
+      <a href="/en/author/flavia-r.-c.-costa/">Flávia R. C. Costa</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/ted-r.-feldpausch/">Ted R. Feldpausch</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Leeds; University of Exeter"></i>, <span >
+      <a href="/en/author/adriano-c.-quaresma/">Adriano C. Quaresma</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/nicolas-c.-arboleda/">Nicolás C. Arboleda</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto SINCHI"></i>, <span >
+      <a href="/en/author/charles-e.-zartman/">Charles E. Zartman</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/timothy-j.-killeen/">Timothy J. Killeen</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Agteca-Amazonica"></i>, <span >
+      <a href="/en/author/beatriz-s.-marimon/">Beatriz S. Marimon</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade do Estado de Mato Grosso"></i>, <span >
+      <a href="/en/author/ben-h.-marimon/">Ben H. Marimon</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade do Estado de Mato Grosso"></i>, <span >
+      <a href="/en/author/rodolfo-vasquez/">Rodolfo Vasquez</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Jardín Botánico de Missouri"></i>, <span >
+      <a href="/en/author/bonifacio-mostacedo/">Bonifacio Mostacedo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Autónoma Gabriel René Moreno"></i>, <span >
+      <a href="/en/author/rafael-l.-assis/">Rafael L. Assis</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Tecnológico Vale"></i>, <span >
+      <a href="/en/author/chris-baraloto/">Chris Baraloto</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Florida International University"></i>, <span >
+      <a href="/en/author/dario-d.-amaral/">Dário D. Amaral</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Museu Paraense Emílio Goeldi"></i>, <span >
+      <a href="/en/author/julien-engel/">Julien Engel</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Université de Montpellier; Florida International University"></i>, <span >
+      <a href="/en/author/pascal-petronelli/">Pascal Petronelli</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="French National Research Institute for Agriculture, Food and Environment; Université de Guyane"></i>, <span >
+      <a href="/en/author/hernan-castellanos/">Hernán Castellanos</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional Experimental de Guayana"></i>, <span >
+      <a href="/en/author/marcelo-b.-medeiros/">Marcelo B. Medeiros</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Embrapa Recursos Genéticos e Biotecnologia"></i>, <span >
+      <a href="/en/author/marcelo-f.-simon/">Marcelo F. Simon</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Embrapa Recursos Genéticos e Biotecnologia"></i>, <span >
+      <a href="/en/author/ana-andrade/">Ana Andrade</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/jose-l.-c.-camargo/">José L. C. Camargo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/william-f.-laurance/">William F. Laurance</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="James Cook University"></i>, <span >
+      <a href="/en/author/susan-g.-w.-laurance/">Susan G. W. Laurance</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="James Cook University"></i>, <span >
+      <a href="/en/author/lorena-m.-rincon/">Lorena M. Rincón</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/juliana-schietti/">Juliana Schietti</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/thaiane-r.-sousa/">Thaiane R. Sousa</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/gisele-b.-mori/">Gisele B. Mori</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/emanuelle-s.-farias/">Emanuelle S. Farias</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Leônidas e Maria Deane"></i>, <span >
+      <a href="/en/author/maria-a.-lopes/">Maria A. Lopes</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal do Pará"></i>, <span >
+      <a href="/en/author/jose-l.-l.-magalhaes/">José L. L. Magalhães</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal do Pará; Embrapa Amazônia Oriental"></i>, <span >
+      <a href="/en/author/henrique-e.-m.-nascimento/">Henrique E. M. Nascimento</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/helder-l.-queiroz/">Helder L. Queiroz</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto de Desenvolvimento Sustentável Mamirauá"></i>, <span class="author-highlighted">
+      <a href="/en/author/caroline-c.-vasconcelos/">Caroline C. Vasconcelos</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/gerardo-a.-aymard/">Gerardo A. Aymard</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Herbario Universitario"></i>, <span >
+      <a href="/en/author/roel-brienen/">Roel Brienen</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Leeds"></i>, <span >
+      <a href="/en/author/pablo-r.-stevenson/">Pablo R. Stevenson</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de los Andes"></i>, <span >
+      <a href="/en/author/alejandro-araujo-murakami/">Alejandro Araujo-Murakami</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Autónoma Gabriel Rene Moreno"></i>, <span >
+      <a href="/en/author/bruno-b.-l.-cintra/">Bruno B. L. Cintra</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Birmingham"></i>, <span >
+      <a href="/en/author/tim-r.-baker/">Tim R. Baker</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Leeds"></i>, <span >
+      <a href="/en/author/yuri-o.-feitosa/">Yuri O. Feitosa</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/hugo-f.-mogollon/">Hugo F. Mogollón</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Endangered Species Coalition"></i>, <span >
+      <a href="/en/author/joost-f.-duivenvoorden/">Joost F. Duivenvoorden</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Amsterdam"></i>, <span >
+      <a href="/en/author/carlos-a.-peres/">Carlos A. Peres</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of East Anglia"></i>, <span >
+      <a href="/en/author/miles-r.-silman/">Miles R. Silman</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Wake Forest University"></i>, <span >
+      <a href="/en/author/leandro-v.-ferreira/">Leandro V. Ferreira</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Museu Paraense Emílio Goeldi"></i>, <span >
+      <a href="/en/author/jose-r.-lozada/">José R. Lozada</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de los Andes"></i>, <span >
+      <a href="/en/author/james-a.-comiskey/">James A. Comiskey</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="National Park Service; Smithsonian Conservation Biology Institute"></i>, <span >
+      <a href="/en/author/jose-j.-toledo/">José J. Toledo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal do Amapá"></i>, <span >
+      <a href="/en/author/gabriel-damasco/">Gabriel Damasco</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Gothenburg"></i>, <span >
+      <a href="/en/author/nallarett-davila/">Nállarett Dávila</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Estadual de Campinas"></i>, <span >
+      <a href="/en/author/freddie-c.-draper/">Freddie C. Draper</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Liverpool"></i>, <span >
+      <a href="/en/author/roosevelt-garcia-villacorta/">Roosevelt García-Villacorta</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Centro para la Restauración y Bioeconomía Sostenible; Peruvian Center for Biodiversity and Conservation"></i>, <span >
+      <a href="/en/author/aline-lopes/">Aline Lopes</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="UniCesumar and Cesumar Institute of Science, Technology, and Innovation"></i>, <span >
+      <a href="/en/author/alberto-vicentini/">Alberto Vicentini</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/fernando-c.-valverde/">Fernando C. Valverde</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Andes to Amazon Biodiversity Program"></i>, <span >
+      <a href="/en/author/alfonso-alonso/">Alfonso Alonso</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Smithsonian Conservation Biology Institute"></i>, <span >
+      <a href="/en/author/luzmila-arroyo/">Luzmila Arroyo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Autónoma Gabriel Rene Moreno"></i>, <span >
+      <a href="/en/author/francisco-dallmeier/">Francisco Dallmeier</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Smithsonian Conservation Biology Institute"></i>, <span >
+      <a href="/en/author/vitor-h.-f.-gomes/">Vitor H. F. Gomes</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Centro Universitário do Pará; Universidade Federal do Pará"></i>, <span >
+      <a href="/en/author/eliana-m.-jimenez/">Eliana M. Jimenez</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Amazónico de Investigaciones Imani"></i>, <span >
+      <a href="/en/author/david-neill/">David Neill</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Estatal Amazónica"></i>, <span >
+      <a href="/en/author/maria-c.-p.-mora/">Maria C. P. Mora</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Regional Amazónica Ikiam"></i>, <span >
+      <a href="/en/author/janaina-c.-noronha/">Janaína C. Noronha</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Federal University of Mato Grosso"></i>, <span >
+      <a href="/en/author/daniel-p.-p.-aguiar/">Daniel P. P. Aguiar</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Ministério Público do Estado do Amazonas; Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/flavia-r.-barbosa/">Flávia R. Barbosa</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Federal University of Mato Grosso"></i>, <span >
+      <a href="/en/author/yennie-k.-bredin/">Yennie K. Bredin</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Norwegian University of Life Sciences"></i>, <span >
+      <a href="/en/author/rainiellen-s.-carpanedo/">Rainiellen S. Carpanedo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Federal University of Mato Grosso"></i>, <span >
+      <a href="/en/author/fernanda-a.-carvalho/">Fernanda A. Carvalho</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia; Universidade Federal de Minas Gerais"></i>, <span >
+      <a href="/en/author/fernanda-c.-souza/">Fernanda C. Souza</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Leeds; Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/kenneth-j.-feeley/">Kenneth J. Feeley</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Miami; Fairchild Tropical Botanic Garden"></i>, <span >
+      <a href="/en/author/rogerio-gribel/">Rogério Gribel</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/torbj%C3%B8rn-haugaasen/">Torbjørn Haugaasen</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Norwegian University of Life Sciences"></i>, <span >
+      <a href="/en/author/joseph-e.-hawes/">Joseph E. Hawes</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Norwegian University of Life Sciences "></i>, <span >
+      <a href="/en/author/marcelo-p.-pansonato/">Marcelo P. Pansonato</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia; Universidade de Sao Paulo"></i>, <span >
+      <a href="/en/author/john-j.-pipoly-iii/">John J. Pipoly III</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Broward County Parks and Recreation"></i>, <span >
+      <a href="/en/author/marcos-r.-paredes/">Marcos R. Paredes</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Servicios de Biodiversidad EIRL"></i>, <span >
+      <a href="/en/author/domingos-j.-rodrigues/">Domingos J. Rodrigues</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Federal University of Mato Grosso"></i>, <span >
+      <a href="/en/author/jos-barlow/">Jos Barlow</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Lancaster University"></i>, <span >
+      <a href="/en/author/erika-berenguer/">Erika Berenguer</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Lancaster University; University of Oxford"></i>, <span >
+      <a href="/en/author/izaias-b.-silva/">Izaias B. Silva</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Federal University of Acre"></i>, <span >
+      <a href="/en/author/maria-j.-ferreira/">Maria J. Ferreira</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Juruá Institute"></i>, <span >
+      <a href="/en/author/joice-ferreira/">Joice Ferreira</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Embrapa Amazônia Oriental"></i>, <span >
+      <a href="/en/author/paul-v.-a.-fine/">Paul V. A. Fine</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of California"></i>, <span >
+      <a href="/en/author/marcelino-c.-guedes/">Marcelino C. Guedes</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Embrapa Amapá"></i>, <span >
+      <a href="/en/author/carolina-levis/">Carolina Levis</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Federal University of Santa Catarina"></i>, <span >
+      <a href="/en/author/juan-c.-licona/">Juan C. Licona</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Boliviano de Investigacion Forestal"></i>, <span >
+      <a href="/en/author/boris-e.-v.-zegarra/">Boris E. V. Zegarra</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Direccíon de Evaluación Forestal y de Fauna Silvestre"></i>, <span >
+      <a href="/en/author/vincent-a.-vos/">Vincent A. Vos</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Autónoma del Beni José Ballivián"></i>, <span >
+      <a href="/en/author/carlos-ceron/">Carlos Cerón</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Central"></i>, <span >
+      <a href="/en/author/flavia-m.-durgante/">Flávia M. Durgante</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Karlsruhe Institute of Technology; Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/emile-fonty/">Émile Fonty</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Université de Montpellier"></i>, <span >
+      <a href="/en/author/terry-w.-henkel/">Terry W. Henkel</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="California State Polytechnic University"></i>, <span >
+      <a href="/en/author/john-e.-householder/">John E. Householder</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Karlsruhe Institute of Technology"></i>, <span >
+      <a href="/en/author/isau-huamantupa-chuquimaco/">Isau Huamantupa-Chuquimaco</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional Amazónica de Madre de Dios"></i>, <span >
+      <a href="/en/author/marcos-silveira/">Marcos Silveira</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal do Acre"></i>, <span >
+      <a href="/en/author/juliana-stropp/">Juliana Stropp</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Museo Nacional de Ciencias Naturales"></i>, <span >
+      <a href="/en/author/raquel-thomas/">Raquel Thomas</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Iwokrama International Centre for Rain Forest Conservation and Development"></i>, <span >
+      <a href="/en/author/doug-daly/">Doug Daly</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="New York Botanical Garden"></i>, <span >
+      <a href="/en/author/william-milliken/">William Milliken</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Royal Botanic Gardens"></i>, <span >
+      <a href="/en/author/guido-p.-molina/">Guido P. Molina</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Autónoma del Beni José Ballivián"></i>, <span >
+      <a href="/en/author/toby-pennington/">Toby Pennington</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Royal Botanic Garden Edinburgh"></i>, <span >
+      <a href="/en/author/ima-c.-g.-vieira/">Ima C. G. Vieira</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Museu Paraense Emílio Goeldi"></i>, <span >
+      <a href="/en/author/bianca-w.-albuquerque/">Bianca W. Albuquerque</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/wegliane-campelo/">Wegliane Campelo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal do Amapá"></i>, <span >
+      <a href="/en/author/alfredo-fuentes/">Alfredo Fuentes</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Missouri Botanical Garden; Universidad Mayor de San Andres"></i>, <span >
+      <a href="/en/author/bente-klitgaard/">Bente Klitgaard</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Royal Botanic Gardens"></i>, <span >
+      <a href="/en/author/jose-l.-m.-pena/">José L. M. Pena</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de Jaén"></i>, <span >
+      <a href="/en/author/j.-sebastian-tello/">J. Sebastián Tello</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Missouri Botanical Garden"></i>, <span >
+      <a href="/en/author/corine-vriesendorp/">Corine Vriesendorp</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="The Field Museum"></i>, <span >
+      <a href="/en/author/jerome-chave/">Jerome Chave</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Centre National de la Recherche Scientifique; Université Paul Sabatier"></i>, <span >
+      <a href="/en/author/anthony-di-fiore/">Anthony Di Fiore</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Texas at Austin; Universidad San Francisco de Quito"></i>, <span >
+      <a href="/en/author/renato-r.-hilario/">Renato R. Hilário</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal do Amapá"></i>, <span >
+      <a href="/en/author/luciana-o.-pereira/">Luciana O. Pereira</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Exeter"></i>, <span >
+      <a href="/en/author/juan-f.-phillips/">Juan F. Phillips</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Fundación Puerto Rastrojo"></i>, <span >
+      <a href="/en/author/gonzalo-rivas-torres/">Gonzalo Rivas-Torres</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad San Francisco de Quito; University of Florida"></i>, <span >
+      <a href="/en/author/tinde-r.-van-andel/">Tinde R. van Andel</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Naturalis Biodiversity Center; Wageningen University"></i>, <span >
+      <a href="/en/author/patricio-von-hildebrand/">Patricio von Hildebrand</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Fundación Estación de Biología"></i>, <span >
+      <a href="/en/author/william-balee/">William Balee</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Tulane University"></i>, <span >
+      <a href="/en/author/edelcilio-m.-barbosa/">Edelcilio M. Barbosa</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/luiz-c.-m.-bonates/">Luiz C. M. Bonates</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/hilda-p.-d.-doza/">Hilda P. D. Doza</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Servicios de Biodiversidad EIRL"></i>, <span >
+      <a href="/en/author/ricardo-z.-gomez/">Ricardo Z. Gómez</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto de Investigaciones de la Amazonía Peruana"></i>, <span >
+      <a href="/en/author/therany-gonzales/">Therany Gonzales</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="ACEER Foundation"></i>, <span >
+      <a href="/en/author/george-p.-g.-gonzales/">George P. G. Gonzales</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Servicios de Biodiversidad EIRL"></i>, <span >
+      <a href="/en/author/bruce-hoffman/">Bruce Hoffman</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Amazon Conservation Team"></i>, <span >
+      <a href="/en/author/andre-b.-junqueira/">André B. Junqueira</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universitat Autònoma de Barcelona"></i>, <span >
+      <a href="/en/author/yadvinder-malhi/">Yadvinder Malhi</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Oxford"></i>, <span >
+      <a href="/en/author/ires-p.-a.-miranda/">Ires P. A. Miranda</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/linder-f.-m.-pinto/">Linder F. M. Pinto</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Servicios de Biodiversidad EIRL"></i>, <span >
+      <a href="/en/author/adriana-prieto/">Adriana Prieto</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de Colombia"></i>, <span >
+      <a href="/en/author/agustin-rudas/">Agustín Rudas</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de Colombia"></i>, <span >
+      <a href="/en/author/ademir-r.-ruschel/">Ademir R. Ruschel</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Embrapa Amazônia Oriental"></i>, <span >
+      <a href="/en/author/natalino-silva/">Natalino Silva</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal Rural da Amazônia"></i>, <span >
+      <a href="/en/author/cesar-i.-a.-vela/">César I. A. Vela</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de San Antonio Abad del Cusco"></i>, <span >
+      <a href="/en/author/stanford-zent/">Stanford Zent</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Venezolano de Investigaciones Científicas"></i>, <span >
+      <a href="/en/author/eglee-l.-zent/">Egleé L. Zent</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Venezolano de Investigaciones Científicas"></i>, <span >
+      <a href="/en/author/maria-j.-endara/">María J. Endara</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de las Américas"></i>, <span >
+      <a href="/en/author/angela-cano/">Angela Cano</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de los Andes; Cambridge University Botanic Garden"></i>, <span >
+      <a href="/en/author/yrma-a.-c.-marquez/">Yrma A. C. Márquez</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de los Andes"></i>, <span >
+      <a href="/en/author/diego-f.-correa/">Diego F. Correa</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de los Andes; The University of Queensland"></i>, <span >
+      <a href="/en/author/janaina-b.-p.-costa/">Janaina B. P. Costa</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Embrapa Amapá"></i>, <span >
+      <a href="/en/author/bernardo-m.-flores/">Bernardo M. Flores</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Federal University of Santa Catarina"></i>, <span >
+      <a href="/en/author/david-galbraith/">David Galbraith</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Leeds"></i>, <span >
+      <a href="/en/author/milena-holmgren/">Milena Holmgren</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Wageningen University &amp; Research"></i>, <span >
+      <a href="/en/author/michelle-kalamandeen/">Michelle Kalamandeen</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Unique land use GmbH"></i>, <span >
+      <a href="/en/author/guilherme-lobo/">Guilherme Lobo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Estadual de Campinas"></i>, <span >
+      <a href="/en/author/luis-t.-montenegro/">Luis T. Montenegro</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de la Amazonia Peruana"></i>, <span >
+      <a href="/en/author/marcelo-t.-nascimento/">Marcelo T. Nascimento</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Estadual do Norte Fluminense"></i>, <span >
+      <a href="/en/author/alexandre-a.-oliveira/">Alexandre A. Oliveira</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade de Sao Paulo"></i>, <span >
+      <a href="/en/author/maihyra-m.-pombo/">Maihyra M. Pombo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/hirma-ramirez-angulo/">Hirma Ramirez-Angulo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de los Andes"></i>, <span >
+      <a href="/en/author/maira-rocha/">Maira Rocha</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/veridiana-v.-scudeller/">Veridiana V. Scudeller</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal do Amazonas"></i>, <span >
+      <a href="/en/author/maria-n.-umana/">Maria N. Umaña</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Michigan"></i>, <span >
+      <a href="/en/author/geertje-van-der-heijden/">Geertje van der Heijden</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Nottingham"></i>, <span >
+      <a href="/en/author/emilio-v.-torre/">Emilio V. Torre</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de los Andes"></i>, <span >
+      <a href="/en/author/tony-m.-vargas/">Tony M. Vargas</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de la Amazonia Peruana"></i>, <span >
+      <a href="/en/author/manuel-a.-a.-reategui/">Manuel A. A. Reategui</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="PLUSPRETOL"></i>, <span >
+      <a href="/en/author/claudia-baider/">Cláudia Baider</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade de Sao Paulo; Ministry of Agro-Industry and Food Security"></i>, <span >
+      <a href="/en/author/henrik-balslev/">Henrik Balslev</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Aarhus University"></i>, <span >
+      <a href="/en/author/sasha-cardenas/">Sasha Cárdenas</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de los Andes"></i>, <span >
+      <a href="/en/author/luisa-f.-casas/">Luisa F. Casas</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de los Andes"></i>, <span >
+      <a href="/en/author/william-farfan-rios/">William Farfan-Rios</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de San Antonio Abad del Cusco"></i>, <span >
+      <a href="/en/author/cid-ferreira/">Cid Ferreira</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Instituto Nacional de Pesquisas da Amazônia"></i>, <span >
+      <a href="/en/author/reynaldo-linares-palomino/">Reynaldo Linares-Palomino</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Smithsonian Conservation Biology Institute"></i>, <span >
+      <a href="/en/author/casimiro-mendoza/">Casimiro Mendoza</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Mayor de San Simon; Manejo Forestal en las Tierras Tropicales de Bolivia"></i>, <span >
+      <a href="/en/author/italo-mesones/">Italo Mesones</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of California"></i>, <span >
+      <a href="/en/author/germaine-a.-parada/">Germaine A. Parada</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Autónoma Gabriel Rene Moreno"></i>, <span >
+      <a href="/en/author/armando-torres-lezama/">Armando Torres-Lezama</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad de los Andes"></i>, <span >
+      <a href="/en/author/ligia-e.-u.-giraldo/">Ligia E. U. Giraldo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de Colombia"></i>, <span >
+      <a href="/en/author/daniel-villarroel/">Daniel Villarroel</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Autónoma Gabriel Rene Moreno"></i>, <span >
+      <a href="/en/author/roderick-zagt/">Roderick Zagt</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Tropenbos International"></i>, <span >
+      <a href="/en/author/miguel-n.-alexiades/">Miguel N. Alexiades</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Kent"></i>, <span >
+      <a href="/en/author/edmar-a.-oliveira/">Edmar A. Oliveira</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade do Estado de Mato Grosso"></i>, <span >
+      <a href="/en/author/riley-p.-fortier/">Riley P. Fortier</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="University of Miami"></i>, <span >
+      <a href="/en/author/karina-garcia-cabrera/">Karina Garcia-Cabrera</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Wake Forest University"></i>, <span >
+      <a href="/en/author/lionel-hernandez/">Lionel Hernandez</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional Experimental de Guayana"></i>, <span >
+      <a href="/en/author/walter-p.-cuenca/">Walter P. Cuenca</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Técnica del Norte"></i>, <span >
+      <a href="/en/author/susamar-pansini/">Susamar Pansini</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal de Rondônia"></i>, <span >
+      <a href="/en/author/daniela-pauletto/">Daniela Pauletto</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal do Oeste do Pará"></i>, <span >
+      <a href="/en/author/freddy-r.-arevalo/">Freddy R. Arevalo</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de la Amazonia Peruana"></i>, <span >
+      <a href="/en/author/adeilza-f.-sampaio/">Adeilza F. Sampaio</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Federal de Rondônia"></i>, <span >
+      <a href="/en/author/elvis-h.-v.-sandoval/">Elvis H. V. Sandoval</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidad Nacional de la Amazonia Peruana; University of Missouri"></i>, <span >
+      <a href="/en/author/luis-v.-gamarra/">Luis V. Gamarra</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Jardín Botánico de Missouri"></i>, <span >
+      <a href="/en/author/marina-hirota/">Marina Hirota</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Estadual de Campinas"></i>, <span >
+      <a href="/en/author/clarisse-palma-silva/">Clarisse Palma-Silva</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Universidade Estadual de Campinas"></i>, <span >
+      <a href="/en/author/hans-ter-steege/">Hans ter Steege</a></span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Naturalis Biodiversity Center; Utrecht University"></i>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    October 2024
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+    <span class="middot-divider"></span>
+    <a href="/en/publication/2024-luize-et-al-article-commun-biol/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="https://www.nature.com/articles/s42003-024-06937-5.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
+        data-filename="/en/publication/2024-luize-et-al-article-commun-biol/cite.bib">
+  Cite
+</a>
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.6084/m9.figshare.26792731.v1" target="_blank" rel="noopener">
+  Code
+</a>
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.6084/m9.figshare.26792731.v1" target="_blank" rel="noopener">
+  Dataset
+</a>
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header" href="/en/project/atdn/">
+    Project
+  </a>
+  
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.1038/s42003-024-06937-5" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    
+    <h3>Abstract</h3>
+    <p class="pub-abstract">We describe the geographical variation in tree species composition across Amazonian forests and show how environmental conditions are associated with species turnover. Our analyses are based on 2023 forest inventory plots (1 ha) that provide abundance data for a total of 5188 tree species. Within-plot species composition reflected both local environmental conditions (especially soil nutrients and hydrology) and geographical regions. A broader-scale view of species turnover was obtained by interpolating the relative tree species abundances over Amazonia into 47,441 0.1-degree grid cells. Two main dimensions of spatial change in tree species composition were identified. The first was a gradient between western Amazonia at the Andean forelands (with young geology and relatively nutrient-rich soils) and central–eastern Amazonia associated with the Guiana and Brazilian Shields (with more ancient geology and poor soils). The second gradient was between the wet forests of the northwest and the drier forests in southern Amazonia. Isolines linking cells of similar composition crossed major Amazonian rivers, suggesting that tree species distributions are not limited by rivers. Even though some areas of relatively sharp species turnover were identified, mostly the tree species composition changed gradually over large extents, which does not support delimiting clear discrete biogeographic regions within Amazonia.</p>
+    
+
+    
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            <a href="/en/publication/#2">
+              Journal article
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9"><em>Communications Biology, 7: 1240</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/&amp;text=The%20biogeography%20of%20the%20Amazonian%20tree%20flora" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/&amp;t=The%20biogeography%20of%20the%20Amazonian%20tree%20flora" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=The%20biogeography%20of%20the%20Amazonian%20tree%20flora&amp;body=https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/&amp;title=The%20biogeography%20of%20the%20Amazonian%20tree%20flora" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=The%20biogeography%20of%20the%20Amazonian%20tree%20flora%20https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://ccvasconcelos.github.io/"><img class="avatar mr-3 avatar-circle" src="/en/author/caroline-c.-vasconcelos/avatar_hu989c4163d97b5c7cc30c354861be6816_3694738_270x270_fill_q75_lanczos_center.jpg" alt="Caroline C. Vasconcelos"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://ccvasconcelos.github.io/">Caroline C. Vasconcelos</a></h5>
+      <h6 class="card-subtitle">Research Fellow</h6>
+      <p class="card-text">My research interests include taxonomy and systematics (especially neotropical Sapotaceae), spectroscopy as a integrative tools, Amazonian flora, species distribution modeling, floristic studies, and tropical forest ecology.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/en/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/en/" >
+        <i class="fas fa-"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://lattes.cnpq.br/1535461703335857" target="_blank" rel="noopener">
+        <i class="ai ai-lattes"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.researchgate.net/profile/Caroline_Vasconcelos3" target="_blank" rel="noopener">
+        <i class="ai ai-researchgate"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ccvasconcelos" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.br/citations?user=XuZ_h4wAAAAJ&amp;hl=pt-BR" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0002-7850-6672" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://publons.com/researcher/1890688/caroline-c-vasconcelos/" target="_blank" rel="noopener">
+        <i class="ai ai-publons"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/ccvasconcelos/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  <section id="comments">
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "ccvasconcelos" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </section>
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</div>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+  <p class="powered-by">
+    
+      <a href="/en/privacy/">Privacy Policy</a>
+    
+    
+  </p>
+  
+
+  
+  <p class="powered-by">
+    © 2025 Caroline C. Vasconcelos
+  </p>
+  
+
+  
+  
+
+
+
+
+
+  
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://ccvasconcelos.disqus.com/count.js" async></script>
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.3620485f564f09769c1eec841a4efb2e.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+</body>
+</html>

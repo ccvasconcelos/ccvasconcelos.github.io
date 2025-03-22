@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dissimilaridade de Gower | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/pt/tag/dissimilaridade-de-gower/</link>
+      <atom:link href="https://ccvasconcelos.github.io/pt/tag/dissimilaridade-de-gower/index.xml" rel="self" type="application/rss+xml" />
+    <description>Dissimilaridade de Gower</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Sat, 05 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>Dissimilaridade de Gower</title>
+      <link>https://ccvasconcelos.github.io/pt/tag/dissimilaridade-de-gower/</link>
+    </image>
+    
+    <item>
+      <title>Dendrograma de agrupamento hierárquico com suporte bootstrap [Portuguese text]</title>
+      <link>https://ccvasconcelos.github.io/pt/post/dendrograma-de-agrupamento-com-bootstrap-no-r/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/post/dendrograma-de-agrupamento-com-bootstrap-no-r/</guid>
+      <description>
+
+
+&lt;p&gt;Neste tutorial você aprenderá a gerar um dendrograma de &lt;strong&gt;Agrupamento Hierárquico&lt;/strong&gt; (&lt;em&gt;Hierarchical Cluster Analysis&lt;/em&gt;) usando a medida de dissimilaridade de &lt;strong&gt;Gower&lt;/strong&gt; &lt;span class=&#34;citation&#34;&gt;(Gower &lt;a href=&#34;#ref-gower1971general&#34; role=&#34;doc-biblioref&#34;&gt;1971&lt;/a&gt;)&lt;/span&gt; e o método de agrupamento &lt;strong&gt;Ward.D2&lt;/strong&gt; &lt;span class=&#34;citation&#34;&gt;(Murtagh and Legendre &lt;a href=&#34;#ref-murtagh2014ward&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;, além de adicionar valores de &lt;strong&gt;Bootstrap&lt;/strong&gt; &lt;span class=&#34;citation&#34;&gt;(Efron, Halloran, and Holmes &lt;a href=&#34;#ref-efron1996bootstrap&#34; role=&#34;doc-biblioref&#34;&gt;1996&lt;/a&gt;; Felsenstein &lt;a href=&#34;#ref-felsenstein1985confidence&#34; role=&#34;doc-biblioref&#34;&gt;1985&lt;/a&gt;)&lt;/span&gt; aos nós do dendrograma para avaliar a incerteza na análise de agrupamento. A ideia do post não é entrar no mérito de como cada método funciona, mas sim em mostrar como isso pode ser implementado no R.&lt;/p&gt;
+&lt;p&gt;Esta postagem foi inteiramente produzida em ambiente R Studio, usando os pacotes &lt;code&gt;rmarkdown&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Allaire et al. &lt;a href=&#34;#ref-allaire2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;; Xie, Allaire, and Grolemund &lt;a href=&#34;#ref-xie2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;; Xie, Dervieux, and Riederer &lt;a href=&#34;#ref-xie2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;rmdformats&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Barnier &lt;a href=&#34;#ref-barnier2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;remedy&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Fay, Sidi, and Smith &lt;a href=&#34;#ref-fay2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;knitr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Xie &lt;a href=&#34;#ref-stodden2014&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;, &lt;a href=&#34;#ref-xie2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;, &lt;a href=&#34;#ref-xie2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; e &lt;code&gt;citr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Aust &lt;a href=&#34;#ref-aust2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;. &lt;br&gt;&lt;/p&gt;
+&lt;div id=&#34;instalação-dos-pacotes-necessários&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;1. Instalação dos pacotes necessários&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Antes de iniciarmos, é importante que você tenha os seguintes pacotes e dependências instalados:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;downloader&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Chang &lt;a href=&#34;#ref-chang2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;parallel&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(R Core Team &lt;a href=&#34;#ref-rcoreteam2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cluster&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Maechler et al. &lt;a href=&#34;#ref-maechler2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dendextend&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Galili &lt;a href=&#34;#ref-galili2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#instala os pacotes, se for necessário:
+pacotes = c(&amp;quot;downloader&amp;quot;,&amp;quot;parallel&amp;quot;,&amp;quot;cluster&amp;quot;,&amp;quot;dendextend&amp;quot;)
+for (p in setdiff(pacotes, installed.packages()[,&amp;quot;Package&amp;quot;])) {install.packages(p, dependencies=TRUE)}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Para gerar os valores &lt;em&gt;bootstrap&lt;/em&gt; você precisará executar os comandos a seguir para baixar o arquivo contendo as funções necessárias. Originalmente, essas funções foram implementadas no pacote &lt;code&gt;booststrap&lt;/code&gt; por &lt;a href=&#34;http://www.github.com/sgibb/bootstrap/&#34; target=&#34;_blank&#34;&gt;Sebastian Gibb (2013)&lt;/a&gt; e adaptadas para este tutorial.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#faz o download das funções necessárias para o seu diretório de trabalho a partir do meu repositório no Github
+downloader::download(&amp;quot;https://github.com/CarolineVasconcelos/FunctionsFromBootstrapPackage/archive/refs/heads/main.zip&amp;quot;,
+                    dest=&amp;quot;FunctionsFromBootstrapPackage-main.zip&amp;quot;, 
+                    mode=&amp;quot;wb&amp;quot;)
+#extrai o arquivo
+utils::unzip(&amp;quot;FunctionsFromBootstrapPackage-main.zip&amp;quot;, exdir=&amp;quot;.&amp;quot;)
+
+#carrega o arquivo contendo as funções necessárias
+source(&amp;quot;FunctionsFromBootstrapPackage-main/funcoesbootstrap.R&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;prepara-os-dados&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;2. Prepara os dados&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Aqui, vamos usar como exemplo o &lt;strong&gt;&lt;em&gt;Iris Dataset&lt;/em&gt;&lt;/strong&gt; &lt;span class=&#34;citation&#34;&gt;(Anderson &lt;a href=&#34;#ref-anderson1935&#34; role=&#34;doc-biblioref&#34;&gt;1935&lt;/a&gt;)&lt;/span&gt;, que consiste em um &lt;em&gt;data.frame&lt;/em&gt; com 150 observações (linhas) e 5 variáveis (colunas). Este famoso conjunto de dados fornece as medidas em centímetros das variáveis denominadas &lt;strong&gt;Sepal.Length&lt;/strong&gt;, &lt;strong&gt;Sepal.Width&lt;/strong&gt;, &lt;strong&gt;Petal.Length&lt;/strong&gt;, &lt;strong&gt;Petal.Width&lt;/strong&gt; e &lt;strong&gt;Species&lt;/strong&gt;, respectivamente, para 50 flores de cada espécie de &lt;em&gt;Iris&lt;/em&gt; (&lt;em&gt;I. setosa&lt;/em&gt;, &lt;em&gt;I. versicolor&lt;/em&gt; e &lt;em&gt;I. virginica&lt;/em&gt;).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(iris) #exemplo com o iris dataset
+head(iris) #checa o topo dos dados&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;str(iris) #checa a estrutura dos dados&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;#39;data.frame&amp;#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &amp;quot;setosa&amp;quot;,&amp;quot;versicolor&amp;quot;,..: 1 1 1 1 1 1 1 1 1 1 ...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(iris) #faz um resumo dos dados&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## &lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#cria um identificador ÚNICO para as amostras 
+#Por exemplo, pode ser o voucher ou qualquer outro código
+minhasAmostras = paste(iris[,5],&amp;quot;-&amp;quot;, seq(1:length(iris[,5])), sep=&amp;quot;&amp;quot;) 
+#junta esse identificador aos dados originais
+meusDados = data.frame(iris, minhasAmostras)
+
+#nomeia as linhas do data.frame a partir dos identificadores
+rownames(meusDados) = minhasAmostras
+#mostra isso
+head(meusDados)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##          Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## setosa-1          5.1         3.5          1.4         0.2  setosa
+## setosa-2          4.9         3.0          1.4         0.2  setosa
+## setosa-3          4.7         3.2          1.3         0.2  setosa
+## setosa-4          4.6         3.1          1.5         0.2  setosa
+## setosa-5          5.0         3.6          1.4         0.2  setosa
+## setosa-6          5.4         3.9          1.7         0.4  setosa
+##          minhasAmostras
+## setosa-1       setosa-1
+## setosa-2       setosa-2
+## setosa-3       setosa-3
+## setosa-4       setosa-4
+## setosa-5       setosa-5
+## setosa-6       setosa-6&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#cria um objeto contendo apenas as variáveis
+minhasVariaveis = meusDados[,-c(5:6)]
+#mostra isso
+head(minhasVariaveis)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##          Sepal.Length Sepal.Width Petal.Length Petal.Width
+## setosa-1          5.1         3.5          1.4         0.2
+## setosa-2          4.9         3.0          1.4         0.2
+## setosa-3          4.7         3.2          1.3         0.2
+## setosa-4          4.6         3.1          1.5         0.2
+## setosa-5          5.0         3.6          1.4         0.2
+## setosa-6          5.4         3.9          1.7         0.4&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bootstrapping-simples-para-agrupamento-hierárquico&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;3. &lt;em&gt;Bootstrapping&lt;/em&gt; simples para agrupamento hierárquico&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Agora vamos gerar os valores &lt;em&gt;bootstrap&lt;/em&gt; e plotá-los no dendrograma:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#função que cria um objeto &amp;#39;hclust&amp;#39; pelo método Ward.D2 usando uma matriz de distância pelo método de Gower.
+#IMPORTANTE: No argumento &amp;quot;type&amp;quot; é importante especificar o tipo de cada variável em uma lista [list()]. 
+#No caso do &amp;#39;iris dataset&amp;#39; todas as variáveis são númericas. Veja também o help da função daisy()
+createHclustObject = function(data) hclust(cluster::daisy(data, 
+                                                          metric=&amp;quot;gower&amp;quot;, #dissimilaridade de Gower
+                                                          type=list(numeric=c(1:4))), #especifica variáveis
+                                                          method=&amp;quot;ward.D2&amp;quot;) #método de agrupamento
+require(&amp;quot;parallel&amp;quot;)
+resultadoBootstrap = bootstrap(minhasVariaveis, 
+                               fun=createHclustObject, 
+                               n=1000L) #faz booststrap para n = 1000 vezes
+
+hclust = createHclustObject(minhasVariaveis) #gera um objeto da classe hclust
+meuDendrograma = as.dendrogram(hclust) #converte o hclust em um dendrograma
+
+#define alguns parâmetros gráficos
+par(mar=c(7,5,4,1))
+
+#plota o dendrograma
+plot(meuDendrograma, 
+     ylab=&amp;quot;Dissimilaridade de Gower&amp;quot;, cex.lab=1.5, #eixo Y
+     main=&amp;quot;Dendrograma de Agrupamento Hierárquico&amp;quot;, sub=&amp;quot;Método de agrupamento Ward.D2&amp;quot;, cex.main=1.8, #título
+     nodePar=list(lab.cex=1, pch=NA), #define alguns parâmetros dos nós
+     type=&amp;quot;rectangle&amp;quot;) #ou pode usar também type=&amp;quot;triangle&amp;quot;
+
+#plota os valores de booststrap correspondentes a cada nó do dendrograma
+bootlabels.hclust(hclust, resultadoBootstrap, col=&amp;quot;blue&amp;quot;, cex=0.9)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/dendrograma-de-agrupamento-com-bootstrap-no-r/index.pt_files/figure-html/bootstrapping-1.png&#34; width=&#34;5400&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;melhorando-a-visualização-do-dendrograma&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;4. Melhorando a visualização do dendrograma&lt;/strong&gt;&lt;/h2&gt;
+&lt;div id=&#34;opção-1---dendrograma-com-barras-coloridas-indicando-categorias-spp-e-grupos-clusters&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Opção 1 - Dendrograma com barras coloridas indicando categorias (spp) e grupos (&lt;em&gt;clusters&lt;/em&gt;)&lt;/h5&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#quais amostras formam k grupos?
+grupos = cutree(hclust, k=3) #define um k
+#inclui no data.frame original uma coluna contendo o nome do grupo ao qual cada amostra faz parte
+meusDados$clusterID = grupos
+#checa o resultado disso
+head(meusDados)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##          Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## setosa-1          5.1         3.5          1.4         0.2  setosa
+## setosa-2          4.9         3.0          1.4         0.2  setosa
+## setosa-3          4.7         3.2          1.3         0.2  setosa
+## setosa-4          4.6         3.1          1.5         0.2  setosa
+## setosa-5          5.0         3.6          1.4         0.2  setosa
+## setosa-6          5.4         3.9          1.7         0.4  setosa
+##          minhasAmostras clusterID
+## setosa-1       setosa-1         1
+## setosa-2       setosa-2         1
+## setosa-3       setosa-3         1
+## setosa-4       setosa-4         1
+## setosa-5       setosa-5         1
+## setosa-6       setosa-6         1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#cria um objeto para armazenar cores
+#você pode incluir mais cores ou usar uma paleta pronta 
+#conforme o número de grupos que quer testar
+coresCategorias = c(&amp;quot;#CC476B&amp;quot;, #rosa
+                    &amp;quot;#309210&amp;quot;, #azul
+                    &amp;quot;#0082CE&amp;quot;) #verde
+
+#vamos criar barras para plotar junto ao dendrograma
+#aqui as barras são configuradas conforme as categorias (spp) e grupos (clusters)
+#atribui cores às &amp;quot;Species&amp;quot; na mesma ordem do dendrograma
+barraSpp = coresCategorias[meusDados$Species][order.dendrogram(meuDendrograma)]
+#atribui cores aos grupos &amp;quot;clusterID&amp;quot;
+barraGrp = coresCategorias[meusDados$clusterID]
+#une as barras
+barras = cbind(barraSpp, barraGrp)
+
+#define alguns parâmetros gráficos - pois a figura pode ficar grande demais
+par(mar=c(10,5,4,1) + 0.1, xpd=NA) 
+
+#define alguns parâmetros em relação aos nós do dendrograma
+nP = list(col=c(NA, NA), 
+          cex=c(3, 0.5), 
+          pch=c(21, NA),
+          bg=c(&amp;quot;gray66&amp;quot;, &amp;quot;black&amp;quot;),
+          lab.cex=1,
+          lab.col=&amp;quot;black&amp;quot;)
+#plota o dendrograma
+plot(meuDendrograma,
+     nodePar=nP,
+     edgePar=list(col=&amp;quot;gray66&amp;quot;, lwd=1.2), #define alguns parâmetros dos ramos
+     horiz=FALSE, #se horiz=TRUE a plotagem dos valores bootstraps fica prejudicada
+     ylab=&amp;quot;Dissimilaridade de Gower&amp;quot;, cex.lab=1.5, #eixo Y
+     main=&amp;quot;Dendrograma de Agrupamento Hierárquico&amp;quot;, sub=&amp;quot;Método de agrupamento Ward.D2&amp;quot;, cex.main=1.8) #título
+
+ #plota os valores de bootstrap
+bootlabels.hclust(hclust, resultadoBootstrap, col=&amp;quot;darkblue&amp;quot;, cex=0.7)
+
+library(dendextend) #carrega o pacote que contém a função colored_bars()
+#plota as barras
+colored_bars(colors=barras, dend=meuDendrograma, rowLabels=c(&amp;quot;Espécies&amp;quot;,&amp;quot;Grupos&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/dendrograma-de-agrupamento-com-bootstrap-no-r/index.pt_files/figure-html/plot%20dendrograma%201-1.png&#34; width=&#34;5400&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;opção-2---dendrograma-com-labels-coloridos-em-vez-das-barras&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Opção 2 - Dendrograma com &lt;em&gt;labels&lt;/em&gt; coloridos em vez das barras&lt;/h5&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar=c(10,5,4,1) + 0.1, xpd=NA) #define alguns parâmetros gráficos
+
+library(dendextend) #carrega o pacote que contém a função labels_colors()
+#para colorir os labels
+labels_colors(meuDendrograma) = coresCategorias[meusDados$Species][order.dendrogram(meuDendrograma)]
+
+#define alguns parâmetros em relação aos nós do dendrograma
+nP = list(col=c(NA, NA),
+          cex=c(3, 0.5), 
+          pch=c(21, NA),
+          bg=c(&amp;quot;gray66&amp;quot;, &amp;quot;black&amp;quot;),
+          lab.cex=1,
+          lab.col=&amp;quot;black&amp;quot;)
+#plota o dendrograma
+plot(meuDendrograma,
+     nodePar=nP, 
+     edgePar=list(col=&amp;quot;gray66&amp;quot;, lwd=1.2), #define alguns parâmetros dos ramos
+     horiz=F, #se horiz=TRUE a plotagem dos valores bootstraps fica prejudicada
+     ylab=&amp;quot;Distância de Gower&amp;quot;, cex.lab=1.5, #eixo Y
+     main=&amp;quot;Dendrograma de Agrupamento Hierárquico&amp;quot;, sub=&amp;quot;Método de agrupamento Ward.D2&amp;quot;, cex.main=1.8) #título
+
+#plota os valores de bootstrap
+bootlabels.hclust(hclust, resultadoBootstrap, col=&amp;quot;darkblue&amp;quot;, cex=0.7)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/dendrograma-de-agrupamento-com-bootstrap-no-r/index.pt_files/figure-html/plot%20dendrograma%202-1.png&#34; width=&#34;5400&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;salvando-as-figuras-em-pdf&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;5. Salvando as figuras em PDF&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Para salvar uma figura use as seguintes funções &lt;code&gt;pdf()&lt;/code&gt; e &lt;code&gt;dev.off()&lt;/code&gt;. Veja como no exemplo abaixo:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pdf(&amp;quot;FigDendrograma_labelscoloridos.pdf&amp;quot;, width=18, height=14) #abre um dispositivo pdf para salvar a figura
+#plota o dendrograma
+plot(meuDendrograma,
+     nodePar=nP,
+     edgePar=list(col=&amp;quot;gray66&amp;quot;, lwd=1.2), #define alguns parâmetros dos ramos
+     horiz=FALSE, #se horiz=TRUE a plotagem dos valores bootstraps fica prejudicada
+     ylab=&amp;quot;Dissimilaridade de Gower&amp;quot;, cex.lab=1.5, #eixo Y
+     main=&amp;quot;Dendrograma de Agrupamento Hierárquico&amp;quot;, sub=&amp;quot;Método de agrupamento Ward.D2&amp;quot;, cex.main=1.8) #título
+
+#plota os valores de bootstrap
+bootlabels.hclust(hclust, resultadoBootstrap, col=&amp;quot;darkblue&amp;quot;, cex=0.7)
+dev.off() #fecha o dispositivo e salva a figura&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## png 
+##   2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Postagem originalmente publicada no meu perfil do &lt;a href=&#34;https://rpubs.com/ccvasconcelos&#34; target=&#34;_blank&#34;&gt;RPubs&lt;/a&gt;. Toda semana tem conteúdo novo por lá!&lt;/p&gt;
+&lt;p&gt;Até a próxima! &lt;em&gt;See you soon!&lt;/em&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;referências&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;Referências&lt;/strong&gt;&lt;/h2&gt;
+&lt;div id=&#34;refs&#34;&gt;
+&lt;div id=&#34;ref-allaire2021&#34;&gt;
+&lt;p&gt;Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2021. &lt;em&gt;Rmarkdown: Dynamic Documents for R&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/rmarkdown&#34;&gt;https://github.com/rstudio/rmarkdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-anderson1935&#34;&gt;
+&lt;p&gt;Anderson, Edgar. 1935. “The Irises of the Gaspe Peninsula.” &lt;em&gt;Bulletin of the American Iris Society&lt;/em&gt; 59: 2–5.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-aust2019&#34;&gt;
+&lt;p&gt;Aust, Frederik. 2019. &lt;em&gt;Citr: ’RStudio’ Add-in to Insert Markdown Citations&lt;/em&gt;. &lt;a href=&#34;https://github.com/crsh/citr&#34;&gt;https://github.com/crsh/citr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-barnier2021&#34;&gt;
+&lt;p&gt;Barnier, Julien. 2021. &lt;em&gt;Rmdformats: HTML Output Formats and Templates for ’Rmarkdown’ Documents&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=rmdformats&#34;&gt;https://CRAN.R-project.org/package=rmdformats&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-chang2015&#34;&gt;
+&lt;p&gt;Chang, Winston. 2015. &lt;em&gt;Downloader: Download Files over Http and Https&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=downloader&#34;&gt;https://CRAN.R-project.org/package=downloader&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-efron1996bootstrap&#34;&gt;
+&lt;p&gt;Efron, Bradley, Elizabeth Halloran, and Susan Holmes. 1996. “Bootstrap Confidence Levels for Phylogenetic Trees.” &lt;em&gt;Proceedings of the National Academy of Sciences&lt;/em&gt; 93 (23): 13429–9. &lt;a href=&#34;https://doi.org/10.1073/pnas.93.23.13429&#34;&gt;https://doi.org/10.1073/pnas.93.23.13429&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-fay2018&#34;&gt;
+&lt;p&gt;Fay, Colin, Jonathan Sidi, and Luke Smith. 2018. &lt;em&gt;Remedy: ’RStudio’ Addins to Simplify ’Markdown’ Writing&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=remedy&#34;&gt;https://CRAN.R-project.org/package=remedy&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-felsenstein1985confidence&#34;&gt;
+&lt;p&gt;Felsenstein, Joseph. 1985. “Confidence Limits on Phylogenies: An Approach Using the Bootstrap.” &lt;em&gt;Evolution&lt;/em&gt; 39 (4): 783–91. &lt;a href=&#34;https://doi.org/10.1111/j.1558-5646.1985.tb00420.x&#34;&gt;https://doi.org/10.1111/j.1558-5646.1985.tb00420.x&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-galili2015&#34;&gt;
+&lt;p&gt;Galili, Tal. 2015. “Dendextend: An R Package for Visualizing, Adjusting, and Comparing Trees of Hierarchical Clustering.” &lt;em&gt;Bioinformatics&lt;/em&gt;. &lt;a href=&#34;https://doi.org/10.1093/bioinformatics/btv428&#34;&gt;https://doi.org/10.1093/bioinformatics/btv428&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-gower1971general&#34;&gt;
+&lt;p&gt;Gower, John C. 1971. “A General Coefficient of Similarity and Some of Its Properties.” &lt;em&gt;Biometrics&lt;/em&gt;, 857–71. &lt;a href=&#34;https://doi.org/10.2307/2528823&#34;&gt;https://doi.org/10.2307/2528823&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-maechler2019&#34;&gt;
+&lt;p&gt;Maechler, Martin, Peter Rousseeuw, Anja Struyf, Mia Hubert, and Kurt Hornik. 2019. &lt;em&gt;Cluster: Cluster Analysis Basics and Extensions&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-murtagh2014ward&#34;&gt;
+&lt;p&gt;Murtagh, Fionn, and Pierre Legendre. 2014. “Ward’s Hierarchical Agglomerative Clustering Method: Which Algorithms Implement Ward’s Criterion?” &lt;em&gt;Journal of Classification&lt;/em&gt; 31 (3): 274–95. &lt;a href=&#34;https://doi.org/10.1007/s00357-014-9161-z&#34;&gt;https://doi.org/10.1007/s00357-014-9161-z&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-rcoreteam2020&#34;&gt;
+&lt;p&gt;R Core Team. 2020. &lt;em&gt;R: A Language and Environment for Statistical Computing&lt;/em&gt;. Vienna, Austria: R Foundation for Statistical Computing. &lt;a href=&#34;https://www.R-project.org/&#34;&gt;https://www.R-project.org/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-stodden2014&#34;&gt;
+&lt;p&gt;Xie, Yihui. 2014. “Knitr: A Comprehensive Tool for Reproducible Research in R.” In &lt;em&gt;Implementing Reproducible Computational Research&lt;/em&gt;, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC. &lt;a href=&#34;http://www.crcpress.com/product/isbn/9781466561595&#34;&gt;http://www.crcpress.com/product/isbn/9781466561595&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2015&#34;&gt;
+&lt;p&gt;———. 2015. &lt;em&gt;Dynamic Documents with R and Knitr&lt;/em&gt;. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://yihui.org/knitr/&#34;&gt;https://yihui.org/knitr/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2021&#34;&gt;
+&lt;p&gt;———. 2021. &lt;em&gt;Knitr: A General-Purpose Package for Dynamic Report Generation in R&lt;/em&gt;. &lt;a href=&#34;https://yihui.org/knitr/&#34;&gt;https://yihui.org/knitr/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2018&#34;&gt;
+&lt;p&gt;Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. &lt;em&gt;R Markdown: The Definitive Guide&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown&#34;&gt;https://bookdown.org/yihui/rmarkdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2020&#34;&gt;
+&lt;p&gt;Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. &lt;em&gt;R Markdown Cookbook&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown-cookbook&#34;&gt;https://bookdown.org/yihui/rmarkdown-cookbook&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

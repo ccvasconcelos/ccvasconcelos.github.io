@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Maria N. Umaña | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/en/author/maria-n.-umana/</link>
+      <atom:link href="https://ccvasconcelos.github.io/en/author/maria-n.-umana/index.xml" rel="self" type="application/rss+xml" />
+    <description>Maria N. Umaña</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>Maria N. Umaña</title>
+      <link>https://ccvasconcelos.github.io/en/author/maria-n.-umana/</link>
+    </image>
+    
+    <item>
+      <title>Functional composition of the Amazonian tree flora and forests</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2025-tersteege-et-al-article-commun-biol/</link>
+      <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2025-tersteege-et-al-article-commun-biol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The biogeography of the Amazonian tree flora</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/</link>
+      <pubDate>Wed, 02 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2024-luize-et-al-article-commun-biol/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

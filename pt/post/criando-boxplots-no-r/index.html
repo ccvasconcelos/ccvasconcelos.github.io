@@ -1,0 +1,1785 @@
+<!DOCTYPE html><html lang="pt-br" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Caroline C. Vasconcelos" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Aprenda a gerar múltiplos boxplots e a organizá-los em uma única figura de alta qualidade." />
+
+  
+    <link rel="alternate" hreflang="en" href="https://ccvasconcelos.github.io/en/post/criando-boxplots-no-r/" />
+  
+  <link rel="alternate" hreflang="pt-br" href="https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="hsl(339, 90%, 68%)" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'">
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono&display=swap">
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.b700e43662bb99635d836030594f20ed.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144860931-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-144860931-1', { 'anonymize_ip': true });
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/pt/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@cc_vasconcelos" />
+    <meta property="twitter:creator" content="@cc_vasconcelos" />
+  
+  <meta property="og:site_name" content="Caroline C. Vasconcelos" />
+  <meta property="og:url" content="https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/" />
+  <meta property="og:title" content="Criando boxplots apresentáveis no R [Portuguese text] | Caroline C. Vasconcelos" />
+  <meta property="og:description" content="Aprenda a gerar múltiplos boxplots e a organizá-los em uma única figura de alta qualidade." /><meta property="og:image" content="https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="pt-br" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-05-28T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-06-07T15:34:51-04:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/"
+  },
+  "headline": "Criando boxplots apresentáveis no R [Portuguese text]",
+  
+  "datePublished": "2021-05-28T00:00:00Z",
+  "dateModified": "2021-06-07T15:34:51-04:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Caroline C. Vasconcelos"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Caroline C. Vasconcelos",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Aprenda a gerar múltiplos boxplots e a organizá-los em uma única figura de alta qualidade."
+}
+</script>
+
+  
+
+  
+
+  
+  
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" integrity="sha256-5VhCqFam2Cn+yjw61zbBNrbHVJ6SRydPeKopYlngbiQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" integrity="sha256-zQ0LblD/Af8vOppw18+2anxsuaz3pWYyVWi+bTvTH8Q=" crossorigin="anonymous">
+  
+  <script>
+  window.addEventListener("load", function(){
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "hsl(339, 90%, 68%)",
+          "text": "rgb(255, 255, 255)"
+        },
+        "button": {
+          "background": "rgb(255, 255, 255)",
+          "text": "hsl(339, 90%, 68%)"
+        }
+      },
+      "theme": "classic",
+      "content": {
+        "message": "Este site contém cookies para garantir que você tenha a melhor experência.",
+        "dismiss": "Entendi!",
+        "link": "Saiba mais",
+        "href": "/pt/privacy/"
+      }
+    })});
+  </script>
+
+
+  
+
+
+
+
+
+  <title>Criando boxplots apresentáveis no R [Portuguese text] | Caroline C. Vasconcelos</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  dark " data-wc-page-id="636587ca987477678220b4d220bea925" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.afb024698bed5f6611e02ca728372e06.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Pesquisar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Pesquisar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Pesquisar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/pt/">Caroline C. Vasconcelos</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Alterar navegação">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/pt/">Caroline C. Vasconcelos</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/pt/#about"><span>Início</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/pt/#experience"><span>Experiência</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/pt/#skills"><span>Habilidades</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/pt/#publications"><span>Publicações</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/pt/#projects"><span>Projetos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/pt/#accomplishments"><span>Prêmios</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/pt/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/pt/#contact"><span>Contate-me</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/pt/uploads/CV_CarolineVasconcelos_pt-br.pdf"><span>CV</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+          
+          <li class="nav-item d-none d-lg-inline-flex">
+            <a class="nav-link" href="/pt/"  aria-label="">
+              <i class="fas fa-" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Pesquisar"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown i18n-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"
+           aria-haspopup="true" aria-label="Languages">
+          <i class="fas fa-globe mr-1" aria-hidden="true"></i><span class="d-none d-lg-inline">Português</span></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-item dropdown-item-active">
+            <span>Português</span>
+          </div>
+          
+          <a class="dropdown-item" href="https://ccvasconcelos.github.io/en/post/criando-boxplots-no-r/">
+            <span>English</span>
+          </a>
+          
+        </div>
+      </li>
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Criando boxplots apresentáveis no R [Portuguese text]</h1>
+
+  
+  <p class="page-subtitle">Aprenda a gerar múltiplos boxplots e a organizá-los em uma única figura de alta qualidade.</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      <a href="/pt/author/caroline-c.-vasconcelos/">Caroline C. Vasconcelos</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Última atualização em
+      
+    
+    Jun 7, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 minutos de leitura
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+    <span class="middot-divider"></span>
+    <a href="/pt/post/criando-boxplots-no-r/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/pt/category/tutorials-for-learning-r/">Tutorials for learning R</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+
+<p>Neste tutorial você aprenderá a gerar múltiplos boxplots e a organizá-los em uma única figura de alta qualidade.</p>
+<p>Esta postagem foi inteiramente produzida em ambiente R Studio, usando os pacotes <code>rmarkdown</code> <span class="citation">(Allaire et al. <a href="#ref-allaire2021" role="doc-biblioref">2021</a>; Xie, Allaire, and Grolemund <a href="#ref-xie2018" role="doc-biblioref">2018</a>; Xie, Dervieux, and Riederer <a href="#ref-xie2020" role="doc-biblioref">2020</a>)</span>, <code>rmdformats</code> <span class="citation">(Barnier <a href="#ref-barnier2021" role="doc-biblioref">2021</a>)</span>, <code>remedy</code> <span class="citation">(Fay, Sidi, and Smith <a href="#ref-fay2018" role="doc-biblioref">2018</a>)</span>, <code>knitr</code> <span class="citation">(Xie <a href="#ref-stodden2014" role="doc-biblioref">2014</a>, <a href="#ref-xie2015" role="doc-biblioref">2015</a>, <a href="#ref-xie2021" role="doc-biblioref">2021</a>)</span> e <code>citr</code> <span class="citation">(Aust <a href="#ref-aust2019" role="doc-biblioref">2019</a>)</span>. <br></p>
+<div id="instalação-dos-pacotes-necessários" class="section level2">
+<h2><strong>1. Instalação dos pacotes necessários</strong></h2>
+<p>Antes de iniciarmos, é importante que você tenha os seguintes pacotes e dependências instalados:</p>
+<ul>
+<li><code>ggplot2</code> <span class="citation">(Wickham <a href="#ref-wickham2916" role="doc-biblioref">2016</a>)</span></li>
+<li><code>viridis</code> <span class="citation">(Garnier <a href="#ref-garnier2018" role="doc-biblioref">2018</a>)</span></li>
+<li><code>hrbrthemes</code> <span class="citation">(Rudis <a href="#ref-rudis2020" role="doc-biblioref">2020</a>)</span></li>
+<li><code>ggpubr</code> <span class="citation">(Kassambara <a href="#ref-kassambara2020" role="doc-biblioref">2020</a>)</span></li>
+</ul>
+<pre class="r"><code>#instala os pacotes, se for necessário:
+pacotes = c(&quot;ggplot2&quot;,&quot;viridis&quot;,&quot;hrbrthemes&quot;,&quot;ggpubr&quot;)
+for (p in setdiff(pacotes, installed.packages()[,&quot;Package&quot;])) {install.packages(p, dependencies=TRUE)}</code></pre>
+</div>
+<div id="checando-e-preparando-os-dados" class="section level2">
+<h2><strong>2. Checando e preparando os dados</strong></h2>
+<p>Aqui, vamos usar como exemplo o <strong><em>Iris Dataset</em></strong> <span class="citation">(Anderson <a href="#ref-anderson1935" role="doc-biblioref">1935</a>)</span>, que consiste em um <em>data.frame</em> com 150 observações (linhas) e 5 variáveis (colunas). Este famoso conjunto de dados fornece as medidas em centímetros das variáveis denominadas <strong>Sepal.Length</strong>, <strong>Sepal.Width</strong>, <strong>Petal.Length</strong>, <strong>Petal.Width</strong> e <strong>Species</strong>, respectivamente, para 50 flores de cada espécie de <em>Iris</em> (<em>I. setosa</em>, <em>I. versicolor</em> e <em>I. virginica</em>).</p>
+<pre class="r"><code>data(&quot;iris&quot;) #carrega o iris dataset
+head(iris) #checa o topo dos dados</code></pre>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
+<pre class="r"><code>str(iris) #checa a estrutura dos dados</code></pre>
+<pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<pre class="r"><code>summary(iris) #resume os dados</code></pre>
+<pre><code>##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## </code></pre>
+<pre class="r"><code>#cria subconjuntos para cada variável
+CompSepal = data.frame(Especies=iris$Species, CompSepal=iris$Sepal.Length)
+LargSepal = data.frame(Especies=iris$Species, LargSepal=iris$Sepal.Width)
+CompPetal = data.frame(Especies=iris$Species, CompPetal=iris$Petal.Length)
+LargPetal = data.frame(Especies=iris$Species, LargPetal=iris$Petal.Width)
+
+#cria uma lista contendo os subconjuntos de dados
+listaVariaveis = list(CompSepal=CompSepal, 
+                      LargSepal=LargSepal, 
+                      CompPetal=CompPetal, 
+                      LargPetal=LargPetal)
+
+#cria um objeto que contenha os nomes das variáveis para usar no eixo Y de cada plot
+nomesVariaveis = c(&quot;Comprimento da sépala (cm)&quot;, 
+                   &quot;Largura da sépala (cm)&quot;, 
+                   &quot;Comprimento da pétala (cm)&quot;, 
+                   &quot;Largura da pétala (cm)&quot;)</code></pre>
+</div>
+<div id="loop-for-para-gerar-os-boxplots" class="section level2">
+<h2><strong>3. <em>Loop for</em> para gerar os boxplots</strong></h2>
+<pre class="r"><code>library(&quot;ggplot2&quot;) #para plotar os gráficos
+library(&quot;viridis&quot;) #paleta de cores
+library(&quot;hrbrthemes&quot;) #theme_ipsum()
+
+#cria um objeto do tipo vetor para armazenar os resultados gerados
+resultadoPlots = vector(mode=&quot;list&quot;, length=length(listaVariaveis))
+#gera o plot de cada variável (em subconjunto) dentro de um loop
+for(i in 1:length(listaVariaveis)){ 
+    resultadoPlots[[i]] = ggplot(listaVariaveis[[i]],
+                          #veja também aes() em vez de aes_string()
+                          aes_string(x=names(listaVariaveis[[i]][1]), #pega a coluna que corresponde aos nomes das spp em cada subconjunto 
+                                     y=names(listaVariaveis[[i]][2]), #pega a coluna que corresponde aos nomes das variáveis em cada subconjunto 
+                                     fill=names(listaVariaveis[[i]][1]))) + #define as cores por spp
+    geom_boxplot() +
+    scale_fill_viridis(discrete=TRUE, alpha=0.6) +
+    geom_jitter(color=&quot;black&quot;, size=0.4, alpha=0.9) +
+    theme_ipsum() +
+    theme(legend.position=&quot;none&quot;, 
+          axis.title.x=element_text(size=12), 
+          axis.title.y=element_text(size=12), 
+          axis.text=element_text(size=10),
+          axis.text.x=element_text(face=&quot;italic&quot;)) + #para que os nomes no eixo X fiquem em itálico
+    xlab(&quot;Iris spp.&quot;) +
+    ylab(nomesVariaveis[i])
+    print(resultadoPlots[[i]]) #para ver o resultado
+}</code></pre>
+<p><img src="https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/index.pt_files/figure-html/loop%20para%20plotar%20os%20graficos-1.png" width="576" /><img src="https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/index.pt_files/figure-html/loop%20para%20plotar%20os%20graficos-2.png" width="576" /><img src="https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/index.pt_files/figure-html/loop%20para%20plotar%20os%20graficos-3.png" width="576" /><img src="https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/index.pt_files/figure-html/loop%20para%20plotar%20os%20graficos-4.png" width="576" /></p>
+</div>
+<div id="plota-os-boxplots-em-uma-única-figura" class="section level2">
+<h2><strong>4. Plota os boxplots em uma única figura</strong></h2>
+<p><img src="https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/index.pt_files/figure-html/salva%20tudo%20em%20uma%20figura-1.png" width="2400" /></p>
+</div>
+<div id="salva-a-figura-em-um-arquivo-.tiff-de-alta-qualidade" class="section level2">
+<h2><strong>5. Salva a figura em um arquivo .tiff de alta qualidade</strong></h2>
+<pre class="r"><code>ggsave(&quot;FiguraBoxplots.tiff&quot;, plot=figuraBoxplots, 
+       width=22, height=20, units=&quot;cm&quot;, dpi=300, compression=&quot;lzw&quot;) #define os parâmetros da imagem</code></pre>
+<p>Postagem originalmente publicada no meu perfil do <a href="https://rpubs.com/ccvasconcelos" target="_blank">RPubs</a>. Toda semana tem conteúdo novo por lá!</p>
+<p>Até a próxima!</p>
+</div>
+<div id="referências" class="section level2">
+<h2><strong>Referências</strong></h2>
+<div id="refs">
+<div id="ref-allaire2021">
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2021. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://github.com/rstudio/rmarkdown">https://github.com/rstudio/rmarkdown</a>.</p>
+</div>
+<div id="ref-anderson1935">
+<p>Anderson, Edgar. 1935. “The Irises of the Gaspe Peninsula.” <em>Bulletin of the American Iris Society</em> 59: 2–5.</p>
+</div>
+<div id="ref-aust2019">
+<p>Aust, Frederik. 2019. <em>Citr: ’RStudio’ Add-in to Insert Markdown Citations</em>. <a href="https://github.com/crsh/citr">https://github.com/crsh/citr</a>.</p>
+</div>
+<div id="ref-barnier2021">
+<p>Barnier, Julien. 2021. <em>Rmdformats: HTML Output Formats and Templates for ’Rmarkdown’ Documents</em>. <a href="https://CRAN.R-project.org/package=rmdformats">https://CRAN.R-project.org/package=rmdformats</a>.</p>
+</div>
+<div id="ref-fay2018">
+<p>Fay, Colin, Jonathan Sidi, and Luke Smith. 2018. <em>Remedy: ’RStudio’ Addins to Simplify ’Markdown’ Writing</em>. <a href="https://CRAN.R-project.org/package=remedy">https://CRAN.R-project.org/package=remedy</a>.</p>
+</div>
+<div id="ref-garnier2018">
+<p>Garnier, Simon. 2018. <em>Viridis: Default Color Maps from ’Matplotlib’</em>. <a href="https://CRAN.R-project.org/package=viridis">https://CRAN.R-project.org/package=viridis</a>.</p>
+</div>
+<div id="ref-kassambara2020">
+<p>Kassambara, Alboukadel. 2020. <em>Ggpubr: ’Ggplot2’ Based Publication Ready Plots</em>. <a href="https://CRAN.R-project.org/package=ggpubr">https://CRAN.R-project.org/package=ggpubr</a>.</p>
+</div>
+<div id="ref-rudis2020">
+<p>Rudis, Bob. 2020. <em>Hrbrthemes: Additional Themes, Theme Components and Utilities for ’Ggplot2’</em>. <a href="https://CRAN.R-project.org/package=hrbrthemes">https://CRAN.R-project.org/package=hrbrthemes</a>.</p>
+</div>
+<div id="ref-wickham2916">
+<p>Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.</p>
+</div>
+<div id="ref-stodden2014">
+<p>Xie, Yihui. 2014. “Knitr: A Comprehensive Tool for Reproducible Research in R.” In <em>Implementing Reproducible Computational Research</em>, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC. <a href="http://www.crcpress.com/product/isbn/9781466561595">http://www.crcpress.com/product/isbn/9781466561595</a>.</p>
+</div>
+<div id="ref-xie2015">
+<p>———. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.</p>
+</div>
+<div id="ref-xie2021">
+<p>———. 2021. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.</p>
+</div>
+<div id="ref-xie2018">
+<p>Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <em>R Markdown: The Definitive Guide</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown">https://bookdown.org/yihui/rmarkdown</a>.</p>
+</div>
+<div id="ref-xie2020">
+<p>Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. <em>R Markdown Cookbook</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown-cookbook">https://bookdown.org/yihui/rmarkdown-cookbook</a>.</p>
+</div>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/pt/tag/r-tutorial/">R tutorial</a>
+  
+  <a class="badge badge-light" href="/pt/tag/r-markdown/">R Markdown</a>
+  
+  <a class="badge badge-light" href="/pt/tag/rpubs/">RPubs</a>
+  
+  <a class="badge badge-light" href="/pt/tag/aprendendo-r/">Aprendendo R</a>
+  
+  <a class="badge badge-light" href="/pt/tag/boxplots/">Boxplots</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/&amp;text=Criando%20boxplots%20apresent%c3%a1veis%20no%20R%20[Portuguese%20text]" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/&amp;t=Criando%20boxplots%20apresent%c3%a1veis%20no%20R%20[Portuguese%20text]" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Criando%20boxplots%20apresent%c3%a1veis%20no%20R%20[Portuguese%20text]&amp;body=https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/&amp;title=Criando%20boxplots%20apresent%c3%a1veis%20no%20R%20[Portuguese%20text]" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Criando%20boxplots%20apresent%c3%a1veis%20no%20R%20[Portuguese%20text]%20https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://ccvasconcelos.github.io/"><img class="avatar mr-3 avatar-circle" src="/pt/author/caroline-c.-vasconcelos/avatar_hu989c4163d97b5c7cc30c354861be6816_3694738_270x270_fill_q75_lanczos_center.jpg" alt="Caroline C. Vasconcelos"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://ccvasconcelos.github.io/">Caroline C. Vasconcelos</a></h5>
+      <h6 class="card-subtitle">Bolsista de Apoio Técnico</h6>
+      <p class="card-text">Meus interesses de pesquisa incluem taxonomia e sistemática (especialmente Sapotaceae neotropical), espectroscopia como ferramenta integrativa, flora amazônica, modelagem de distribuição de espécies, estudos florísticos, e ecologia de florestas tropicais.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/pt/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/pt/" >
+        <i class="fas fa-"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="http://lattes.cnpq.br/1535461703335857" target="_blank" rel="noopener">
+        <i class="ai ai-lattes"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.researchgate.net/profile/Caroline_Vasconcelos3" target="_blank" rel="noopener">
+        <i class="ai ai-researchgate"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ccvasconcelos" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com.br/citations?user=XuZ_h4wAAAAJ&amp;hl=pt-BR" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://orcid.org/0000-0002-7850-6672" target="_blank" rel="noopener">
+        <i class="ai ai-orcid"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://publons.com/researcher/1890688/caroline-c-vasconcelos/" target="_blank" rel="noopener">
+        <i class="ai ai-publons"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/ccvasconcelos/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  <section id="comments">
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "ccvasconcelos" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </section>
+  
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Relacionados</h3>
+    <ul>
+      
+      <li><a href="/pt/post/criando-cronograma-de-atividades-no-r/">Criando um cronograma de atividades no R [Portuguese text]</a></li>
+      
+      <li><a href="/pt/post/dendrograma-de-agrupamento-com-bootstrap-no-r/">Dendrograma de agrupamento hierárquico com suporte bootstrap [Portuguese text]</a></li>
+      
+      <li><a href="/pt/post/criando-mapa-no-r/">Criando um mapa de distribuição no R [Portuguese text]</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+  <p class="powered-by">
+    
+      <a href="/pt/privacy/">Política de Privacidade</a>
+    
+    
+  </p>
+  
+
+  
+  <p class="powered-by">
+    © 2025 Caroline C. Vasconcelos
+  </p>
+  
+
+  
+  
+
+
+
+
+
+  
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citação</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://ccvasconcelos.disqus.com/count.js" async></script>
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/pt/js/wowchemy.min.59e572badfd3b20903f4dbe139e5d0c8.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+</body>
+</html>

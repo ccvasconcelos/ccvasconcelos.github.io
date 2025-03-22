@@ -1,0 +1,69 @@
+---
+bio: My research interests include Amazonian flora; taxonomy and systematics of angiosperms (focusing on Sapotaceae); and ecology and management of native forests.
+education:
+  courses:
+  - course: Ph.D. in Biological Sciences (emphasis in Botany)
+    institution: Instituto Nacional de Pesquisas da Amazônia (INPA)
+    year: 2018 - Present
+  - course: M.Sc. in Biological Sciences (emphasis in Botany)
+    institution: Instituto Nacional de Pesquisas da Amazônia (INPA)
+    year: 2015 - 2017
+  - course: B.Sc. in Forest Engineering
+    institution: Universidade do Estado Amapá (UEAP)
+    year: 2010 - 2014
+  - course: Computer Networking Technician
+    institution: Centro de Educação Profissional do Amapá (CEPA)
+    year: 2009 - 2010
+  - course: Computer Technician
+    institution: Centro de Educação Profissional do Amapá (CEPA)
+    year: 2008 - 2009
+email: "cc_vasconcelos@hotmail.com"
+highlight_name: true
+interests:
+- Integrative taxonomy
+- Systematics and evolution
+- Seedling morphology
+- Neotropical Sapotaceae
+- Ecology and forest management 
+organizations:
+- name: Instituto Nacional de Pesquisas da Amazônia
+  url: http://www.portais.atrio.scire.net.br/inpa-ppgbot/index.php/pt/
+role: PhD candidate in Botany
+social:
+- icon: envelope
+  icon_pack: fas
+  link: /#contact
+- display:
+    header: true
+- icon: lattes
+  icon_pack: ai
+  link: http://lattes.cnpq.br/1535461703335857
+- icon: researchgate
+  icon_pack: ai
+  link: https://www.researchgate.net/profile/Caroline_Vasconcelos3
+- icon: r-project
+  icon_pack: fab
+  link: https://rpubs.com/ccvasconcelos 
+- icon: github
+  icon_pack: fab
+  link: https://github.com/CarolineVasconcelos
+- icon: google-scholar
+  icon_pack: ai
+  link: https://scholar.google.com.br/citations?user=XuZ_h4wAAAAJ&hl=pt-BR
+- icon: orcid
+  icon_pack: ai
+  link: https://orcid.org/0000-0002-7850-6672
+#- icon: linkedin
+#  icon_pack: fab
+#  link: https://www.linkedin.com/in/ccvasconcelos/
+#- icon: twitter
+#  icon_pack: fab
+#  label: Follow me on Twitter
+#  link: https://twitter.com/cc_vasconcelos
+superuser: true
+title: Caroline C. Vasconcelos
+---
+
+Brazilian forestry engineer, botanist and scientist interested in taxonomy, systematics, and evolution. I'm a PhD candidate at the Instituto Nacional de Pesquisas da Amazônia (INPA). My research focuses on Taxonomy and Systematics of Neotropical Chrysophylloideae (Sapotaceae), with a fellowship funded by the Conselho Nacional de Desenvolvimento Científico e Tecnológico ([CNPq](http://www.cnpq.br), process no. 142214/ 2018-3). I’m also highly curious about new methods and technology and willing to learn from and share knowledge with others. (she/her/hers) 
+
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/CV_CarolineVasconcelos_en.pdf" "newtab" >}}CV{{< /staticref >}} for full details.

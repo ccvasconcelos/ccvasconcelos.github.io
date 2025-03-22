@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Neotropical tree | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/en/tag/neotropical-tree/</link>
+      <atom:link href="https://ccvasconcelos.github.io/en/tag/neotropical-tree/index.xml" rel="self" type="application/rss+xml" />
+    <description>Neotropical tree</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>Neotropical tree</title>
+      <link>https://ccvasconcelos.github.io/en/tag/neotropical-tree/</link>
+    </image>
+    
+    <item>
+      <title>Morphology, germination, and geographic distribution of Pentaclethra macroloba (Fabaceae), a hyperdominant Amazonian tree</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2021-dantas-et-al-article-rev-bio-trop/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2021-dantas-et-al-article-rev-bio-trop/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

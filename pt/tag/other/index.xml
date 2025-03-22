@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Other | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/pt/tag/other/</link>
+      <atom:link href="https://ccvasconcelos.github.io/pt/tag/other/index.xml" rel="self" type="application/rss+xml" />
+    <description>Other</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2025 Caroline C. Vasconcelos</copyright>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>Other</title>
+      <link>https://ccvasconcelos.github.io/pt/tag/other/</link>
+    </image>
+    
+    <item>
+      <title>Outros projetos</title>
+      <link>https://ccvasconcelos.github.io/pt/project/collab/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/project/collab/</guid>
+      <description>&lt;h2 id=&#34;colaborações-em-diferentes-áreas&#34;&gt;&lt;strong&gt;Colaborações em diferentes áreas&lt;/strong&gt;&lt;/h2&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    Página em construção&amp;hellip;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

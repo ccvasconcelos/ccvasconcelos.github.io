@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ana C. Lira-Guedes | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/en/author/ana-c.-lira-guedes/</link>
+      <atom:link href="https://ccvasconcelos.github.io/en/author/ana-c.-lira-guedes/index.xml" rel="self" type="application/rss+xml" />
+    <description>Ana C. Lira-Guedes</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Mon, 11 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>Ana C. Lira-Guedes</title>
+      <link>https://ccvasconcelos.github.io/en/author/ana-c.-lira-guedes/</link>
+    </image>
+    
+    <item>
+      <title>Natural history of the hyperdominant tree, Pentaclethra macroloba (Willd.) Kuntze, in the Amazon River estuary</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2024-dantas-et-al-article-bjb/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2024-dantas-et-al-article-bjb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Notes on the seedling morphology of Pouteria franciscana Baehni (Sapotaceae)</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2021c-vasconcelos-et-al-article-biota-amazon/</link>
+      <pubDate>Wed, 28 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2021c-vasconcelos-et-al-article-biota-amazon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Morphology, germination, and geographic distribution of Pentaclethra macroloba (Fabaceae), a hyperdominant Amazonian tree</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2021-dantas-et-al-article-rev-bio-trop/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2021-dantas-et-al-article-rev-bio-trop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>First record of Pouteria franciscana Baehni (Chrysophylloideae, Sapotaceae) in Amapá state, eastern Brazilian Amazonia</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2020a-vasconcelos-et-al-article-checklist/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2020a-vasconcelos-et-al-article-checklist/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

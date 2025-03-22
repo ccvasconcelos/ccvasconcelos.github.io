@@ -1,0 +1,1270 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/pt/post/</link>
+      <atom:link href="https://ccvasconcelos.github.io/pt/post/index.xml" rel="self" type="application/rss+xml" />
+    <description>Posts</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Tue, 15 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>Posts</title>
+      <link>https://ccvasconcelos.github.io/pt/post/</link>
+    </image>
+    
+    <item>
+      <title>Criando um cronograma de atividades no R [Portuguese text]</title>
+      <link>https://ccvasconcelos.github.io/pt/post/criando-cronograma-de-atividades-no-r/</link>
+      <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/post/criando-cronograma-de-atividades-no-r/</guid>
+      <description>
+
+
+&lt;p&gt;Neste tutorial você aprenderá a gerar um simples cronograma de atividades no R usando os pacotes &lt;code&gt;tidyverse&lt;/code&gt; e talvez um editor de planilhas (p.ex. MS Excel, Open Office Calc) – o “talvez” significa que você pode fazer tudo no R.&lt;/p&gt;
+&lt;p&gt;O estilo do cronograma a ser implementado aqui (adaptado de &lt;a href=&#34;https://www.molecularecologist.com/2019/01/03/simple-gantt-charts-in-r-with-ggplot2-and-the-tidyverse/&#34;&gt;Jeremy B. Yoder&lt;/a&gt;), simula um &lt;strong&gt;Gantt chart&lt;/strong&gt; (devido ao seu invetor Henry Gantt, 1861-1919), o qual corresponde a um gráfico de barras que ilustra o cronograma de um projeto. Este gráfico lista as tarefas a serem realizadas no eixo vertical (y) e os intervalos de tempo no eixo horizontal (x). A largura das barras horizontais no gráfico mostra a duração de cada atividade. Saiba mais clicando &lt;a href=&#34;https://en.wikipedia.org/wiki/Gantt_chart&#34; target=&#34;_blank&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Dica:&lt;/strong&gt; Se você está interessado(a) em solicitar fundos para sua pesquisa, aí está uma forma de apresentar um cronograma diferenciado para seu projeto!&lt;/p&gt;
+&lt;p&gt;Esta postagem foi inteiramente produzida em ambiente R Studio, usando os pacotes &lt;code&gt;rmarkdown&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Allaire et al. &lt;a href=&#34;#ref-allaire2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;; Xie, Allaire, and Grolemund &lt;a href=&#34;#ref-xie2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;; Xie, Dervieux, and Riederer &lt;a href=&#34;#ref-xie2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;rmdformats&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Barnier &lt;a href=&#34;#ref-barnier2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;remedy&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Fay, Sidi, and Smith &lt;a href=&#34;#ref-fay2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;knitr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Xie &lt;a href=&#34;#ref-stodden2014&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;, &lt;a href=&#34;#ref-xie2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;, &lt;a href=&#34;#ref-xie2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; e &lt;code&gt;citr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Aust &lt;a href=&#34;#ref-aust2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;.&lt;/p&gt;
+&lt;div id=&#34;topico-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;1. Instalação dos pacotes necessários&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Antes de iniciarmos, é importante que você tenha a seguinte coleção de pacotes instalada:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tidyverse&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Wickham et al. &lt;a href=&#34;#ref-wickham2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#instala o pacote, se for necessário:
+if(!require(tidyverse)) install.packages(&amp;quot;tidyverse&amp;quot;, dependencies=TRUE)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Você pode esboçar uma &lt;em&gt;timeline&lt;/em&gt; do seu projeto em um arquivo de texto delimitado através de um editor de planilha (é muito mais prático!) e, em seguida, criar um gráfico a partir dele em apenas algumas linhas de código – a partir do &lt;a href=&#34;#topico-4&#34;&gt;Tópico 4&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Aqui, usei o MS Excel:&lt;/p&gt;
+&lt;img src=&#34;./EsboçoCronograma.PNG&#34; title=&#34;fig:&#34; alt=&#34;png&#34; /&gt;
+&lt;figcaption align=&#34;center&#34;&gt;
+&lt;i&gt;No Excel: exportando os dados para o cronograma como um arquivo ‘.csv’ separado por tabulação.&lt;/i&gt;
+&lt;/figcaption&gt;
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;Uma alternativa &lt;em&gt;open source&lt;/em&gt; ao Microsoft Office é o LibreOffice. Você pode fazer o download dele clicando &lt;a href=&#34;https://pt-br.libreoffice.org/baixe-ja/libreoffice-novo/&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;topico-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;2. Importa o arquivo de exemplo gerado no editor de planilhas&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#importando o arquivo
+URL = &amp;quot;https://drive.google.com/u/0/uc?id=1xbNxrElxkdIMzZLzh1vAFk6RmBRZMH7j&amp;amp;export=download&amp;quot; 
+meuCronograma = read.csv(URL, 
+                         header=TRUE, #se verdadeiro, contém os nomes das variáveis como primeira linha
+                         sep=&amp;quot;\t&amp;quot;, #separado por tabulação
+                         encoding=&amp;quot;UTF-8&amp;quot;) #melhor especificar - no meu caso usei acentuação gráfica então foi necessário
+#mostra o objeto
+meuCronograma&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Item                           Atividades                  Elementos
+## 1     1               Crédito em disciplinas           Obrigatoriedades
+## 2     2           Levantamento bibliográfico   Preparação de publicação
+## 3     3               Propostas de concessão Aquisição de financiamento
+## 4     4     Amostragem para DNA e morfologia            Coleta de dados
+## 5     5           Banco de dados integrativo                   Análises
+## 6     6           Banco de dados integrativo            Impactos amplos
+## 7     7 Submissão do primeiro artigo da tese            Impactos amplos
+## 8     8                 Aula de qualificação           Obrigatoriedades
+## 9     9  Submissão do segundo artigo da tese            Impactos amplos
+## 10   10                  Dados morfométricos            Coleta de dados
+## 11   11                  Dados morfométricos                   Análises
+## 12   12                  Dados morfométricos   Preparação de publicação
+## 13   13                     Dados espectrais            Coleta de dados
+## 14   14                     Dados espectrais                   Análises
+## 15   15                     Dados espectrais   Preparação de publicação
+## 16   16     Extração e sequenciamento de DNA            Coleta de dados
+## 17   17     Dados moleculares e biogeografia                   Análises
+## 18   18     Dados moleculares e biogeografia   Preparação de publicação
+## 19   19 Submissão do terceiro artigo da tese            Impactos amplos
+## 20   20                       Defesa pública           Obrigatoriedades
+##    dataInicio    dataFim
+## 1  2018.07.01 2021.02.28
+## 2  2018.07.01 2022.02.28
+## 3  2018.07.01 2021.02.28
+## 4  2019.01.05 2021.06.30
+## 5  2019.01.05 2022.02.28
+## 6  2022.03.01 2022.06.30
+## 7  2019.04.01 2019.05.30
+## 8  2020.06.01 2020.07.20
+## 9  2020.09.01 2020.10.30
+## 10 2019.01.05 2020.12.30
+## 11 2021.01.01 2021.02.28
+## 12 2021.03.01 2021.06.30
+## 13 2019.01.05 2020.12.30
+## 14 2021.01.01 2021.02.28
+## 15 2021.03.01 2021.06.30
+## 16 2020.08.01 2021.05.30
+## 17 2021.06.01 2021.09.30
+## 18 2021.10.01 2022.01.20
+## 19 2022.02.28 2022.03.31
+## 20 2022.05.01 2022.06.30&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#informa as dimensões do objeto criado (número de linhas e colunas)
+dim(meuCronograma)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 20  5&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Se for usar a opção acima (&lt;a href=&#34;#topico-2&#34;&gt;Tópico 2&lt;/a&gt;), avance para o &lt;a href=&#34;#topico-4&#34;&gt;Tópico 4&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;topico-3&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;3. Como esboçar os dados do cronograma diretamente no R&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;A seguir, cada objeto criado corresponde a uma coluna no nosso &lt;code&gt;data.frame&lt;/code&gt; contendo os dados do cronograma. Vale lembrar que o comprimento de cada objeto deve ser igual.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;Atividades = c(&amp;quot;Crédito em disciplinas&amp;quot;, &amp;quot;Levantamento bibliográfico&amp;quot;, &amp;quot;Propostas de concessão&amp;quot;, &amp;quot;Amostragem para DNA e morfologia&amp;quot;, 
+               &amp;quot;Banco de dados integrativo&amp;quot;, &amp;quot;Banco de dados integrativo&amp;quot;, &amp;quot;Submissão do primeiro artigo da tese&amp;quot;, &amp;quot;Aula de qualificação&amp;quot;,
+               &amp;quot;Submissão do segundo artigo da tese&amp;quot;, &amp;quot;Dados morfométricos&amp;quot;, &amp;quot;Dados morfométricos&amp;quot;, &amp;quot;Dados morfométricos&amp;quot;, &amp;quot;Dados espectrais&amp;quot;,
+               &amp;quot;Dados espectrais&amp;quot;, &amp;quot;Dados espectrais&amp;quot;, &amp;quot;Extração e sequenciamento de DNA&amp;quot;, &amp;quot;Dados moleculares e biogeografia&amp;quot;,
+               &amp;quot;Dados moleculares e biogeografia&amp;quot;, &amp;quot;Submissão do terceiro artigo da tese&amp;quot;, &amp;quot;Defesa pública&amp;quot;)
+
+Item = seq(1:length(Atividades))
+
+Elementos = c(&amp;quot;Obrigatoriedades&amp;quot;, &amp;quot;Preparação de publicação&amp;quot;, &amp;quot;Aquisição de financiamento&amp;quot;, &amp;quot;Coleta de dados&amp;quot;, &amp;quot;Análises&amp;quot;, &amp;quot;Impactos amplos&amp;quot;,
+              &amp;quot;Impactos amplos&amp;quot;, &amp;quot;Obrigatoriedades&amp;quot;, &amp;quot;Impactos amplos&amp;quot;, &amp;quot;Coleta de dados&amp;quot;, &amp;quot;Análises&amp;quot;, &amp;quot;Preparação de publicação&amp;quot;, &amp;quot;Coleta de dados&amp;quot;,
+              &amp;quot;Análises&amp;quot;, &amp;quot;Preparação de publicação&amp;quot;, &amp;quot;Coleta de dados&amp;quot;, &amp;quot;Análises&amp;quot;, &amp;quot;Preparação de publicação&amp;quot;, &amp;quot;Impactos amplos&amp;quot;, &amp;quot;Obrigatoriedades&amp;quot;)
+
+#observe o formato da data
+dataInicio = c(&amp;quot;2018.07.01&amp;quot;, &amp;quot;2018.07.01&amp;quot;, &amp;quot;2018.07.01&amp;quot;, &amp;quot;2019.01.05&amp;quot;, &amp;quot;2019.01.05&amp;quot;, &amp;quot;2022.03.01&amp;quot;, &amp;quot;2019.04.01&amp;quot;, 
+               &amp;quot;2020.06.01&amp;quot;, &amp;quot;2020.09.01&amp;quot;, &amp;quot;2019.01.05&amp;quot;, &amp;quot;2021.01.01&amp;quot;, &amp;quot;2021.03.01&amp;quot;, &amp;quot;2019.01.05&amp;quot;, &amp;quot;2021.01.01&amp;quot;, 
+               &amp;quot;2021.03.01&amp;quot;, &amp;quot;2020.08.01&amp;quot;, &amp;quot;2021.06.01&amp;quot;, &amp;quot;2021.10.01&amp;quot;, &amp;quot;2022.02.28&amp;quot;, &amp;quot;2022.05.01&amp;quot;)
+
+dataFim = c(&amp;quot;2021.02.28&amp;quot;, &amp;quot;2022.02.28&amp;quot;, &amp;quot;2021.02.28&amp;quot;, &amp;quot;2021.06.30&amp;quot;, &amp;quot;2022.02.28&amp;quot;, &amp;quot;2022.06.30&amp;quot;, &amp;quot;2019.05.30&amp;quot;,
+            &amp;quot;2020.07.20&amp;quot;, &amp;quot;2020.10.30&amp;quot;, &amp;quot;2020.12.30&amp;quot;, &amp;quot;2021.02.28&amp;quot;, &amp;quot;2021.06.30&amp;quot;, &amp;quot;2020.12.30&amp;quot;, &amp;quot;2021.02.28&amp;quot;,
+            &amp;quot;2021.06.30&amp;quot;, &amp;quot;2021.05.30&amp;quot;, &amp;quot;2021.09.30&amp;quot;, &amp;quot;2022.01.20&amp;quot;, &amp;quot;2022.04.30&amp;quot;, &amp;quot;2022.06.30&amp;quot;)
+
+#Criando o data.frame: cada objeto criado se tornará uma coluna
+meuCronograma = data.frame(Item, Atividades, Elementos, dataInicio, dataFim)
+#mostra o objeto
+meuCronograma&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Item                           Atividades                  Elementos
+## 1     1               Crédito em disciplinas           Obrigatoriedades
+## 2     2           Levantamento bibliográfico   Preparação de publicação
+## 3     3               Propostas de concessão Aquisição de financiamento
+## 4     4     Amostragem para DNA e morfologia            Coleta de dados
+## 5     5           Banco de dados integrativo                   Análises
+## 6     6           Banco de dados integrativo            Impactos amplos
+## 7     7 Submissão do primeiro artigo da tese            Impactos amplos
+## 8     8                 Aula de qualificação           Obrigatoriedades
+## 9     9  Submissão do segundo artigo da tese            Impactos amplos
+## 10   10                  Dados morfométricos            Coleta de dados
+## 11   11                  Dados morfométricos                   Análises
+## 12   12                  Dados morfométricos   Preparação de publicação
+## 13   13                     Dados espectrais            Coleta de dados
+## 14   14                     Dados espectrais                   Análises
+## 15   15                     Dados espectrais   Preparação de publicação
+## 16   16     Extração e sequenciamento de DNA            Coleta de dados
+## 17   17     Dados moleculares e biogeografia                   Análises
+## 18   18     Dados moleculares e biogeografia   Preparação de publicação
+## 19   19 Submissão do terceiro artigo da tese            Impactos amplos
+## 20   20                       Defesa pública           Obrigatoriedades
+##    dataInicio    dataFim
+## 1  2018.07.01 2021.02.28
+## 2  2018.07.01 2022.02.28
+## 3  2018.07.01 2021.02.28
+## 4  2019.01.05 2021.06.30
+## 5  2019.01.05 2022.02.28
+## 6  2022.03.01 2022.06.30
+## 7  2019.04.01 2019.05.30
+## 8  2020.06.01 2020.07.20
+## 9  2020.09.01 2020.10.30
+## 10 2019.01.05 2020.12.30
+## 11 2021.01.01 2021.02.28
+## 12 2021.03.01 2021.06.30
+## 13 2019.01.05 2020.12.30
+## 14 2021.01.01 2021.02.28
+## 15 2021.03.01 2021.06.30
+## 16 2020.08.01 2021.05.30
+## 17 2021.06.01 2021.09.30
+## 18 2021.10.01 2022.01.20
+## 19 2022.02.28 2022.04.30
+## 20 2022.05.01 2022.06.30&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#informa as dimensões do objeto criado (número de linhas e colunas)
+dim(meuCronograma)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 20  5&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Aqui, o resultado gerado pelo código acima é igual ao gerado pelo editor de planilhas no &lt;a href=&#34;#topico-3&#34;&gt;Tópico 3&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;topico-4&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;4. Prepara os dados&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#transformando as colunas &amp;#39;Atividades&amp;#39; e &amp;#39;Elementos&amp;#39; em fatores
+acts = levels(as.factor(meuCronograma$Atividades))
+els = levels(as.factor(meuCronograma$Elementos))
+
+library(&amp;quot;tidyverse&amp;quot;)
+
+PreparaCronograma = gather(meuCronograma, &amp;quot;state&amp;quot;, &amp;quot;date&amp;quot;, 4:5) %&amp;gt;% 
+                    mutate(date = as.Date(date, &amp;quot;%Y.%m.%d&amp;quot;), Atividades=factor(Atividades, acts[length(acts):1]), Elementos=factor(Elementos, els))
+#mostra o objeto
+PreparaCronograma&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##    Item                           Atividades                  Elementos
+## 1     1               Crédito em disciplinas           Obrigatoriedades
+## 2     2           Levantamento bibliográfico   Preparação de publicação
+## 3     3               Propostas de concessão Aquisição de financiamento
+## 4     4     Amostragem para DNA e morfologia            Coleta de dados
+## 5     5           Banco de dados integrativo                   Análises
+## 6     6           Banco de dados integrativo            Impactos amplos
+## 7     7 Submissão do primeiro artigo da tese            Impactos amplos
+## 8     8                 Aula de qualificação           Obrigatoriedades
+## 9     9  Submissão do segundo artigo da tese            Impactos amplos
+## 10   10                  Dados morfométricos            Coleta de dados
+## 11   11                  Dados morfométricos                   Análises
+## 12   12                  Dados morfométricos   Preparação de publicação
+## 13   13                     Dados espectrais            Coleta de dados
+## 14   14                     Dados espectrais                   Análises
+## 15   15                     Dados espectrais   Preparação de publicação
+## 16   16     Extração e sequenciamento de DNA            Coleta de dados
+## 17   17     Dados moleculares e biogeografia                   Análises
+## 18   18     Dados moleculares e biogeografia   Preparação de publicação
+## 19   19 Submissão do terceiro artigo da tese            Impactos amplos
+## 20   20                       Defesa pública           Obrigatoriedades
+## 21    1               Crédito em disciplinas           Obrigatoriedades
+## 22    2           Levantamento bibliográfico   Preparação de publicação
+## 23    3               Propostas de concessão Aquisição de financiamento
+## 24    4     Amostragem para DNA e morfologia            Coleta de dados
+## 25    5           Banco de dados integrativo                   Análises
+## 26    6           Banco de dados integrativo            Impactos amplos
+## 27    7 Submissão do primeiro artigo da tese            Impactos amplos
+## 28    8                 Aula de qualificação           Obrigatoriedades
+## 29    9  Submissão do segundo artigo da tese            Impactos amplos
+## 30   10                  Dados morfométricos            Coleta de dados
+## 31   11                  Dados morfométricos                   Análises
+## 32   12                  Dados morfométricos   Preparação de publicação
+## 33   13                     Dados espectrais            Coleta de dados
+## 34   14                     Dados espectrais                   Análises
+## 35   15                     Dados espectrais   Preparação de publicação
+## 36   16     Extração e sequenciamento de DNA            Coleta de dados
+## 37   17     Dados moleculares e biogeografia                   Análises
+## 38   18     Dados moleculares e biogeografia   Preparação de publicação
+## 39   19 Submissão do terceiro artigo da tese            Impactos amplos
+## 40   20                       Defesa pública           Obrigatoriedades
+##         state       date
+## 1  dataInicio 2018-07-01
+## 2  dataInicio 2018-07-01
+## 3  dataInicio 2018-07-01
+## 4  dataInicio 2019-01-05
+## 5  dataInicio 2019-01-05
+## 6  dataInicio 2022-03-01
+## 7  dataInicio 2019-04-01
+## 8  dataInicio 2020-06-01
+## 9  dataInicio 2020-09-01
+## 10 dataInicio 2019-01-05
+## 11 dataInicio 2021-01-01
+## 12 dataInicio 2021-03-01
+## 13 dataInicio 2019-01-05
+## 14 dataInicio 2021-01-01
+## 15 dataInicio 2021-03-01
+## 16 dataInicio 2020-08-01
+## 17 dataInicio 2021-06-01
+## 18 dataInicio 2021-10-01
+## 19 dataInicio 2022-02-28
+## 20 dataInicio 2022-05-01
+## 21    dataFim 2021-02-28
+## 22    dataFim 2022-02-28
+## 23    dataFim 2021-02-28
+## 24    dataFim 2021-06-30
+## 25    dataFim 2022-02-28
+## 26    dataFim 2022-06-30
+## 27    dataFim 2019-05-30
+## 28    dataFim 2020-07-20
+## 29    dataFim 2020-10-30
+## 30    dataFim 2020-12-30
+## 31    dataFim 2021-02-28
+## 32    dataFim 2021-06-30
+## 33    dataFim 2020-12-30
+## 34    dataFim 2021-02-28
+## 35    dataFim 2021-06-30
+## 36    dataFim 2021-05-30
+## 37    dataFim 2021-09-30
+## 38    dataFim 2022-01-20
+## 39    dataFim 2022-04-30
+## 40    dataFim 2022-06-30&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;topico-5&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;5. Plota o cronograma&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;PlotaCronograma = ggplot(PreparaCronograma, aes(date, reorder(Atividades, desc(Item)), color=Elementos, group=Item)) +
+                  geom_line(size=10) +
+                  labs(x=&amp;quot;Ano&amp;quot;, y=NULL, title=&amp;quot;Timeline do Projeto&amp;quot;)+
+                  theme_gray(base_size=14)&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;MeuCronogramaNoR.png&#34; title=&#34;fig:&#34; alt=&#34;png&#34; /&gt;
+&lt;figcaption align=&#34;center&#34;&gt;
+&lt;i&gt;Cronograma exemplo.&lt;/i&gt;
+&lt;/figcaption&gt;
+&lt;/div&gt;
+&lt;div id=&#34;topico-6&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;6. Salva o cronograma como uma figura&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggsave(&amp;quot;MeuCronogramaNoR.tiff&amp;quot;, plot=PlotaCronograma, 
+       width=28, height=20, units=&amp;quot;cm&amp;quot;, dpi=300, compression=&amp;quot;lzw&amp;quot;) #define os parâmetros da imagem&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Postagem originalmente publicada no meu perfil do &lt;a href=&#34;https://rpubs.com/ccvasconcelos&#34; target=&#34;_blank&#34;&gt;RPubs&lt;/a&gt;. Toda semana tem conteúdo novo por lá!&lt;/p&gt;
+&lt;p&gt;Até a próxima!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;referências&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;Referências&lt;/strong&gt;&lt;/h2&gt;
+&lt;div id=&#34;refs&#34;&gt;
+&lt;div id=&#34;ref-allaire2021&#34;&gt;
+&lt;p&gt;Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2021. &lt;em&gt;Rmarkdown: Dynamic Documents for R&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/rmarkdown&#34;&gt;https://github.com/rstudio/rmarkdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-aust2019&#34;&gt;
+&lt;p&gt;Aust, Frederik. 2019. &lt;em&gt;Citr: ’RStudio’ Add-in to Insert Markdown Citations&lt;/em&gt;. &lt;a href=&#34;https://github.com/crsh/citr&#34;&gt;https://github.com/crsh/citr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-barnier2021&#34;&gt;
+&lt;p&gt;Barnier, Julien. 2021. &lt;em&gt;Rmdformats: HTML Output Formats and Templates for ’Rmarkdown’ Documents&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=rmdformats&#34;&gt;https://CRAN.R-project.org/package=rmdformats&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-fay2018&#34;&gt;
+&lt;p&gt;Fay, Colin, Jonathan Sidi, and Luke Smith. 2018. &lt;em&gt;Remedy: ’RStudio’ Addins to Simplify ’Markdown’ Writing&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=remedy&#34;&gt;https://CRAN.R-project.org/package=remedy&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-wickham2019&#34;&gt;
+&lt;p&gt;Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. “Welcome to the tidyverse.” &lt;em&gt;Journal of Open Source Software&lt;/em&gt; 4 (43): 1686. &lt;a href=&#34;https://doi.org/10.21105/joss.01686&#34;&gt;https://doi.org/10.21105/joss.01686&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-stodden2014&#34;&gt;
+&lt;p&gt;Xie, Yihui. 2014. “Knitr: A Comprehensive Tool for Reproducible Research in R.” In &lt;em&gt;Implementing Reproducible Computational Research&lt;/em&gt;, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC. &lt;a href=&#34;http://www.crcpress.com/product/isbn/9781466561595&#34;&gt;http://www.crcpress.com/product/isbn/9781466561595&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2015&#34;&gt;
+&lt;p&gt;———. 2015. &lt;em&gt;Dynamic Documents with R and Knitr&lt;/em&gt;. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://yihui.org/knitr/&#34;&gt;https://yihui.org/knitr/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2021&#34;&gt;
+&lt;p&gt;———. 2021. &lt;em&gt;Knitr: A General-Purpose Package for Dynamic Report Generation in R&lt;/em&gt;. &lt;a href=&#34;https://yihui.org/knitr/&#34;&gt;https://yihui.org/knitr/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2018&#34;&gt;
+&lt;p&gt;Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. &lt;em&gt;R Markdown: The Definitive Guide&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown&#34;&gt;https://bookdown.org/yihui/rmarkdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2020&#34;&gt;
+&lt;p&gt;Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. &lt;em&gt;R Markdown Cookbook&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown-cookbook&#34;&gt;https://bookdown.org/yihui/rmarkdown-cookbook&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dendrograma de agrupamento hierárquico com suporte bootstrap [Portuguese text]</title>
+      <link>https://ccvasconcelos.github.io/pt/post/dendrograma-de-agrupamento-com-bootstrap-no-r/</link>
+      <pubDate>Sat, 05 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/post/dendrograma-de-agrupamento-com-bootstrap-no-r/</guid>
+      <description>
+
+
+&lt;p&gt;Neste tutorial você aprenderá a gerar um dendrograma de &lt;strong&gt;Agrupamento Hierárquico&lt;/strong&gt; (&lt;em&gt;Hierarchical Cluster Analysis&lt;/em&gt;) usando a medida de dissimilaridade de &lt;strong&gt;Gower&lt;/strong&gt; &lt;span class=&#34;citation&#34;&gt;(Gower &lt;a href=&#34;#ref-gower1971general&#34; role=&#34;doc-biblioref&#34;&gt;1971&lt;/a&gt;)&lt;/span&gt; e o método de agrupamento &lt;strong&gt;Ward.D2&lt;/strong&gt; &lt;span class=&#34;citation&#34;&gt;(Murtagh and Legendre &lt;a href=&#34;#ref-murtagh2014ward&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;, além de adicionar valores de &lt;strong&gt;Bootstrap&lt;/strong&gt; &lt;span class=&#34;citation&#34;&gt;(Efron, Halloran, and Holmes &lt;a href=&#34;#ref-efron1996bootstrap&#34; role=&#34;doc-biblioref&#34;&gt;1996&lt;/a&gt;; Felsenstein &lt;a href=&#34;#ref-felsenstein1985confidence&#34; role=&#34;doc-biblioref&#34;&gt;1985&lt;/a&gt;)&lt;/span&gt; aos nós do dendrograma para avaliar a incerteza na análise de agrupamento. A ideia do post não é entrar no mérito de como cada método funciona, mas sim em mostrar como isso pode ser implementado no R.&lt;/p&gt;
+&lt;p&gt;Esta postagem foi inteiramente produzida em ambiente R Studio, usando os pacotes &lt;code&gt;rmarkdown&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Allaire et al. &lt;a href=&#34;#ref-allaire2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;; Xie, Allaire, and Grolemund &lt;a href=&#34;#ref-xie2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;; Xie, Dervieux, and Riederer &lt;a href=&#34;#ref-xie2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;rmdformats&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Barnier &lt;a href=&#34;#ref-barnier2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;remedy&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Fay, Sidi, and Smith &lt;a href=&#34;#ref-fay2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;knitr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Xie &lt;a href=&#34;#ref-stodden2014&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;, &lt;a href=&#34;#ref-xie2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;, &lt;a href=&#34;#ref-xie2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; e &lt;code&gt;citr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Aust &lt;a href=&#34;#ref-aust2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;. &lt;br&gt;&lt;/p&gt;
+&lt;div id=&#34;instalação-dos-pacotes-necessários&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;1. Instalação dos pacotes necessários&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Antes de iniciarmos, é importante que você tenha os seguintes pacotes e dependências instalados:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;downloader&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Chang &lt;a href=&#34;#ref-chang2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;parallel&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(R Core Team &lt;a href=&#34;#ref-rcoreteam2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cluster&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Maechler et al. &lt;a href=&#34;#ref-maechler2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dendextend&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Galili &lt;a href=&#34;#ref-galili2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#instala os pacotes, se for necessário:
+pacotes = c(&amp;quot;downloader&amp;quot;,&amp;quot;parallel&amp;quot;,&amp;quot;cluster&amp;quot;,&amp;quot;dendextend&amp;quot;)
+for (p in setdiff(pacotes, installed.packages()[,&amp;quot;Package&amp;quot;])) {install.packages(p, dependencies=TRUE)}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Para gerar os valores &lt;em&gt;bootstrap&lt;/em&gt; você precisará executar os comandos a seguir para baixar o arquivo contendo as funções necessárias. Originalmente, essas funções foram implementadas no pacote &lt;code&gt;booststrap&lt;/code&gt; por &lt;a href=&#34;http://www.github.com/sgibb/bootstrap/&#34; target=&#34;_blank&#34;&gt;Sebastian Gibb (2013)&lt;/a&gt; e adaptadas para este tutorial.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#faz o download das funções necessárias para o seu diretório de trabalho a partir do meu repositório no Github
+downloader::download(&amp;quot;https://github.com/CarolineVasconcelos/FunctionsFromBootstrapPackage/archive/refs/heads/main.zip&amp;quot;,
+                    dest=&amp;quot;FunctionsFromBootstrapPackage-main.zip&amp;quot;, 
+                    mode=&amp;quot;wb&amp;quot;)
+#extrai o arquivo
+utils::unzip(&amp;quot;FunctionsFromBootstrapPackage-main.zip&amp;quot;, exdir=&amp;quot;.&amp;quot;)
+
+#carrega o arquivo contendo as funções necessárias
+source(&amp;quot;FunctionsFromBootstrapPackage-main/funcoesbootstrap.R&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;prepara-os-dados&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;2. Prepara os dados&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Aqui, vamos usar como exemplo o &lt;strong&gt;&lt;em&gt;Iris Dataset&lt;/em&gt;&lt;/strong&gt; &lt;span class=&#34;citation&#34;&gt;(Anderson &lt;a href=&#34;#ref-anderson1935&#34; role=&#34;doc-biblioref&#34;&gt;1935&lt;/a&gt;)&lt;/span&gt;, que consiste em um &lt;em&gt;data.frame&lt;/em&gt; com 150 observações (linhas) e 5 variáveis (colunas). Este famoso conjunto de dados fornece as medidas em centímetros das variáveis denominadas &lt;strong&gt;Sepal.Length&lt;/strong&gt;, &lt;strong&gt;Sepal.Width&lt;/strong&gt;, &lt;strong&gt;Petal.Length&lt;/strong&gt;, &lt;strong&gt;Petal.Width&lt;/strong&gt; e &lt;strong&gt;Species&lt;/strong&gt;, respectivamente, para 50 flores de cada espécie de &lt;em&gt;Iris&lt;/em&gt; (&lt;em&gt;I. setosa&lt;/em&gt;, &lt;em&gt;I. versicolor&lt;/em&gt; e &lt;em&gt;I. virginica&lt;/em&gt;).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(iris) #exemplo com o iris dataset
+head(iris) #checa o topo dos dados&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;str(iris) #checa a estrutura dos dados&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;#39;data.frame&amp;#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &amp;quot;setosa&amp;quot;,&amp;quot;versicolor&amp;quot;,..: 1 1 1 1 1 1 1 1 1 1 ...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(iris) #faz um resumo dos dados&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## &lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#cria um identificador ÚNICO para as amostras 
+#Por exemplo, pode ser o voucher ou qualquer outro código
+minhasAmostras = paste(iris[,5],&amp;quot;-&amp;quot;, seq(1:length(iris[,5])), sep=&amp;quot;&amp;quot;) 
+#junta esse identificador aos dados originais
+meusDados = data.frame(iris, minhasAmostras)
+
+#nomeia as linhas do data.frame a partir dos identificadores
+rownames(meusDados) = minhasAmostras
+#mostra isso
+head(meusDados)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##          Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## setosa-1          5.1         3.5          1.4         0.2  setosa
+## setosa-2          4.9         3.0          1.4         0.2  setosa
+## setosa-3          4.7         3.2          1.3         0.2  setosa
+## setosa-4          4.6         3.1          1.5         0.2  setosa
+## setosa-5          5.0         3.6          1.4         0.2  setosa
+## setosa-6          5.4         3.9          1.7         0.4  setosa
+##          minhasAmostras
+## setosa-1       setosa-1
+## setosa-2       setosa-2
+## setosa-3       setosa-3
+## setosa-4       setosa-4
+## setosa-5       setosa-5
+## setosa-6       setosa-6&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#cria um objeto contendo apenas as variáveis
+minhasVariaveis = meusDados[,-c(5:6)]
+#mostra isso
+head(minhasVariaveis)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##          Sepal.Length Sepal.Width Petal.Length Petal.Width
+## setosa-1          5.1         3.5          1.4         0.2
+## setosa-2          4.9         3.0          1.4         0.2
+## setosa-3          4.7         3.2          1.3         0.2
+## setosa-4          4.6         3.1          1.5         0.2
+## setosa-5          5.0         3.6          1.4         0.2
+## setosa-6          5.4         3.9          1.7         0.4&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;bootstrapping-simples-para-agrupamento-hierárquico&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;3. &lt;em&gt;Bootstrapping&lt;/em&gt; simples para agrupamento hierárquico&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Agora vamos gerar os valores &lt;em&gt;bootstrap&lt;/em&gt; e plotá-los no dendrograma:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#função que cria um objeto &amp;#39;hclust&amp;#39; pelo método Ward.D2 usando uma matriz de distância pelo método de Gower.
+#IMPORTANTE: No argumento &amp;quot;type&amp;quot; é importante especificar o tipo de cada variável em uma lista [list()]. 
+#No caso do &amp;#39;iris dataset&amp;#39; todas as variáveis são númericas. Veja também o help da função daisy()
+createHclustObject = function(data) hclust(cluster::daisy(data, 
+                                                          metric=&amp;quot;gower&amp;quot;, #dissimilaridade de Gower
+                                                          type=list(numeric=c(1:4))), #especifica variáveis
+                                                          method=&amp;quot;ward.D2&amp;quot;) #método de agrupamento
+require(&amp;quot;parallel&amp;quot;)
+resultadoBootstrap = bootstrap(minhasVariaveis, 
+                               fun=createHclustObject, 
+                               n=1000L) #faz booststrap para n = 1000 vezes
+
+hclust = createHclustObject(minhasVariaveis) #gera um objeto da classe hclust
+meuDendrograma = as.dendrogram(hclust) #converte o hclust em um dendrograma
+
+#define alguns parâmetros gráficos
+par(mar=c(7,5,4,1))
+
+#plota o dendrograma
+plot(meuDendrograma, 
+     ylab=&amp;quot;Dissimilaridade de Gower&amp;quot;, cex.lab=1.5, #eixo Y
+     main=&amp;quot;Dendrograma de Agrupamento Hierárquico&amp;quot;, sub=&amp;quot;Método de agrupamento Ward.D2&amp;quot;, cex.main=1.8, #título
+     nodePar=list(lab.cex=1, pch=NA), #define alguns parâmetros dos nós
+     type=&amp;quot;rectangle&amp;quot;) #ou pode usar também type=&amp;quot;triangle&amp;quot;
+
+#plota os valores de booststrap correspondentes a cada nó do dendrograma
+bootlabels.hclust(hclust, resultadoBootstrap, col=&amp;quot;blue&amp;quot;, cex=0.9)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/dendrograma-de-agrupamento-com-bootstrap-no-r/index.pt_files/figure-html/bootstrapping-1.png&#34; width=&#34;5400&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;melhorando-a-visualização-do-dendrograma&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;4. Melhorando a visualização do dendrograma&lt;/strong&gt;&lt;/h2&gt;
+&lt;div id=&#34;opção-1---dendrograma-com-barras-coloridas-indicando-categorias-spp-e-grupos-clusters&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Opção 1 - Dendrograma com barras coloridas indicando categorias (spp) e grupos (&lt;em&gt;clusters&lt;/em&gt;)&lt;/h5&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#quais amostras formam k grupos?
+grupos = cutree(hclust, k=3) #define um k
+#inclui no data.frame original uma coluna contendo o nome do grupo ao qual cada amostra faz parte
+meusDados$clusterID = grupos
+#checa o resultado disso
+head(meusDados)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##          Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## setosa-1          5.1         3.5          1.4         0.2  setosa
+## setosa-2          4.9         3.0          1.4         0.2  setosa
+## setosa-3          4.7         3.2          1.3         0.2  setosa
+## setosa-4          4.6         3.1          1.5         0.2  setosa
+## setosa-5          5.0         3.6          1.4         0.2  setosa
+## setosa-6          5.4         3.9          1.7         0.4  setosa
+##          minhasAmostras clusterID
+## setosa-1       setosa-1         1
+## setosa-2       setosa-2         1
+## setosa-3       setosa-3         1
+## setosa-4       setosa-4         1
+## setosa-5       setosa-5         1
+## setosa-6       setosa-6         1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#cria um objeto para armazenar cores
+#você pode incluir mais cores ou usar uma paleta pronta 
+#conforme o número de grupos que quer testar
+coresCategorias = c(&amp;quot;#CC476B&amp;quot;, #rosa
+                    &amp;quot;#309210&amp;quot;, #azul
+                    &amp;quot;#0082CE&amp;quot;) #verde
+
+#vamos criar barras para plotar junto ao dendrograma
+#aqui as barras são configuradas conforme as categorias (spp) e grupos (clusters)
+#atribui cores às &amp;quot;Species&amp;quot; na mesma ordem do dendrograma
+barraSpp = coresCategorias[meusDados$Species][order.dendrogram(meuDendrograma)]
+#atribui cores aos grupos &amp;quot;clusterID&amp;quot;
+barraGrp = coresCategorias[meusDados$clusterID]
+#une as barras
+barras = cbind(barraSpp, barraGrp)
+
+#define alguns parâmetros gráficos - pois a figura pode ficar grande demais
+par(mar=c(10,5,4,1) + 0.1, xpd=NA) 
+
+#define alguns parâmetros em relação aos nós do dendrograma
+nP = list(col=c(NA, NA), 
+          cex=c(3, 0.5), 
+          pch=c(21, NA),
+          bg=c(&amp;quot;gray66&amp;quot;, &amp;quot;black&amp;quot;),
+          lab.cex=1,
+          lab.col=&amp;quot;black&amp;quot;)
+#plota o dendrograma
+plot(meuDendrograma,
+     nodePar=nP,
+     edgePar=list(col=&amp;quot;gray66&amp;quot;, lwd=1.2), #define alguns parâmetros dos ramos
+     horiz=FALSE, #se horiz=TRUE a plotagem dos valores bootstraps fica prejudicada
+     ylab=&amp;quot;Dissimilaridade de Gower&amp;quot;, cex.lab=1.5, #eixo Y
+     main=&amp;quot;Dendrograma de Agrupamento Hierárquico&amp;quot;, sub=&amp;quot;Método de agrupamento Ward.D2&amp;quot;, cex.main=1.8) #título
+
+ #plota os valores de bootstrap
+bootlabels.hclust(hclust, resultadoBootstrap, col=&amp;quot;darkblue&amp;quot;, cex=0.7)
+
+library(dendextend) #carrega o pacote que contém a função colored_bars()
+#plota as barras
+colored_bars(colors=barras, dend=meuDendrograma, rowLabels=c(&amp;quot;Espécies&amp;quot;,&amp;quot;Grupos&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/dendrograma-de-agrupamento-com-bootstrap-no-r/index.pt_files/figure-html/plot%20dendrograma%201-1.png&#34; width=&#34;5400&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;opção-2---dendrograma-com-labels-coloridos-em-vez-das-barras&#34; class=&#34;section level5&#34;&gt;
+&lt;h5&gt;Opção 2 - Dendrograma com &lt;em&gt;labels&lt;/em&gt; coloridos em vez das barras&lt;/h5&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar=c(10,5,4,1) + 0.1, xpd=NA) #define alguns parâmetros gráficos
+
+library(dendextend) #carrega o pacote que contém a função labels_colors()
+#para colorir os labels
+labels_colors(meuDendrograma) = coresCategorias[meusDados$Species][order.dendrogram(meuDendrograma)]
+
+#define alguns parâmetros em relação aos nós do dendrograma
+nP = list(col=c(NA, NA),
+          cex=c(3, 0.5), 
+          pch=c(21, NA),
+          bg=c(&amp;quot;gray66&amp;quot;, &amp;quot;black&amp;quot;),
+          lab.cex=1,
+          lab.col=&amp;quot;black&amp;quot;)
+#plota o dendrograma
+plot(meuDendrograma,
+     nodePar=nP, 
+     edgePar=list(col=&amp;quot;gray66&amp;quot;, lwd=1.2), #define alguns parâmetros dos ramos
+     horiz=F, #se horiz=TRUE a plotagem dos valores bootstraps fica prejudicada
+     ylab=&amp;quot;Distância de Gower&amp;quot;, cex.lab=1.5, #eixo Y
+     main=&amp;quot;Dendrograma de Agrupamento Hierárquico&amp;quot;, sub=&amp;quot;Método de agrupamento Ward.D2&amp;quot;, cex.main=1.8) #título
+
+#plota os valores de bootstrap
+bootlabels.hclust(hclust, resultadoBootstrap, col=&amp;quot;darkblue&amp;quot;, cex=0.7)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/dendrograma-de-agrupamento-com-bootstrap-no-r/index.pt_files/figure-html/plot%20dendrograma%202-1.png&#34; width=&#34;5400&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;salvando-as-figuras-em-pdf&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;5. Salvando as figuras em PDF&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Para salvar uma figura use as seguintes funções &lt;code&gt;pdf()&lt;/code&gt; e &lt;code&gt;dev.off()&lt;/code&gt;. Veja como no exemplo abaixo:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pdf(&amp;quot;FigDendrograma_labelscoloridos.pdf&amp;quot;, width=18, height=14) #abre um dispositivo pdf para salvar a figura
+#plota o dendrograma
+plot(meuDendrograma,
+     nodePar=nP,
+     edgePar=list(col=&amp;quot;gray66&amp;quot;, lwd=1.2), #define alguns parâmetros dos ramos
+     horiz=FALSE, #se horiz=TRUE a plotagem dos valores bootstraps fica prejudicada
+     ylab=&amp;quot;Dissimilaridade de Gower&amp;quot;, cex.lab=1.5, #eixo Y
+     main=&amp;quot;Dendrograma de Agrupamento Hierárquico&amp;quot;, sub=&amp;quot;Método de agrupamento Ward.D2&amp;quot;, cex.main=1.8) #título
+
+#plota os valores de bootstrap
+bootlabels.hclust(hclust, resultadoBootstrap, col=&amp;quot;darkblue&amp;quot;, cex=0.7)
+dev.off() #fecha o dispositivo e salva a figura&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## png 
+##   2&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Postagem originalmente publicada no meu perfil do &lt;a href=&#34;https://rpubs.com/ccvasconcelos&#34; target=&#34;_blank&#34;&gt;RPubs&lt;/a&gt;. Toda semana tem conteúdo novo por lá!&lt;/p&gt;
+&lt;p&gt;Até a próxima! &lt;em&gt;See you soon!&lt;/em&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;referências&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;Referências&lt;/strong&gt;&lt;/h2&gt;
+&lt;div id=&#34;refs&#34;&gt;
+&lt;div id=&#34;ref-allaire2021&#34;&gt;
+&lt;p&gt;Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2021. &lt;em&gt;Rmarkdown: Dynamic Documents for R&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/rmarkdown&#34;&gt;https://github.com/rstudio/rmarkdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-anderson1935&#34;&gt;
+&lt;p&gt;Anderson, Edgar. 1935. “The Irises of the Gaspe Peninsula.” &lt;em&gt;Bulletin of the American Iris Society&lt;/em&gt; 59: 2–5.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-aust2019&#34;&gt;
+&lt;p&gt;Aust, Frederik. 2019. &lt;em&gt;Citr: ’RStudio’ Add-in to Insert Markdown Citations&lt;/em&gt;. &lt;a href=&#34;https://github.com/crsh/citr&#34;&gt;https://github.com/crsh/citr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-barnier2021&#34;&gt;
+&lt;p&gt;Barnier, Julien. 2021. &lt;em&gt;Rmdformats: HTML Output Formats and Templates for ’Rmarkdown’ Documents&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=rmdformats&#34;&gt;https://CRAN.R-project.org/package=rmdformats&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-chang2015&#34;&gt;
+&lt;p&gt;Chang, Winston. 2015. &lt;em&gt;Downloader: Download Files over Http and Https&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=downloader&#34;&gt;https://CRAN.R-project.org/package=downloader&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-efron1996bootstrap&#34;&gt;
+&lt;p&gt;Efron, Bradley, Elizabeth Halloran, and Susan Holmes. 1996. “Bootstrap Confidence Levels for Phylogenetic Trees.” &lt;em&gt;Proceedings of the National Academy of Sciences&lt;/em&gt; 93 (23): 13429–9. &lt;a href=&#34;https://doi.org/10.1073/pnas.93.23.13429&#34;&gt;https://doi.org/10.1073/pnas.93.23.13429&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-fay2018&#34;&gt;
+&lt;p&gt;Fay, Colin, Jonathan Sidi, and Luke Smith. 2018. &lt;em&gt;Remedy: ’RStudio’ Addins to Simplify ’Markdown’ Writing&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=remedy&#34;&gt;https://CRAN.R-project.org/package=remedy&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-felsenstein1985confidence&#34;&gt;
+&lt;p&gt;Felsenstein, Joseph. 1985. “Confidence Limits on Phylogenies: An Approach Using the Bootstrap.” &lt;em&gt;Evolution&lt;/em&gt; 39 (4): 783–91. &lt;a href=&#34;https://doi.org/10.1111/j.1558-5646.1985.tb00420.x&#34;&gt;https://doi.org/10.1111/j.1558-5646.1985.tb00420.x&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-galili2015&#34;&gt;
+&lt;p&gt;Galili, Tal. 2015. “Dendextend: An R Package for Visualizing, Adjusting, and Comparing Trees of Hierarchical Clustering.” &lt;em&gt;Bioinformatics&lt;/em&gt;. &lt;a href=&#34;https://doi.org/10.1093/bioinformatics/btv428&#34;&gt;https://doi.org/10.1093/bioinformatics/btv428&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-gower1971general&#34;&gt;
+&lt;p&gt;Gower, John C. 1971. “A General Coefficient of Similarity and Some of Its Properties.” &lt;em&gt;Biometrics&lt;/em&gt;, 857–71. &lt;a href=&#34;https://doi.org/10.2307/2528823&#34;&gt;https://doi.org/10.2307/2528823&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-maechler2019&#34;&gt;
+&lt;p&gt;Maechler, Martin, Peter Rousseeuw, Anja Struyf, Mia Hubert, and Kurt Hornik. 2019. &lt;em&gt;Cluster: Cluster Analysis Basics and Extensions&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-murtagh2014ward&#34;&gt;
+&lt;p&gt;Murtagh, Fionn, and Pierre Legendre. 2014. “Ward’s Hierarchical Agglomerative Clustering Method: Which Algorithms Implement Ward’s Criterion?” &lt;em&gt;Journal of Classification&lt;/em&gt; 31 (3): 274–95. &lt;a href=&#34;https://doi.org/10.1007/s00357-014-9161-z&#34;&gt;https://doi.org/10.1007/s00357-014-9161-z&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-rcoreteam2020&#34;&gt;
+&lt;p&gt;R Core Team. 2020. &lt;em&gt;R: A Language and Environment for Statistical Computing&lt;/em&gt;. Vienna, Austria: R Foundation for Statistical Computing. &lt;a href=&#34;https://www.R-project.org/&#34;&gt;https://www.R-project.org/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-stodden2014&#34;&gt;
+&lt;p&gt;Xie, Yihui. 2014. “Knitr: A Comprehensive Tool for Reproducible Research in R.” In &lt;em&gt;Implementing Reproducible Computational Research&lt;/em&gt;, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC. &lt;a href=&#34;http://www.crcpress.com/product/isbn/9781466561595&#34;&gt;http://www.crcpress.com/product/isbn/9781466561595&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2015&#34;&gt;
+&lt;p&gt;———. 2015. &lt;em&gt;Dynamic Documents with R and Knitr&lt;/em&gt;. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://yihui.org/knitr/&#34;&gt;https://yihui.org/knitr/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2021&#34;&gt;
+&lt;p&gt;———. 2021. &lt;em&gt;Knitr: A General-Purpose Package for Dynamic Report Generation in R&lt;/em&gt;. &lt;a href=&#34;https://yihui.org/knitr/&#34;&gt;https://yihui.org/knitr/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2018&#34;&gt;
+&lt;p&gt;Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. &lt;em&gt;R Markdown: The Definitive Guide&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown&#34;&gt;https://bookdown.org/yihui/rmarkdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2020&#34;&gt;
+&lt;p&gt;Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. &lt;em&gt;R Markdown Cookbook&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown-cookbook&#34;&gt;https://bookdown.org/yihui/rmarkdown-cookbook&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Criando um mapa de distribuição no R [Portuguese text]</title>
+      <link>https://ccvasconcelos.github.io/pt/post/criando-mapa-no-r/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/post/criando-mapa-no-r/</guid>
+      <description>
+
+
+&lt;p&gt;Neste tutorial você aprenderá a obter dados de ocorrência do &lt;strong&gt;GBIF - &lt;a href=&#34;https://www.gbif.org&#34; target=&#34;_blank&#34;&gt;Global Biodiversity Information Facility&lt;/a&gt;&lt;/strong&gt;, a filtrar e a processar esses dados para gerar um mapa simples de distribuição geográfica.&lt;/p&gt;
+&lt;p&gt;Esta postagem foi inteiramente produzida em ambiente R Studio, usando os pacotes &lt;code&gt;rmarkdown&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Allaire et al. &lt;a href=&#34;#ref-allaire2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;; Xie, Allaire, and Grolemund &lt;a href=&#34;#ref-xie2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;; Xie, Dervieux, and Riederer &lt;a href=&#34;#ref-xie2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;rmdformats&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Barnier &lt;a href=&#34;#ref-barnier2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;remedy&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Fay, Sidi, and Smith &lt;a href=&#34;#ref-fay2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;knitr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Xie &lt;a href=&#34;#ref-stodden2014&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;, &lt;a href=&#34;#ref-xie2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;, &lt;a href=&#34;#ref-xie2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; e &lt;code&gt;citr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Aust &lt;a href=&#34;#ref-aust2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;. &lt;br&gt;&lt;/p&gt;
+&lt;div id=&#34;instalação-dos-pacotes-necessários&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;1. Instalação dos pacotes necessários&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Antes de iniciarmos, é importante que você tenha os seguintes pacotes e dependências instalados:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rgbif&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Chamberlain and Boettiger &lt;a href=&#34;#ref-chamberlain2017&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;; Chamberlain et al. &lt;a href=&#34;#ref-chamberlain2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dplyr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Wickham et al. &lt;a href=&#34;#ref-wickham2020a&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tidyr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Wickham &lt;a href=&#34;#ref-wickham2020c&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CoordinateCleaner&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Zizka et al. &lt;a href=&#34;#ref-zizka2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;maps&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Richard A. Becker, Ray Brownrigg. Enhancements by Thomas P Minka, and Deckmyn. &lt;a href=&#34;#ref-becker2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prettymapr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Dunnington &lt;a href=&#34;#ref-dunnington2017&#34; role=&#34;doc-biblioref&#34;&gt;2017&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GISTools&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Brunsdon and Chen &lt;a href=&#34;#ref-brunsdon2014&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;readr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Wickham and Hester &lt;a href=&#34;#ref-wickham2020b&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#instala os pacotes, se for necessário:
+pacotes = c(&amp;quot;rgbif&amp;quot;,&amp;quot;dplyr&amp;quot;,&amp;quot;tidyr&amp;quot;,&amp;quot;CoordinateCleaner&amp;quot;,&amp;quot;maps&amp;quot;,&amp;quot;prettymapr&amp;quot;,&amp;quot;GISTools&amp;quot;,&amp;quot;readr&amp;quot;)
+for (p in setdiff(pacotes, installed.packages()[,&amp;quot;Package&amp;quot;])) {install.packages(p, dependencies=TRUE)}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;obtenção-filtragem-e-limpeza-dos-dados-de-ocorrência-do-gbif&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;2. Obtenção, filtragem e limpeza dos dados de ocorrência do GBIF&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;quot;rgbif&amp;quot;)
+#retorna apenas as ocorrências que possuem coordenadas geográficas
+#no argumento &amp;#39;scientificName&amp;#39; você também pode definir outros níveis taxonômicos (p.ex. espécie, família)
+occEcclinusa = occ_data(scientificName=&amp;quot;Ecclinusa&amp;quot;, hasCoordinate=TRUE)
+#mostra as 10 primeiras linhas e 5 primeiras colunas dos dados
+occEcclinusa$data[1:10,1:5]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 10 x 5
+##    key     scientificName     decimalLatitude decimalLongitude issues           
+##    &amp;lt;chr&amp;gt;   &amp;lt;chr&amp;gt;                        &amp;lt;dbl&amp;gt;            &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt;            
+##  1 201390~ Ecclinusa Mart.             -22.5             -43.0 cdround,gass84,i~
+##  2 286919~ Ecclinusa Mart.              -7.06            -76.0 cdround,gass84,o~
+##  3 286920~ Ecclinusa Mart.              -7.05            -76.0 cdround,gass84,o~
+##  4 301342~ Ecclinusa ramiflo~          -25.3             -48.3 gass84,diffown   
+##  5 183573~ Ecclinusa ramiflo~          -22.4             -43.7 cdround,gass84,i~
+##  6 183573~ Ecclinusa ramiflo~          -22.4             -43.7 cdround,gass84,i~
+##  7 225252~ Ecclinusa ramiflo~          -25.2             -48.3 cdround,gass84,r~
+##  8 251269~ Ecclinusa ramiflo~          -25.2             -48.3 gass84,diffown   
+##  9 299686~ Ecclinusa ramiflo~          -25.2             -48.3 cdround,gass84,r~
+## 10 199382~ Ecclinusa guianen~          -18.8             -40.4 gass84&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;quot;dplyr&amp;quot;)
+#filtra apenas as colunas de interesse
+filtroColunas = occEcclinusa$data %&amp;gt;% dplyr::select(scientificName, decimalLatitude, decimalLongitude)
+#mostra o topo dos dados
+head(filtroColunas)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 x 3
+##   scientificName            decimalLatitude decimalLongitude
+##   &amp;lt;chr&amp;gt;                               &amp;lt;dbl&amp;gt;            &amp;lt;dbl&amp;gt;
+## 1 Ecclinusa Mart.                    -22.5             -43.0
+## 2 Ecclinusa Mart.                     -7.06            -76.0
+## 3 Ecclinusa Mart.                     -7.05            -76.0
+## 4 Ecclinusa ramiflora Mart.          -25.3             -48.3
+## 5 Ecclinusa ramiflora Mart.          -22.4             -43.7
+## 6 Ecclinusa ramiflora Mart.          -22.4             -43.7&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#quantas linhas e colunas?
+dim(filtroColunas)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 500   3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#quantos registros por spp?
+table(filtroColunas$scientificName)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##         Chrysophyllum guianense (Eyma) Baehni 
+##                                             6 
+##                      Ecclimusa Mart. ex A.DC. 
+##                                             1 
+##    Ecclinusa atabapoensis (Aubrév.) T.D.Penn. 
+##                                            25 
+##                   Ecclinusa bullata T.D.Penn. 
+##                                             6 
+##                     Ecclinusa guianensis Eyma 
+##                                           115 
+## Ecclinusa lanceolata (Mart. &amp;amp; Eichler) Pierre 
+##                                            90 
+##                               Ecclinusa Mart. 
+##                                            67 
+##                Ecclinusa parviflora T.D.Penn. 
+##                                             1 
+##                     Ecclinusa ramiflora Mart. 
+##                                           189&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#filtrando as spp - retorna os nomes únicos
+quaisSpp = unique(filtroColunas$scientificName); quaisSpp&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Ecclinusa Mart.&amp;quot;                              
+## [2] &amp;quot;Ecclinusa ramiflora Mart.&amp;quot;                    
+## [3] &amp;quot;Ecclinusa guianensis Eyma&amp;quot;                    
+## [4] &amp;quot;Ecclinusa parviflora T.D.Penn.&amp;quot;               
+## [5] &amp;quot;Ecclinusa lanceolata (Mart. &amp;amp; Eichler) Pierre&amp;quot;
+## [6] &amp;quot;Ecclinusa atabapoensis (Aubrév.) T.D.Penn.&amp;quot;   
+## [7] &amp;quot;Chrysophyllum guianense (Eyma) Baehni&amp;quot;        
+## [8] &amp;quot;Ecclinusa bullata T.D.Penn.&amp;quot;                  
+## [9] &amp;quot;Ecclimusa Mart. ex A.DC.&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#selecionando apenas os nomes válidos
+selecionaSpp = quaisSpp[c(2:6,8)] 
+filtroSpp = filtroColunas[filtroColunas$scientificName %in% selecionaSpp, ]
+head(filtroSpp)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 x 3
+##   scientificName            decimalLatitude decimalLongitude
+##   &amp;lt;chr&amp;gt;                               &amp;lt;dbl&amp;gt;            &amp;lt;dbl&amp;gt;
+## 1 Ecclinusa ramiflora Mart.           -25.3            -48.3
+## 2 Ecclinusa ramiflora Mart.           -22.4            -43.7
+## 3 Ecclinusa ramiflora Mart.           -22.4            -43.7
+## 4 Ecclinusa ramiflora Mart.           -25.2            -48.3
+## 5 Ecclinusa ramiflora Mart.           -25.2            -48.3
+## 6 Ecclinusa ramiflora Mart.           -25.2            -48.3&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#busca os pontos problemáticos conforme os parâmetros definidos - pode demorar um pouquinho!
+limpaCoordenadas = CoordinateCleaner::clean_coordinates(
+  x = filtroSpp, 
+  species = &amp;quot;scientificName&amp;quot;,
+  lon = &amp;quot;decimalLongitude&amp;quot;, 
+  lat = &amp;quot;decimalLatitude&amp;quot;,
+  tests = c(&amp;quot;duplicates&amp;quot;, #duplicatas
+            &amp;quot;equal&amp;quot;, #coordenadas iguais
+            &amp;quot;seas&amp;quot;, #pontos no mar
+            &amp;quot;zeros&amp;quot; #zeros e pontos em que lat = lon 
+  )
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## OGR data source with driver: ESRI Shapefile 
+## Source: &amp;quot;C:\Users\cc_va\AppData\Local\Temp\RtmpKcWVmT&amp;quot;, layer: &amp;quot;ne_50m_land&amp;quot;
+## with 1420 features
+## It has 3 fields
+## Integer64 fields read as strings:  scalerank&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#resultado da marcação de pontos problemáticos
+limpaCoordenadas %&amp;gt;% head&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##              scientificName decimalLatitude decimalLongitude .val .equ .zer
+## 1 Ecclinusa ramiflora Mart.       -25.28083        -48.31333 TRUE TRUE TRUE
+## 2 Ecclinusa ramiflora Mart.       -22.35694        -43.73500 TRUE TRUE TRUE
+## 3 Ecclinusa ramiflora Mart.       -22.35694        -43.73472 TRUE TRUE TRUE
+## 4 Ecclinusa ramiflora Mart.       -25.17111        -48.30139 TRUE TRUE TRUE
+## 5 Ecclinusa ramiflora Mart.       -25.17111        -48.30139 TRUE TRUE TRUE
+## 6 Ecclinusa ramiflora Mart.       -25.17111        -48.30139 TRUE TRUE TRUE
+##   .sea  .dpl .summary
+## 1 TRUE  TRUE     TRUE
+## 2 TRUE  TRUE     TRUE
+## 3 TRUE  TRUE     TRUE
+## 4 TRUE  TRUE     TRUE
+## 5 TRUE FALSE    FALSE
+## 6 TRUE FALSE    FALSE&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(limpaCoordenadas)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##     .val     .equ     .zer     .sea     .dpl .summary 
+##        0        0        0       10      131      140&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#para excluir os pontos marcados como problemáticos
+#TRUE = coordenadas limpas
+#FALSE = coordenadas potencialmente problemáticas
+filtroSpp_limpo = filtroSpp %&amp;gt;% dplyr::filter(limpaCoordenadas$.summary==TRUE)
+filtroSpp_limpo&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 286 x 3
+##    scientificName            decimalLatitude decimalLongitude
+##    &amp;lt;chr&amp;gt;                               &amp;lt;dbl&amp;gt;            &amp;lt;dbl&amp;gt;
+##  1 Ecclinusa ramiflora Mart.        -25.3               -48.3
+##  2 Ecclinusa ramiflora Mart.        -22.4               -43.7
+##  3 Ecclinusa ramiflora Mart.        -22.4               -43.7
+##  4 Ecclinusa ramiflora Mart.        -25.2               -48.3
+##  5 Ecclinusa guianensis Eyma        -18.8               -40.4
+##  6 Ecclinusa ramiflora Mart.          0.0126            -71.0
+##  7 Ecclinusa ramiflora Mart.        -15.6               -39.4
+##  8 Ecclinusa ramiflora Mart.          1.12              -72.8
+##  9 Ecclinusa guianensis Eyma          1.36              -72.9
+## 10 Ecclinusa guianensis Eyma          2.69              -57.1
+## # ... with 276 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#compara os dados de ocorrência por spp (antes, durante e depois do tratamento)
+table(filtroColunas$scientificName)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##         Chrysophyllum guianense (Eyma) Baehni 
+##                                             6 
+##                      Ecclimusa Mart. ex A.DC. 
+##                                             1 
+##    Ecclinusa atabapoensis (Aubrév.) T.D.Penn. 
+##                                            25 
+##                   Ecclinusa bullata T.D.Penn. 
+##                                             6 
+##                     Ecclinusa guianensis Eyma 
+##                                           115 
+## Ecclinusa lanceolata (Mart. &amp;amp; Eichler) Pierre 
+##                                            90 
+##                               Ecclinusa Mart. 
+##                                            67 
+##                Ecclinusa parviflora T.D.Penn. 
+##                                             1 
+##                     Ecclinusa ramiflora Mart. 
+##                                           189&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;table(filtroSpp$scientificName)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##    Ecclinusa atabapoensis (Aubrév.) T.D.Penn. 
+##                                            25 
+##                   Ecclinusa bullata T.D.Penn. 
+##                                             6 
+##                     Ecclinusa guianensis Eyma 
+##                                           115 
+## Ecclinusa lanceolata (Mart. &amp;amp; Eichler) Pierre 
+##                                            90 
+##                Ecclinusa parviflora T.D.Penn. 
+##                                             1 
+##                     Ecclinusa ramiflora Mart. 
+##                                           189&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;table(filtroSpp_limpo$scientificName)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##    Ecclinusa atabapoensis (Aubrév.) T.D.Penn. 
+##                                            17 
+##                   Ecclinusa bullata T.D.Penn. 
+##                                             5 
+##                     Ecclinusa guianensis Eyma 
+##                                            65 
+## Ecclinusa lanceolata (Mart. &amp;amp; Eichler) Pierre 
+##                                            65 
+##                Ecclinusa parviflora T.D.Penn. 
+##                                             1 
+##                     Ecclinusa ramiflora Mart. 
+##                                           133&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exporta-os-dados-de-ocorrência-processados&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;3. Exporta os dados de ocorrência processados&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#ordena a planilha a partir do nome das spp
+geodataEcclinusa = filtroSpp_limpo %&amp;gt;% arrange(desc(scientificName))
+#exporta a planilha em .csv
+readr::write_csv(geodataEcclinusa, paste0(&amp;quot;OcorrenciasGBIF_Ecclinusa.csv&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;prepara-os-dados-para-gerar-o-mapa&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;4. Prepara os dados para gerar o mapa&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#importa o arquivo contendo os dados espaciais
+#geodataEcclinusa = readr::read_csv(&amp;quot;OcorrenciasGBIF_Ecclinusa.csv&amp;quot;)
+
+#define os limites para o mapa
+xlim = range(geodataEcclinusa$decimalLongitude, na.rm=TRUE) + c(-6,6)
+ylim = range(geodataEcclinusa$decimalLatitude, na.rm=TRUE) + c(-6,6)
+
+#filtro contendo as coordenadas geográficas de cada sp
+ramiflora = geodataEcclinusa[geodataEcclinusa$scientificName %in% selecionaSpp[1], 3:2] #3:2 para inverter a ordem para lon e lat
+guianensis = geodataEcclinusa[geodataEcclinusa$scientificName %in% selecionaSpp[2], 3:2]
+parviflora = geodataEcclinusa[geodataEcclinusa$scientificName %in% selecionaSpp[3], 3:2]
+lanceolata = geodataEcclinusa[geodataEcclinusa$scientificName %in% selecionaSpp[4], 3:2]
+atabapoensis = geodataEcclinusa[geodataEcclinusa$scientificName %in% selecionaSpp[5], 3:2] 
+bullata = geodataEcclinusa[geodataEcclinusa$scientificName %in% selecionaSpp[6], 3:2]
+
+#nomes das spp personalizados para a legenda - nomes científicos em itálico
+nomeSpp_legenda =c(expression(paste(italic(&amp;quot;Ecclinusa ramiflora &amp;quot;), &amp;quot;Mart.&amp;quot;)),
+                   expression(paste(italic(&amp;quot;Ecclinusa guianensis  &amp;quot;), &amp;quot;Eyma&amp;quot;)),
+                   expression(paste(italic(&amp;quot;Ecclinusa parviflora &amp;quot;), &amp;quot;T.D.Penn.&amp;quot;)),
+                   expression(paste(italic(&amp;quot;Ecclinusa lanceolata &amp;quot;), &amp;quot;(Mart. &amp;amp; Eichler) Pierre&amp;quot;)),
+                   expression(paste(italic(&amp;quot;Ecclinusa atabapoensis &amp;quot;), &amp;quot;(Aubrév.) T.D.Penn.&amp;quot;)),
+                   expression(paste(italic(&amp;quot;Ecclinusa bullata &amp;quot;), &amp;quot;T.D.Penn.&amp;quot;))
+)
+#cria uma paleta de cores para representar cada sp
+paletaCustomizada = c(&amp;quot;#0072B2&amp;quot;,&amp;quot;#882255&amp;quot;,&amp;quot;#BBCC33&amp;quot;,&amp;quot;#EE6677&amp;quot;,&amp;quot;#d55E00&amp;quot;,&amp;quot;#117733&amp;quot;) &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;plota-o-mapa&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;5. Plota o mapa&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(maps)
+#plota as camadas
+map(&amp;quot;world&amp;quot;, &amp;quot;Brazil&amp;quot;, fill=T, col=&amp;quot;grey90&amp;quot;, xlim=xlim, ylim=ylim)
+map(,,add=T,xlim=xlim, ylim=ylim)
+
+#plota o conjunto de pontos por espécie
+points(ramiflora, pch=19, cex=1, col=paletaCustomizada[1])
+points(guianensis, pch=19, cex=1, col=paletaCustomizada[2])
+points(parviflora, pch=19, cex=1, col=paletaCustomizada[3])
+points(lanceolata, pch=19, cex=1, col=paletaCustomizada[4])
+points(atabapoensis, pch=19, cex=1, col=paletaCustomizada[5])
+points(bullata, pch=19, cex=1, col=paletaCustomizada[6])
+
+#plota alguns elementos de mapa
+abline(h=0, lwd=0.8, lty=2, col=&amp;quot;gray56&amp;quot;) #adiciona uma linha para representar a do equador (opcional)
+#grid(lty=2, lwd=0.8, col=&amp;quot;gray56&amp;quot;) #adiciona um grid (opcional) - caso opte pelo grid seria esteticamente melhor não executar o comando acima
+prettymapr::addnortharrow(&amp;quot;bottomleft&amp;quot;, scale=0.7) #adiciona o símbolo do Norte
+#GISTools::north.arrow(xb=-85, yb=-29,len=0.8, lab=&amp;quot;N&amp;quot;)  #outra opção de símbolo do Norte
+maps::map.scale(x=-42,y=-28, ratio=FALSE, cex=0.8) #adiciona escala; em x e y você também pode alterar a posição
+map.axes() #delimita a figura
+
+#plota a legenda
+legend(x=-53, y=16, #aqui você pode alterar a posição da legenda
+       legend=nomeSpp_legenda, #nomes das espécies
+       col=paletaCustomizada, #cores definidas anteriormente
+       pch=19,
+       pt.cex=1, inset=0.05, cex=0.8, bty=&amp;quot;n&amp;quot;) #outros parâmetros da legenda&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/criando-mapa-no-r/index.pt_files/figure-html/plotando%20o%20mapa-1.png&#34; width=&#34;3000&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Caso queira evitar sobreposição de pontos, você pode plotar a distribuição das espécies separadamente usando o código abaixo:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#cria uma lista com os filtros que criamos anteriormente contendo as coordenadas de cada sp 
+listaSpp = list(ramiflora=ramiflora, 
+                guianensis=guianensis, 
+                parviflora=parviflora, 
+                lanceolata=lanceolata, 
+                atabapoensis=atabapoensis, 
+                bullata=bullata)
+
+#define alguns parâmetros gráficos (linhas, colunas, margem)
+par(mfrow=c(3,2), mar=c(0,0,0,0))
+
+#plota os mapas de cada sp dentro de um loop
+for(i in 1:length(listaSpp)){
+map(&amp;quot;world&amp;quot;, &amp;quot;Brazil&amp;quot;, fill=T, col=&amp;quot;grey90&amp;quot;, xlim=xlim, ylim=ylim)
+title(nomeSpp_legenda[i], line=1) #optei por não plotar a legenda e sim o nome das spp no título de cada plot
+map(,,add=T,xlim=xlim, ylim=ylim)
+points(listaSpp[[i]], pch=19, cex=1, col=paletaCustomizada[i])
+abline(h=0, lwd=0.8, lty=2, col=&amp;quot;gray56&amp;quot;)
+prettymapr::addnortharrow(&amp;quot;bottomleft&amp;quot;, scale=0.5) #altere os argumentos que envolvem posição e tamanho conforme sua necessidade
+maps::map.scale(x=-43,y=-25, ratio=FALSE, cex=0.6)
+map.axes()
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/criando-mapa-no-r/index.pt_files/figure-html/plotando%20mapas%20individuais-1.png&#34; width=&#34;2400&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;salva-o-plot-em-um-arquivo-tiff&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;6. Salva o plot em um arquivo tiff&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#OPÇÃO 1
+#abre um dispositivo .tiff para salvar a figura
+tiff(&amp;quot;MapaDistribuicaoEcclinusaTodasSpp.tiff&amp;quot;,width=20, height=20, units=&amp;quot;cm&amp;quot;, comp=&amp;quot;lzw&amp;quot;, res=300)
+library(maps) 
+map(&amp;quot;world&amp;quot;, &amp;quot;Brazil&amp;quot;, fill=T, col=&amp;quot;grey90&amp;quot;, xlim=xlim, ylim=ylim)
+map(,,add=T,xlim=xlim, ylim=ylim)
+points(ramiflora, pch=19, cex=1, col=paletaCustomizada[1])
+points(guianensis, pch=19, cex=1, col=paletaCustomizada[2])
+points(parviflora, pch=19, cex=1, col=paletaCustomizada[3])
+points(lanceolata, pch=19, cex=1, col=paletaCustomizada[4])
+points(atabapoensis, pch=19, cex=1, col=paletaCustomizada[5])
+points(bullata, pch=19, cex=1, col=paletaCustomizada[6])
+abline(h=0, lwd=0.8, lty=2, col=&amp;quot;gray56&amp;quot;)
+prettymapr::addnortharrow(&amp;quot;bottomleft&amp;quot;, scale=0.7)
+maps::map.scale(x=-42,y=-28, ratio=FALSE, cex=0.8)
+map.axes()
+legend(x=-53, y=16, 
+       legend=nomeSpp_legenda, 
+       col=paletaCustomizada, 
+       pch=19,
+       pt.cex=1, inset=0.05, cex=0.8, bty=&amp;quot;n&amp;quot;)
+#fecha o dispositivo tiff e salva a figura
+dev.off()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## png 
+##   2&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#OPÇÃO 2
+tiff(&amp;quot;MapaDistribuicaoEcclinusaPorSpp.tiff&amp;quot;,width=20, height=20, units=&amp;quot;cm&amp;quot;, comp=&amp;quot;lzw&amp;quot;, res=300)
+par(mfrow=c(3,2), mar=c(0,0,0,0))
+for(i in 1:length(listaSpp)){
+map(&amp;quot;world&amp;quot;, &amp;quot;Brazil&amp;quot;, fill=T, col=&amp;quot;grey90&amp;quot;, xlim=xlim, ylim=ylim)
+title(nomeSpp_legenda[i], line=1)
+map(,,add=T,xlim=xlim, ylim=ylim)
+points(listaSpp[[i]], pch=19, cex=1, col=paletaCustomizada[i])
+abline(h=0, lwd=0.8, lty=2, col=&amp;quot;gray56&amp;quot;)
+prettymapr::addnortharrow(&amp;quot;bottomleft&amp;quot;, scale=0.5)
+maps::map.scale(x=-43,y=-25, ratio=FALSE, cex=0.6)
+map.axes()
+}
+dev.off()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## png 
+##   2&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;uso-dos-dados-do-gbif&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;7. Uso dos dados do GBIF&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Como boa prática científica, é importante lembrar que o contrato do usuário que rege o uso de dados do GBIF exige especificamente que todos os usuários devem reconhecer publicamente, seguindo a convenção científica de citar fontes em conjunto com o uso dos dados. Saiba mais sobre isso clicando &lt;a href=&#34;https://data-blog.gbif.org/post/search-download-analyze-cite/&#34; target=&#34;_blank&#34;&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Através do pacote &lt;code&gt;rgbif&lt;/code&gt; você pode usar os seguintes comandos para obter essas informações:&lt;br&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;x = occ_search(scientificName=&amp;quot;Ecclinusa&amp;quot;, limit=10)
+gbif_citation(x)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [[1]]
+## &amp;lt;&amp;lt;rgbif citation&amp;gt;&amp;gt;
+##    Citation: Forzza R, Estevão L A, Dalcin E (2021). RB - Rio de Janeiro
+##         Botanical Garden Herbarium Collection. Version 84.223. Instituto de
+##         Pesquisas Jardim Botanico do Rio de Janeiro. Occurrence dataset
+##         https://doi.org/10.15468/7ep9i2 accessed via GBIF.org on 2021-07-02..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2021-07-02
+##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode
+## 
+## [[2]]
+## &amp;lt;&amp;lt;rgbif citation&amp;gt;&amp;gt;
+##    Citation: Ferreira Dutra V (2021). VIES - Herbário Central da Universidade
+##         Federal do Espírito Santo. Version 1.79. Universidade Federal do
+##         Espírito Santo. Occurrence dataset https://doi.org/10.15468/rt7ybs
+##         accessed via GBIF.org on 2021-07-02.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2021-07-02
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode
+## 
+## [[3]]
+## &amp;lt;&amp;lt;rgbif citation&amp;gt;&amp;gt;
+##    Citation: Thomaz L D, Forzza R, Lanna J (2021). VIES herbarium -
+##         Universidade Federal do Espírito Santo - Herbário Virtual REFLORA.
+##         Version 1.250. Instituto de Pesquisas Jardim Botanico do Rio de
+##         Janeiro. Occurrence dataset https://doi.org/10.15468/kasze8 accessed
+##         via GBIF.org on 2021-07-02.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2021-07-02
+##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode
+## 
+## [[4]]
+## &amp;lt;&amp;lt;rgbif citation&amp;gt;&amp;gt;
+##    Citation: Solomon J, Stimmel H (2021). Tropicos Specimen Data. Missouri
+##         Botanical Garden. Occurrence dataset https://doi.org/10.15468/hja69f
+##         accessed via GBIF.org on 2021-07-02.. Accessed from R via rgbif
+##         (https://github.com/ropensci/rgbif) on 2021-07-02
+##    Rights: http://creativecommons.org/licenses/by/4.0/legalcode
+## 
+## [[5]]
+## &amp;lt;&amp;lt;rgbif citation&amp;gt;&amp;gt;
+##    Citation: Leandro Brotto M (2021). MBM - Herbário do Museu Botânico
+##         Municipal. Version 1.78. Museu Botânico Municipal. Occurrence dataset
+##         https://doi.org/10.15468/g6ppmt accessed via GBIF.org on 2021-07-02..
+##         Accessed from R via rgbif (https://github.com/ropensci/rgbif) on
+##         2021-07-02
+##    Rights: http://creativecommons.org/licenses/by-nc/4.0/legalcode&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Postagem originalmente publicada no meu perfil do &lt;a href=&#34;https://rpubs.com/ccvasconcelos&#34; target=&#34;_blank&#34;&gt;RPubs&lt;/a&gt;. Toda semana tem conteúdo novo por lá!&lt;/p&gt;
+&lt;p&gt;Até a próxima! &lt;em&gt;See you soon!&lt;/em&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;referências&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;Referências&lt;/strong&gt;&lt;/h2&gt;
+&lt;div id=&#34;refs&#34;&gt;
+&lt;div id=&#34;ref-allaire2021&#34;&gt;
+&lt;p&gt;Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2021. &lt;em&gt;Rmarkdown: Dynamic Documents for R&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/rmarkdown&#34;&gt;https://github.com/rstudio/rmarkdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-aust2019&#34;&gt;
+&lt;p&gt;Aust, Frederik. 2019. &lt;em&gt;Citr: ’RStudio’ Add-in to Insert Markdown Citations&lt;/em&gt;. &lt;a href=&#34;https://github.com/crsh/citr&#34;&gt;https://github.com/crsh/citr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-barnier2021&#34;&gt;
+&lt;p&gt;Barnier, Julien. 2021. &lt;em&gt;Rmdformats: HTML Output Formats and Templates for ’Rmarkdown’ Documents&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=rmdformats&#34;&gt;https://CRAN.R-project.org/package=rmdformats&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-brunsdon2014&#34;&gt;
+&lt;p&gt;Brunsdon, Chris, and Hongyan Chen. 2014. &lt;em&gt;GISTools: Some Further Gis Capabilities for R&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=GISTools&#34;&gt;https://CRAN.R-project.org/package=GISTools&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-chamberlain2021&#34;&gt;
+&lt;p&gt;Chamberlain, Scott, Vijay Barve, Dan Mcglinn, Damiano Oldoni, Peter Desmet, Laurens Geffert, and Karthik Ram. 2021. &lt;em&gt;Rgbif: Interface to the Global Biodiversity Information Facility Api&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=rgbif&#34;&gt;https://CRAN.R-project.org/package=rgbif&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-chamberlain2017&#34;&gt;
+&lt;p&gt;Chamberlain, Scott, and Carl Boettiger. 2017. “R Python, and Ruby Clients for Gbif Species Occurrence Data.” &lt;em&gt;PeerJ PrePrints&lt;/em&gt;, no. 5: e3304v1. &lt;a href=&#34;https://doi.org/10.7287/peerj.preprints.3304v1&#34;&gt;https://doi.org/10.7287/peerj.preprints.3304v1&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-dunnington2017&#34;&gt;
+&lt;p&gt;Dunnington, Dewey. 2017. &lt;em&gt;Prettymapr: Scale Bar, North Arrow, and Pretty Margins in R&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=prettymapr&#34;&gt;https://CRAN.R-project.org/package=prettymapr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-fay2018&#34;&gt;
+&lt;p&gt;Fay, Colin, Jonathan Sidi, and Luke Smith. 2018. &lt;em&gt;Remedy: ’RStudio’ Addins to Simplify ’Markdown’ Writing&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=remedy&#34;&gt;https://CRAN.R-project.org/package=remedy&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-becker2018&#34;&gt;
+&lt;p&gt;Richard A. Becker, Original S code by, Allan R. Wilks. R version by Ray Brownrigg. Enhancements by Thomas P Minka, and Alex Deckmyn. 2018. &lt;em&gt;Maps: Draw Geographical Maps&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=maps&#34;&gt;https://CRAN.R-project.org/package=maps&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-wickham2020c&#34;&gt;
+&lt;p&gt;Wickham, Hadley. 2020. &lt;em&gt;Tidyr: Tidy Messy Data&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=tidyr&#34;&gt;https://CRAN.R-project.org/package=tidyr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-wickham2020a&#34;&gt;
+&lt;p&gt;Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2020. &lt;em&gt;Dplyr: A Grammar of Data Manipulation&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=dplyr&#34;&gt;https://CRAN.R-project.org/package=dplyr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-wickham2020b&#34;&gt;
+&lt;p&gt;Wickham, Hadley, and Jim Hester. 2020. &lt;em&gt;Readr: Read Rectangular Text Data&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=readr&#34;&gt;https://CRAN.R-project.org/package=readr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-stodden2014&#34;&gt;
+&lt;p&gt;Xie, Yihui. 2014. “Knitr: A Comprehensive Tool for Reproducible Research in R.” In &lt;em&gt;Implementing Reproducible Computational Research&lt;/em&gt;, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC. &lt;a href=&#34;http://www.crcpress.com/product/isbn/9781466561595&#34;&gt;http://www.crcpress.com/product/isbn/9781466561595&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2015&#34;&gt;
+&lt;p&gt;———. 2015. &lt;em&gt;Dynamic Documents with R and Knitr&lt;/em&gt;. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://yihui.org/knitr/&#34;&gt;https://yihui.org/knitr/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2021&#34;&gt;
+&lt;p&gt;———. 2021. &lt;em&gt;Knitr: A General-Purpose Package for Dynamic Report Generation in R&lt;/em&gt;. &lt;a href=&#34;https://yihui.org/knitr/&#34;&gt;https://yihui.org/knitr/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2018&#34;&gt;
+&lt;p&gt;Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. &lt;em&gt;R Markdown: The Definitive Guide&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown&#34;&gt;https://bookdown.org/yihui/rmarkdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2020&#34;&gt;
+&lt;p&gt;Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. &lt;em&gt;R Markdown Cookbook&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown-cookbook&#34;&gt;https://bookdown.org/yihui/rmarkdown-cookbook&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-zizka2019&#34;&gt;
+&lt;p&gt;Zizka, Alexander, Daniele Silvestro, Tobias Andermann, Josue Azevedo, Camila Duarte Ritter, Daniel Edler, Harith Farooq, et al. 2019. “CoordinateCleaner: Standardized Cleaning of Occurrence Records from Biological Collection Databases.” &lt;em&gt;Methods in Ecology and Evolution&lt;/em&gt;, no. 10: 744–51. &lt;a href=&#34;https://doi.org/10.1111/2041-210X.13152&#34;&gt;https://doi.org/10.1111/2041-210X.13152&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Criando boxplots apresentáveis no R [Portuguese text]</title>
+      <link>https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/</link>
+      <pubDate>Fri, 28 May 2021 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/</guid>
+      <description>
+
+
+&lt;p&gt;Neste tutorial você aprenderá a gerar múltiplos boxplots e a organizá-los em uma única figura de alta qualidade.&lt;/p&gt;
+&lt;p&gt;Esta postagem foi inteiramente produzida em ambiente R Studio, usando os pacotes &lt;code&gt;rmarkdown&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Allaire et al. &lt;a href=&#34;#ref-allaire2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;; Xie, Allaire, and Grolemund &lt;a href=&#34;#ref-xie2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;; Xie, Dervieux, and Riederer &lt;a href=&#34;#ref-xie2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;rmdformats&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Barnier &lt;a href=&#34;#ref-barnier2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;remedy&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Fay, Sidi, and Smith &lt;a href=&#34;#ref-fay2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;, &lt;code&gt;knitr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Xie &lt;a href=&#34;#ref-stodden2014&#34; role=&#34;doc-biblioref&#34;&gt;2014&lt;/a&gt;, &lt;a href=&#34;#ref-xie2015&#34; role=&#34;doc-biblioref&#34;&gt;2015&lt;/a&gt;, &lt;a href=&#34;#ref-xie2021&#34; role=&#34;doc-biblioref&#34;&gt;2021&lt;/a&gt;)&lt;/span&gt; e &lt;code&gt;citr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Aust &lt;a href=&#34;#ref-aust2019&#34; role=&#34;doc-biblioref&#34;&gt;2019&lt;/a&gt;)&lt;/span&gt;. &lt;br&gt;&lt;/p&gt;
+&lt;div id=&#34;instalação-dos-pacotes-necessários&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;1. Instalação dos pacotes necessários&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Antes de iniciarmos, é importante que você tenha os seguintes pacotes e dependências instalados:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ggplot2&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Wickham &lt;a href=&#34;#ref-wickham2916&#34; role=&#34;doc-biblioref&#34;&gt;2016&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;viridis&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Garnier &lt;a href=&#34;#ref-garnier2018&#34; role=&#34;doc-biblioref&#34;&gt;2018&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hrbrthemes&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Rudis &lt;a href=&#34;#ref-rudis2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ggpubr&lt;/code&gt; &lt;span class=&#34;citation&#34;&gt;(Kassambara &lt;a href=&#34;#ref-kassambara2020&#34; role=&#34;doc-biblioref&#34;&gt;2020&lt;/a&gt;)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#instala os pacotes, se for necessário:
+pacotes = c(&amp;quot;ggplot2&amp;quot;,&amp;quot;viridis&amp;quot;,&amp;quot;hrbrthemes&amp;quot;,&amp;quot;ggpubr&amp;quot;)
+for (p in setdiff(pacotes, installed.packages()[,&amp;quot;Package&amp;quot;])) {install.packages(p, dependencies=TRUE)}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;checando-e-preparando-os-dados&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;2. Checando e preparando os dados&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Aqui, vamos usar como exemplo o &lt;strong&gt;&lt;em&gt;Iris Dataset&lt;/em&gt;&lt;/strong&gt; &lt;span class=&#34;citation&#34;&gt;(Anderson &lt;a href=&#34;#ref-anderson1935&#34; role=&#34;doc-biblioref&#34;&gt;1935&lt;/a&gt;)&lt;/span&gt;, que consiste em um &lt;em&gt;data.frame&lt;/em&gt; com 150 observações (linhas) e 5 variáveis (colunas). Este famoso conjunto de dados fornece as medidas em centímetros das variáveis denominadas &lt;strong&gt;Sepal.Length&lt;/strong&gt;, &lt;strong&gt;Sepal.Width&lt;/strong&gt;, &lt;strong&gt;Petal.Length&lt;/strong&gt;, &lt;strong&gt;Petal.Width&lt;/strong&gt; e &lt;strong&gt;Species&lt;/strong&gt;, respectivamente, para 50 flores de cada espécie de &lt;em&gt;Iris&lt;/em&gt; (&lt;em&gt;I. setosa&lt;/em&gt;, &lt;em&gt;I. versicolor&lt;/em&gt; e &lt;em&gt;I. virginica&lt;/em&gt;).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(&amp;quot;iris&amp;quot;) #carrega o iris dataset
+head(iris) #checa o topo dos dados&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;str(iris) #checa a estrutura dos dados&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## &amp;#39;data.frame&amp;#39;:    150 obs. of  5 variables:
+##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+##  $ Species     : Factor w/ 3 levels &amp;quot;setosa&amp;quot;,&amp;quot;versicolor&amp;quot;,..: 1 1 1 1 1 1 1 1 1 1 ...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(iris) #resume os dados&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
+##  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+##  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+##  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+##  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+##  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+##  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+##        Species  
+##  setosa    :50  
+##  versicolor:50  
+##  virginica :50  
+##                 
+##                 
+## &lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#cria subconjuntos para cada variável
+CompSepal = data.frame(Especies=iris$Species, CompSepal=iris$Sepal.Length)
+LargSepal = data.frame(Especies=iris$Species, LargSepal=iris$Sepal.Width)
+CompPetal = data.frame(Especies=iris$Species, CompPetal=iris$Petal.Length)
+LargPetal = data.frame(Especies=iris$Species, LargPetal=iris$Petal.Width)
+
+#cria uma lista contendo os subconjuntos de dados
+listaVariaveis = list(CompSepal=CompSepal, 
+                      LargSepal=LargSepal, 
+                      CompPetal=CompPetal, 
+                      LargPetal=LargPetal)
+
+#cria um objeto que contenha os nomes das variáveis para usar no eixo Y de cada plot
+nomesVariaveis = c(&amp;quot;Comprimento da sépala (cm)&amp;quot;, 
+                   &amp;quot;Largura da sépala (cm)&amp;quot;, 
+                   &amp;quot;Comprimento da pétala (cm)&amp;quot;, 
+                   &amp;quot;Largura da pétala (cm)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;loop-for-para-gerar-os-boxplots&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;3. &lt;em&gt;Loop for&lt;/em&gt; para gerar os boxplots&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(&amp;quot;ggplot2&amp;quot;) #para plotar os gráficos
+library(&amp;quot;viridis&amp;quot;) #paleta de cores
+library(&amp;quot;hrbrthemes&amp;quot;) #theme_ipsum()
+
+#cria um objeto do tipo vetor para armazenar os resultados gerados
+resultadoPlots = vector(mode=&amp;quot;list&amp;quot;, length=length(listaVariaveis))
+#gera o plot de cada variável (em subconjunto) dentro de um loop
+for(i in 1:length(listaVariaveis)){ 
+    resultadoPlots[[i]] = ggplot(listaVariaveis[[i]],
+                          #veja também aes() em vez de aes_string()
+                          aes_string(x=names(listaVariaveis[[i]][1]), #pega a coluna que corresponde aos nomes das spp em cada subconjunto 
+                                     y=names(listaVariaveis[[i]][2]), #pega a coluna que corresponde aos nomes das variáveis em cada subconjunto 
+                                     fill=names(listaVariaveis[[i]][1]))) + #define as cores por spp
+    geom_boxplot() +
+    scale_fill_viridis(discrete=TRUE, alpha=0.6) +
+    geom_jitter(color=&amp;quot;black&amp;quot;, size=0.4, alpha=0.9) +
+    theme_ipsum() +
+    theme(legend.position=&amp;quot;none&amp;quot;, 
+          axis.title.x=element_text(size=12), 
+          axis.title.y=element_text(size=12), 
+          axis.text=element_text(size=10),
+          axis.text.x=element_text(face=&amp;quot;italic&amp;quot;)) + #para que os nomes no eixo X fiquem em itálico
+    xlab(&amp;quot;Iris spp.&amp;quot;) +
+    ylab(nomesVariaveis[i])
+    print(resultadoPlots[[i]]) #para ver o resultado
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/index.pt_files/figure-html/loop%20para%20plotar%20os%20graficos-1.png&#34; width=&#34;576&#34; /&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/index.pt_files/figure-html/loop%20para%20plotar%20os%20graficos-2.png&#34; width=&#34;576&#34; /&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/index.pt_files/figure-html/loop%20para%20plotar%20os%20graficos-3.png&#34; width=&#34;576&#34; /&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/index.pt_files/figure-html/loop%20para%20plotar%20os%20graficos-4.png&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;plota-os-boxplots-em-uma-única-figura&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;4. Plota os boxplots em uma única figura&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://ccvasconcelos.github.io/pt/post/criando-boxplots-no-r/index.pt_files/figure-html/salva%20tudo%20em%20uma%20figura-1.png&#34; width=&#34;2400&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;salva-a-figura-em-um-arquivo-.tiff-de-alta-qualidade&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;5. Salva a figura em um arquivo .tiff de alta qualidade&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggsave(&amp;quot;FiguraBoxplots.tiff&amp;quot;, plot=figuraBoxplots, 
+       width=22, height=20, units=&amp;quot;cm&amp;quot;, dpi=300, compression=&amp;quot;lzw&amp;quot;) #define os parâmetros da imagem&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Postagem originalmente publicada no meu perfil do &lt;a href=&#34;https://rpubs.com/ccvasconcelos&#34; target=&#34;_blank&#34;&gt;RPubs&lt;/a&gt;. Toda semana tem conteúdo novo por lá!&lt;/p&gt;
+&lt;p&gt;Até a próxima!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;referências&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;&lt;strong&gt;Referências&lt;/strong&gt;&lt;/h2&gt;
+&lt;div id=&#34;refs&#34;&gt;
+&lt;div id=&#34;ref-allaire2021&#34;&gt;
+&lt;p&gt;Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2021. &lt;em&gt;Rmarkdown: Dynamic Documents for R&lt;/em&gt;. &lt;a href=&#34;https://github.com/rstudio/rmarkdown&#34;&gt;https://github.com/rstudio/rmarkdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-anderson1935&#34;&gt;
+&lt;p&gt;Anderson, Edgar. 1935. “The Irises of the Gaspe Peninsula.” &lt;em&gt;Bulletin of the American Iris Society&lt;/em&gt; 59: 2–5.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-aust2019&#34;&gt;
+&lt;p&gt;Aust, Frederik. 2019. &lt;em&gt;Citr: ’RStudio’ Add-in to Insert Markdown Citations&lt;/em&gt;. &lt;a href=&#34;https://github.com/crsh/citr&#34;&gt;https://github.com/crsh/citr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-barnier2021&#34;&gt;
+&lt;p&gt;Barnier, Julien. 2021. &lt;em&gt;Rmdformats: HTML Output Formats and Templates for ’Rmarkdown’ Documents&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=rmdformats&#34;&gt;https://CRAN.R-project.org/package=rmdformats&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-fay2018&#34;&gt;
+&lt;p&gt;Fay, Colin, Jonathan Sidi, and Luke Smith. 2018. &lt;em&gt;Remedy: ’RStudio’ Addins to Simplify ’Markdown’ Writing&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=remedy&#34;&gt;https://CRAN.R-project.org/package=remedy&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-garnier2018&#34;&gt;
+&lt;p&gt;Garnier, Simon. 2018. &lt;em&gt;Viridis: Default Color Maps from ’Matplotlib’&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=viridis&#34;&gt;https://CRAN.R-project.org/package=viridis&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-kassambara2020&#34;&gt;
+&lt;p&gt;Kassambara, Alboukadel. 2020. &lt;em&gt;Ggpubr: ’Ggplot2’ Based Publication Ready Plots&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=ggpubr&#34;&gt;https://CRAN.R-project.org/package=ggpubr&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-rudis2020&#34;&gt;
+&lt;p&gt;Rudis, Bob. 2020. &lt;em&gt;Hrbrthemes: Additional Themes, Theme Components and Utilities for ’Ggplot2’&lt;/em&gt;. &lt;a href=&#34;https://CRAN.R-project.org/package=hrbrthemes&#34;&gt;https://CRAN.R-project.org/package=hrbrthemes&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-wickham2916&#34;&gt;
+&lt;p&gt;Wickham, Hadley. 2016. &lt;em&gt;Ggplot2: Elegant Graphics for Data Analysis&lt;/em&gt;. Springer-Verlag New York. &lt;a href=&#34;https://ggplot2.tidyverse.org&#34;&gt;https://ggplot2.tidyverse.org&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-stodden2014&#34;&gt;
+&lt;p&gt;Xie, Yihui. 2014. “Knitr: A Comprehensive Tool for Reproducible Research in R.” In &lt;em&gt;Implementing Reproducible Computational Research&lt;/em&gt;, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC. &lt;a href=&#34;http://www.crcpress.com/product/isbn/9781466561595&#34;&gt;http://www.crcpress.com/product/isbn/9781466561595&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2015&#34;&gt;
+&lt;p&gt;———. 2015. &lt;em&gt;Dynamic Documents with R and Knitr&lt;/em&gt;. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://yihui.org/knitr/&#34;&gt;https://yihui.org/knitr/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2021&#34;&gt;
+&lt;p&gt;———. 2021. &lt;em&gt;Knitr: A General-Purpose Package for Dynamic Report Generation in R&lt;/em&gt;. &lt;a href=&#34;https://yihui.org/knitr/&#34;&gt;https://yihui.org/knitr/&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2018&#34;&gt;
+&lt;p&gt;Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. &lt;em&gt;R Markdown: The Definitive Guide&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown&#34;&gt;https://bookdown.org/yihui/rmarkdown&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;ref-xie2020&#34;&gt;
+&lt;p&gt;Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. &lt;em&gt;R Markdown Cookbook&lt;/em&gt;. Boca Raton, Florida: Chapman; Hall/CRC. &lt;a href=&#34;https://bookdown.org/yihui/rmarkdown-cookbook&#34;&gt;https://bookdown.org/yihui/rmarkdown-cookbook&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
