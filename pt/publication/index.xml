@@ -5,12 +5,28 @@
     <link>https://ccvasconcelos.github.io/pt/publication/</link>
       <atom:link href="https://ccvasconcelos.github.io/pt/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Fri, 30 May 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
       <title>Publications</title>
       <link>https://ccvasconcelos.github.io/pt/publication/</link>
     </image>
+    
+    <item>
+      <title>Copaifera ferrazii (Leguminosae: Detarioideae), a new Amazonian species from the eastern Madeira River Basin, Brazil</title>
+      <link>https://ccvasconcelos.github.io/pt/publication/2025-carmo-et-al-article-kew-bull/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/publication/2025-carmo-et-al-article-kew-bull/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Códigos R e conjuntos de dados utilizados no curso &#34;Espectroscopia de herbário com MicroNIR: teoria e prática&#34;</title>
+      <link>https://ccvasconcelos.github.io/pt/publication/2025-vasconcelos-durgante-fair-zenodo/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/publication/2025-vasconcelos-durgante-fair-zenodo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ecclinusa nervosa (Sapotaceae, Chrysophylloideae), a New Species Discovered in Central Amazonia</title>

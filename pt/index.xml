@@ -5,12 +5,28 @@
     <link>https://ccvasconcelos.github.io/pt/</link>
       <atom:link href="https://ccvasconcelos.github.io/pt/index.xml" rel="self" type="application/rss+xml" />
     <description>Caroline C. Vasconcelos</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Fri, 30 May 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
       <title>Caroline C. Vasconcelos</title>
       <link>https://ccvasconcelos.github.io/pt/</link>
     </image>
+    
+    <item>
+      <title>Copaifera ferrazii (Leguminosae: Detarioideae), a new Amazonian species from the eastern Madeira River Basin, Brazil</title>
+      <link>https://ccvasconcelos.github.io/pt/publication/2025-carmo-et-al-article-kew-bull/</link>
+      <pubDate>Fri, 27 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/publication/2025-carmo-et-al-article-kew-bull/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Códigos R e conjuntos de dados utilizados no curso &#34;Espectroscopia de herbário com MicroNIR: teoria e prática&#34;</title>
+      <link>https://ccvasconcelos.github.io/pt/publication/2025-vasconcelos-durgante-fair-zenodo/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/publication/2025-vasconcelos-durgante-fair-zenodo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Ecclinusa nervosa (Sapotaceae, Chrysophylloideae), a New Species Discovered in Central Amazonia</title>
@@ -496,7 +512,7 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;coordenadora&#34;&gt;&lt;strong&gt;Coordenadora&lt;/strong&gt;&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Flavia M. Durgante &lt;a href=&#34;http://lattes.cnpq.br/9866263113578229&#34; target=&#34;_blank&#34;&gt;
+&lt;li&gt;Flávia M. Durgante &lt;a href=&#34;http://lattes.cnpq.br/9866263113578229&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
 &lt;/a&gt; 
 &lt;a href=&#34;https://orcid.org/0000-0002-5517-8821&#34; target=&#34;_blank&#34;&gt;
@@ -504,6 +520,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Flavia-Durgante&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=s5nOn6sAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;colaboradores&#34;&gt;&lt;strong&gt;Colaboradores&lt;/strong&gt;&lt;/h3&gt;
@@ -517,6 +536,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/F-Wittmann&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=DbUfPN0AAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -528,6 +550,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Jochen-Schoengart&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=z3nHp0wAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -539,6 +564,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Maria-Teresa-Piedade&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=qGWq_fwAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -561,6 +589,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Alberto-Vicentini&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=kpTfZvoAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -583,6 +614,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Caroline-Vasconcelos&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=XuZ_h4wAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -591,6 +625,9 @@
 &lt;/a&gt; 
 &lt;a href=&#34;https://orcid.org/0000-0002-3054-8574&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=e4wapssAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -602,6 +639,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Caroline-Mallmann-2&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=sRjAm-kAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -613,6 +653,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Kelly-Torralvo&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=Z12yJ9MAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -624,6 +667,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Rafael-Rabelo-2&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=JFHtSG8AAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -635,6 +681,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Darlene-Gris&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?user=tAknLrQAAAAJ&amp;hl=pt-BR&amp;oi=ao&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -645,7 +694,7 @@
 &lt;/ul&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Este projeto é parte da Chamada nº 006/2024 - Mulher Faz Ciência (processo nº 79012.UNI1035.30267.03052024), financiado pela Fundação de Amparo à Pesquisa do Estado do Amazonas (FAPEAM).
+    Este projeto é parte da Chamada no. 006/2024 - Mulher Faz Ciência (processo no. 01.02.016301.04984/2024-17), financiado pela Fundação de Amparo à Pesquisa do Estado do Amazonas (FAPEAM).
   &lt;/div&gt;
 &lt;/div&gt;
 </description>
@@ -660,7 +709,7 @@
     </item>
     
     <item>
-      <title>Incógnitos</title>
+      <title>Revelando os incógnitos</title>
       <link>https://ccvasconcelos.github.io/pt/project/incognitos/</link>
       <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
       <guid>https://ccvasconcelos.github.io/pt/project/incognitos/</guid>
@@ -715,18 +764,21 @@
 &lt;h3 id=&#34;coordenadores&#34;&gt;&lt;strong&gt;Coordenadores&lt;/strong&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Marcelino Carneiro Guedes (Coordenador) &lt;a href=&#34;xxxxxx&#34; target=&#34;_blank&#34;&gt;
+&lt;p&gt;Marcelino Carneiro Guedes (Coordinator) &lt;a href=&#34;http://lattes.cnpq.br/9005172978014230&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
 &lt;/a&gt; 
-&lt;a href=&#34;xxxxxx&#34; target=&#34;_blank&#34;&gt;
+&lt;a href=&#34;https://orcid.org/0000-0003-2702-5614&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;
-&lt;a href=&#34;xxxxxxx&#34; target=&#34;_blank&#34;&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Marcelino-Guedes-2&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?user=eEB9MicAAAAJ&amp;hl=en&amp;oi=ao&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Janaina Barbosa Pedrosa Costa (Vice-Coordenadora)
+&lt;p&gt;Janaina Barbosa Pedrosa Costa (Vice-Coordinator)
 &lt;a href=&#34;http://lattes.cnpq.br/1634069310571110&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
 &lt;/a&gt; 
@@ -749,6 +801,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Adelson-Rocha-Dantas&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=pXebsqIAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -765,6 +820,15 @@
 &lt;li&gt;
 &lt;p&gt;Alexandre Fadigas de Souza &lt;a href=&#34;http://lattes.cnpq.br/7844758818522706&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0001-7468-3631&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Alexandre-Souza-32&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=SX9fp2oAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -787,6 +851,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Ana-Lira-Guedes&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?user=6suvyB4AAAAJ&amp;hl=en&amp;oi=ao&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -795,6 +862,9 @@
 &lt;/a&gt; 
 &lt;a href=&#34;https://orcid.org/0000-0002-4207-8178&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=pGG1T2kAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -816,6 +886,9 @@
 &lt;li&gt;
 &lt;p&gt;Camila Brandão da Silva &lt;a href=&#34;http://lattes.cnpq.br/3718545397394699&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0009-0006-5993-8070&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -827,6 +900,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Caroline-Vasconcelos&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=XuZ_h4wAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -838,6 +914,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Daniel-Pereira-6&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=kOsGzIUAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -871,6 +950,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Josiane-Mueller&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=ouIXglIAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -882,6 +964,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Juliano-Sarmento-Cabral&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=uqZZxF4AAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -915,6 +1000,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Marinez-Siqueira&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=Faiq46QAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -948,6 +1036,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Allan-Galardo&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=jGBIn0EAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1051,7 +1142,7 @@
 &lt;/ul&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Este projeto é parte da Chamada CNPq/CONFAP nº 34/2023 - Expedições Científicas - Iniciativa Amazônia +10 (CNPq processo No. 400738/2024-4).
+    Este projeto é parte da Chamada CNPq/CONFAP no. 34/2023 - Expedições Científicas - Iniciativa Amazônia +10 (CNPq processo no. 400738/2024-4).
   &lt;/div&gt;
 &lt;/div&gt;
 </description>
@@ -1150,7 +1241,7 @@
 &lt;h3 id=&#34;coordenadores&#34;&gt;&lt;strong&gt;Coordenadores&lt;/strong&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Florian Wittmann (Alemanha) &lt;a href=&#34;http://lattes.cnpq.br/5130662662509830&#34; target=&#34;_blank&#34;&gt;
+&lt;p&gt;Florian Wittmann (Germany) &lt;a href=&#34;http://lattes.cnpq.br/5130662662509830&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
 &lt;/a&gt; 
 &lt;a href=&#34;https://orcid.org/0000-0001-9180-356X&#34; target=&#34;_blank&#34;&gt;
@@ -1158,10 +1249,13 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/F-Wittmann&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=DbUfPN0AAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Jochen Schöngart (Brasil) &lt;a href=&#34;http://lattes.cnpq.br/2468979908831549&#34; target=&#34;_blank&#34;&gt;
+&lt;p&gt;Jochen Schöngart (Brazil) &lt;a href=&#34;http://lattes.cnpq.br/2468979908831549&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
 &lt;/a&gt; 
 &lt;a href=&#34;https://orcid.org/0000-0002-7696-9657&#34; target=&#34;_blank&#34;&gt;
@@ -1169,10 +1263,13 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Jochen-Schoengart&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=z3nHp0wAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Maria T. F. Piedade (Brasil) &lt;a href=&#34;http://lattes.cnpq.br/0626509177712805&#34; target=&#34;_blank&#34;&gt;
+&lt;p&gt;Maria T. F. Piedade (Brazil) &lt;a href=&#34;http://lattes.cnpq.br/0626509177712805&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
 &lt;/a&gt; 
 &lt;a href=&#34;https://orcid.org/0000-0002-7320-0498&#34; target=&#34;_blank&#34;&gt;
@@ -1180,13 +1277,16 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Maria-Teresa-Piedade&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=qGWq_fwAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;colaboradores&#34;&gt;&lt;strong&gt;Colaboradores&lt;/strong&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Flavia M. Durgante &lt;a href=&#34;http://lattes.cnpq.br/9866263113578229&#34; target=&#34;_blank&#34;&gt;
+&lt;p&gt;Flávia M. Durgante &lt;a href=&#34;http://lattes.cnpq.br/9866263113578229&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
 &lt;/a&gt; 
 &lt;a href=&#34;https://orcid.org/0000-0002-5517-8821&#34; target=&#34;_blank&#34;&gt;
@@ -1194,6 +1294,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Flavia-Durgante&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=s5nOn6sAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1205,6 +1308,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Gisele-Biem-Mori&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=I_o4EkoAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1227,6 +1333,9 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Adriano-Quaresma&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=q2HYaDwAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1238,11 +1347,20 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Caroline-Vasconcelos&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=XuZ_h4wAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Priscila A. Sá &lt;a href=&#34;http://lattes.cnpq.br/6250230466370309&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0009-0000-4555-9658&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Priscila-Sa-4&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1262,6 +1380,9 @@
 &lt;/a&gt; 
 &lt;a href=&#34;https://orcid.org/0000-0002-3054-8574&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=e4wapssAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1273,12 +1394,15 @@
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Caroline-Mallmann-2&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=sRjAm-kAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Este projeto foi financiado por Amazon Tall Tower Observatory (ATTO), German Federal Ministry of Education and Research (BMBF; contratos 01LK1602F and 01LK2101D), Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq; processo no. 440166/2022-5) via Chamada CNPq/MCTI Nº 01/2022 - APOIO A ATIVIDADES NA TORRE ATTO 2022.
+    Este projeto foi financiado por Amazon Tall Tower Observatory (ATTO), German Federal Ministry of Education and Research (BMBF; contratos 01LK1602F and 01LK2101D), Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq; processo no. 440166/2022-5) via Chamada CNPq/MCTI no. 01/2022 - APOIO A ATIVIDADES NA TORRE ATTO 2022.
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-1&#34;&gt;
@@ -2638,6 +2762,9 @@ for(i in 1:length(listaVariaveis)){
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Isolde-Ferraz&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?user=0g_dmJ0AAAAJ&amp;hl=en&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -2649,6 +2776,9 @@ for(i in 1:length(listaVariaveis)){
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Geangelo-Calvi&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?user=vwpzn7UAAAAJ&amp;hl=EN&amp;oi=ao&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -2660,12 +2790,15 @@ for(i in 1:length(listaVariaveis)){
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Caroline-Vasconcelos&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?user=XuZ_h4wAAAAJ&amp;hl=en&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Este projeto é parte da dissertação de mestrado de &lt;strong&gt;Elzineide M. Carmo&lt;/strong&gt; no Programa de Pós-Graduação em Botânica (PPG-BOT) do Instituto Nacional de Pesquisas da Amazônia (INPA) apoiado por uma bolsa da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES) através do &amp;ldquo;Programa Amazônia Legal” (Edital 06/2021).
+    Este projeto é parte da dissertação de mestrado de &lt;strong&gt;Elzineide M. Carmo&lt;/strong&gt; no Programa de Pós-Graduação em Botânica (PPG-BOT) do Instituto Nacional de Pesquisas da Amazônia (INPA) apoiado por uma bolsa da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES) através do &amp;ldquo;Programa Amazônia Legal” (Edital no. 06/2021).
   &lt;/div&gt;
 &lt;/div&gt;
 </description>
@@ -2701,9 +2834,119 @@ for(i in 1:length(listaVariaveis)){
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
       <guid>https://ccvasconcelos.github.io/pt/project/doctorate/</guid>
       <description>&lt;h2 id=&#34;taxonomia-integrativa-para-a-delimitação-e-descrição-de-espécies-em-chrysophylloideae-neotropical-sapotaceae&#34;&gt;&lt;strong&gt;Taxonomia integrativa para a delimitação e descrição de espécies em Chrysophylloideae neotropical (Sapotaceae)&lt;/strong&gt;&lt;/h2&gt;
-&lt;div class=&#34;alert alert-warning&#34;&gt;
+&lt;h3 id=&#34;descrição&#34;&gt;&lt;strong&gt;Descrição&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;A resolução dos problemas em Chrysophylloideae neotropical é como um quebra-cabeça taxonômico, cujas peças estão em processo de montagem, vide os esforços de Terra-Araujo et al. (2015, 2016), Faria et al. (2017) e Swenson et al. (2023). A partir das mudanças em curso, muitos grupos naturalmente requererão maiores estudos para uma melhor resolução interna. Considerando a representatividade de Chrysophylloideae na flora neotropical e a importância da taxonomia para explorar e compreender a biodiversidade, essa necessidade abre portas para uma infinidade de estudos que buscam caracterizar, classificar e nomear táxons. Este projeto percorre diferentes caminhos no contexto de Chrysophylloideae neotropical, todos representam janelas complementares para explorar a complexidade de Sapotaceae.&lt;/p&gt;
+&lt;p&gt;Literaturas citadas&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Faria, A.D.; Pirani, J.R.; Ribeiro, J.E.L.S.; Nylinder, S.; Terra-Araujo, M.H.; Vieira, P.P.; et al. 2017. Towards a natural classification of subfamily Chrysophylloideae (Sapotaceae) in the Neotropics. &lt;em&gt;Botanical Journal of the Linnean Society&lt;/em&gt; 185: 27–55. DOI: &lt;a href=&#34;https://doi.org/10.1093/botlinnean/box042&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1093/botlinnean/box042&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Swenson, U.; Lepschi, B.; Lowry II, P.P.; Terra-Araujo, M.H.; Santos, K.; Nylinder, S.; et al. 2023. Reassessment of generic boundaries in Neotropical Chrysophylloideae (Sapotaceae): Eleven reinstated genera and narrowed circumscriptions of &lt;em&gt;Chrysophyllum&lt;/em&gt; and &lt;em&gt;Pouteria&lt;/em&gt;. &lt;em&gt;Taxon&lt;/em&gt; 72: 307–359. DOI: &lt;a href=&#34;https://doi.org/10.1002/tax.12894&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1002/tax.12894&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Terra-Araujo, M.H.; Faria, A.D.; Swenson, U. 2016. A taxonomic update of Neotropical &lt;em&gt;Pradosia&lt;/em&gt; (Sapotaceae, Chrysophylloideae). &lt;em&gt;Systematic Botany&lt;/em&gt; 41: 634–650. DOI: &lt;a href=&#34;https://doi.org/10.1600/036364416X692389&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1600/036364416X692389&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Terra-Araujo, M.H.; Faria, A.D.; Vicentini, A.; Nylinder, S.; Swenson, U. 2015. Species tree phylogeny and biogeography of the Neotropical genus &lt;em&gt;Pradosia&lt;/em&gt; (Sapotaceae, Chrysophylloideae). &lt;em&gt;Molecular Phylogenetics and Evolution&lt;/em&gt; 87: 1–13. DOI: &lt;a href=&#34;https://doi.org/10.1016/j.ympev.2015.03.007&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;10.1016/j.ympev.2015.03.007&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;financiamento-parceiros&#34;&gt;&lt;strong&gt;Financiamento/ Parceiros&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fundação de Amparo à Pesquisa do Estado do Amazonas (FAPEAM)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;American Society of Plant Taxonomists (ASPT)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;International Association for Plant Taxonomy (IAPT)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Amazon Tall Tower Observatory (ATTO)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;German Federal Ministry of Education and Research (BMBF)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;IAN, MG, INPA, HUAM, HAMAB, MO, RB, and VIES  herbaria&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Programa de Pesquisa em Biodiversidade (PPBio)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Centro de Estudo Integrados da Biodiversidade Amazônica (CENBAM)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Projeto Dinâmica Biológica de Fragmentos Florestais (PDBFF)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;coordenadora&#34;&gt;&lt;strong&gt;Coordenadora&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Caroline C. Vasconcelos&lt;/strong&gt; &lt;a href=&#34;http://lattes.cnpq.br/1535461703335857&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0002-7850-6672&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Caroline-Vasconcelos&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?user=XuZ_h4wAAAAJ&amp;hl=en&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;colaboradores&#34;&gt;&lt;strong&gt;Colaboradores&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Mário H. Terra-Araujo &lt;a href=&#34;http://lattes.cnpq.br/4481913710926340&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0001-5396-3669&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Mario-Terra-Araujo&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Isolde D. K. Ferraz &lt;a href=&#34;http://lattes.cnpq.br/9125127898290625&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0003-3299-7856&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Isolde-Ferraz&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?user=0g_dmJ0AAAAJ&amp;hl=en&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;José L. C. Camargo &lt;a href=&#34;http://lattes.cnpq.br/7299082066704598&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0003-0370-9878&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Jose-Luis-Camargo&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?user=Od8hL2MAAAAJ&amp;hl=en&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Página em construção&amp;hellip;
+    Este projeto faz parte da tese de doutorado de &lt;strong&gt;Caroline C. Vasconcelos&lt;/strong&gt; no Programa de Pós-Graduação em Botânica (PPG-BOT) do Instituto Nacional de Pesquisas da Amazônia (INPA), apoiado por uma bolsa do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq; processo nº 142214/2018-3).
   &lt;/div&gt;
 &lt;/div&gt;
 </description>
@@ -2761,6 +3004,9 @@ for(i in 1:length(listaVariaveis)){
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Caroline-Vasconcelos&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=XuZ_h4wAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;colaboradores&#34;&gt;&lt;strong&gt;Colaboradores&lt;/strong&gt;&lt;/h3&gt;
@@ -2774,6 +3020,9 @@ for(i in 1:length(listaVariaveis)){
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Isolde-Ferraz&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=0g_dmJ0AAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -2796,12 +3045,15 @@ for(i in 1:length(listaVariaveis)){
 &lt;/a&gt;
 &lt;a href=&#34;https://www.researchgate.net/profile/Jose-Luis-Camargo-2&#34; target=&#34;_blank&#34;&gt;
 &lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=Od8hL2MAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
 &lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Este projeto é parte da dissertação de mestrado de &lt;strong&gt;Caroline C. Vasconcelos&lt;/strong&gt; no Programa de Pós-Graduação em Botânica (PPG-BOT) do Instituto Nacional de Pesquisas da Amazônia (INPA) apoiado por uma bolsa do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq, processo número 133381/2015-3).
+    Este projeto é parte da dissertação de mestrado de &lt;strong&gt;Caroline C. Vasconcelos&lt;/strong&gt; no Programa de Pós-Graduação em Botânica (PPG-BOT) do Instituto Nacional de Pesquisas da Amazônia (INPA) apoiado por uma bolsa do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq, processo no. 133381/2015-3).
   &lt;/div&gt;
 &lt;/div&gt;
 </description>
@@ -2822,14 +3074,118 @@ for(i in 1:length(listaVariaveis)){
     </item>
     
     <item>
-      <title> Lecythidoideae Neotropical</title>
+      <title>Lecythidoideae Neotropical</title>
       <link>https://ccvasconcelos.github.io/pt/project/neotropical-lecythidoideae/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ccvasconcelos.github.io/pt/project/neotropical-lecythidoideae/</guid>
       <description>&lt;h2 id=&#34;morfologia-de-frutos-sementes-e-plântulas-de-lecythidoideae&#34;&gt;&lt;strong&gt;Morfologia de frutos, sementes e plântulas de Lecythidoideae&lt;/strong&gt;&lt;/h2&gt;
-&lt;div class=&#34;alert alert-warning&#34;&gt;
+&lt;h3 id=&#34;descrição&#34;&gt;&lt;strong&gt;Descrição&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Devido a carência de estudo morfológicos direcionados aos frutos, sementes e especialmente plântulas das Lecythidoideae amazônicas, este projeto teve como objetivos: descrever detalhadamente a morfologia dessas estruturas a partir do desenvolvimento e função de cada órgão; revisar a morfologia de frutos e sementes de material recém coletado e complementar as descrições realizadas anteriormente; avaliar o uso destas características para uma aplicação taxonômica; e fornecer chaves de identificação a nível genérico para sementes e plântulas e uma a nível específico para frutos.&lt;/p&gt;
+&lt;h3 id=&#34;financiamento-parceiros&#34;&gt;&lt;strong&gt;Financiamento/ Parceiros&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Projeto Dinâmica Biológica de Fragmentos Florestais (PDBFF)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Herbário INPA&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Museu da Amazônia (MUSA)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;coordenadora&#34;&gt;&lt;strong&gt;Coordenadora&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Lorena P. F. Rodrigues &lt;a href=&#34;http://lattes.cnpq.br/9368592925911195&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0002-1232-3814&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;colaboradores&#34;&gt;&lt;strong&gt;Colaboradores&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Isolde D. K. Ferraz &lt;a href=&#34;http://lattes.cnpq.br/9125127898290625&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0003-3299-7856&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Isolde-Ferraz&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=0g_dmJ0AAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Caroline C. Vasconcelos&lt;/strong&gt; &lt;a href=&#34;http://lattes.cnpq.br/1535461703335857&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0002-7850-6672&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Caroline-Vasconcelos&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=XuZ_h4wAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Bruno S. Amorim &lt;a href=&#34;http://lattes.cnpq.br/5143261167490656&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0002-8109-9254&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Bruno-Amorim-6&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lilian C. Procópio &lt;a href=&#34;http://lattes.cnpq.br/9687033215240363&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0002-6168-7032&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Mariana R. Mesquita &lt;a href=&#34;http://lattes.cnpq.br/7222183761365560&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0002-5616-0834&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Mariana-Mesquita-3&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;José L. C. Camargo &lt;a href=&#34;http://lattes.cnpq.br/7299082066704598&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-lattes&#34;&gt;&lt;/i&gt;
+&lt;/a&gt; 
+&lt;a href=&#34;https://orcid.org/0000-0003-0370-9878&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-orcid&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://www.researchgate.net/profile/Jose-Luis-Camargo-2&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-researchgate&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;a href=&#34;https://scholar.google.com.br/citations?hl=en&amp;user=Od8hL2MAAAAJ&#34; target=&#34;_blank&#34;&gt;
+&lt;i class=&#34;ai ai-google-scholar&#34;&gt;&lt;/i&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Página em construção&amp;hellip;
+    Este projeto faz parte da dissertação de mestrado de &lt;strong&gt;Lorena P. F. Rodrigues&lt;/strong&gt; no Programa de Pós-Graduação em Botânica (PPG-BOT) do Instituto Nacional de Pesquisas da Amazônia (INPA), apoiado por uma bolsa da Coordenação de Aperfeiçoamento de Pessoal de Nível Superior (CAPES; processo no. 88882.444392/2019-01).
   &lt;/div&gt;
 &lt;/div&gt;
 </description>
