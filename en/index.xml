@@ -5,12 +5,20 @@
     <link>https://ccvasconcelos.github.io/en/</link>
       <atom:link href="https://ccvasconcelos.github.io/en/index.xml" rel="self" type="application/rss+xml" />
     <description>Caroline C. Vasconcelos</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Fri, 27 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Wed, 09 Jul 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
       <title>Caroline C. Vasconcelos</title>
       <link>https://ccvasconcelos.github.io/en/</link>
     </image>
+    
+    <item>
+      <title>IHerbSpec Protocol v1.0</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2025-iherbspec-zenodo/</link>
+      <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2025-iherbspec-zenodo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Copaifera ferrazii (Leguminosae: Detarioideae), a new Amazonian species from the eastern Madeira River Basin, Brazil</title>
@@ -75,7 +83,8 @@
       <guid>https://ccvasconcelos.github.io/en/project/iherbspec/</guid>
       <description>&lt;h2 id=&#34;international-herbarium-spectral-scanning-iherbspec-working-group&#34;&gt;&lt;strong&gt;International Herbarium Spectral Scanning (IHerbSpec) Working Group&lt;/strong&gt;&lt;/h2&gt;
 &lt;h3 id=&#34;description&#34;&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;The IHerbSpec group has undertaken a global effort to standardize how spectral data are collected and shared from herbaria to advance plant identification, trait prediction, and ecological modeling. We review the benefits and challenges of doing so and outline the protocols needed to ensure data quality and compatibility across herbaria while supporting global collaboration.&lt;/p&gt;
+&lt;p&gt;The International Herbarium Spectral Digitization Working Group (IHerbSpec) is a global consortium advancing standardized methods for collecting and using reflectance spectra from herbarium specimens.&lt;/p&gt;
+&lt;p&gt;Our goal is to support integrative plant biodiversity research by harmonizing measurement workflows, metadata standards, and data-sharing practices.&lt;/p&gt;
 &lt;h3 id=&#34;funding-partners&#34;&gt;&lt;strong&gt;Funding/ Partners&lt;/strong&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Aarhus University&lt;/li&gt;
