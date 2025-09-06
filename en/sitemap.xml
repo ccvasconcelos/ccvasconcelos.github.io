@@ -6231,21 +6231,6 @@
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/admin/</loc>
   </url><url>
-<<<<<<< HEAD
-=======
-    <loc>https://ccvasconcelos.github.io/en/project/neotropical-lecythidoideae/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/project/neotropical-lecythidoideae/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/project/neotropical-lecythidoideae/"
-                />
-  </url><url>
->>>>>>> 9360264980f1ac8c02e4eeb778f1064940601adc
     <loc>https://ccvasconcelos.github.io/en/tag/other/</loc>
     <xhtml:link
                 rel="alternate"
