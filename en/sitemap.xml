@@ -2,8 +2,245 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ccvasconcelos.github.io/en/authors/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/authors/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/bibliotecas-espectrais/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/bibliotecas-espectrais/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/bibliotecas-espectrais/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/author/caroline-c.-vasconcelos/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/caroline-c.-vasconcelos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/caroline-c.-vasconcelos/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/categories/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/categories/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/cites/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/cites/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/cites/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/post/conheca-nossos-pibics-2025/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/post/conheca-nossos-pibics-2025/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/post/conheca-nossos-pibics-2025/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/ecclinusa/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/ecclinusa/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/ecclinusa/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/espectroscopia/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/espectroscopia/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/espectroscopia/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/herbario-inpa/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/herbario-inpa/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/herbario-inpa/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/identificacao-de-especies/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/identificacao-de-especies/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/identificacao-de-especies/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/iniciacao-cientifica/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/iniciacao-cientifica/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/iniciacao-cientifica/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/category/news/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/category/news/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/category/news/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/post/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/post/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/projeto-spectrapop/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/projeto-spectrapop/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/projeto-spectrapop/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tags/</loc>
+    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tags/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/current-as-partner/</loc>
+    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/current-as-partner/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/current-as-partner/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/project/herbspectra-amazon/</loc>
+    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/project/</loc>
+    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/project/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/project/"
+                />
+  </url><url>
     <loc>https://ccvasconcelos.github.io/en/publication-type/2/</loc>
-    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
@@ -13,6 +250,279 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ccvasconcelos.github.io/en/publication-type/2/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/author/caroline-l.-mallmann/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/caroline-l.-mallmann/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/caroline-l.-mallmann/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/publication/2025-hadlich-et-al-gecco/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/publication/2025-hadlich-et-al-gecco/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/publication/2025-hadlich-et-al-gecco/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/field-spectra/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/field-spectra/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/field-spectra/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/author/florian-wittmann/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/florian-wittmann/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/florian-wittmann/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/author/flavia-m.-durgante/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/flavia-m.-durgante/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/flavia-m.-durgante/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/fresh-leaf/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/fresh-leaf/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/fresh-leaf/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/author/gisele-b.-mori/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/gisele-b.-mori/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/gisele-b.-mori/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/author/hilana-l.-hadlich/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/hilana-l.-hadlich/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/hilana-l.-hadlich/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/inner-bark/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/inner-bark/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/inner-bark/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/author/jochen-schongart/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/jochen-schongart/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/jochen-schongart/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/author/layon-o.-demarchi/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/layon-o.-demarchi/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/layon-o.-demarchi/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/author/maria-t.-f.-piedade/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/maria-t.-f.-piedade/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/maria-t.-f.-piedade/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/author/maira-l.-g.-conde/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/maira-l.-g.-conde/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/maira-l.-g.-conde/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/outer-bark/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/outer-bark/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/outer-bark/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/author/priscila-a.-de-sa/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/priscila-a.-de-sa/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/priscila-a.-de-sa/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/publication_types/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/publication_types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/publication_types/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/publication/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/publication/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/publication/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/species-identification/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/species-identification/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/species-identification/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/taxonomic-errors/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/taxonomic-errors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/taxonomic-errors/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/tropical-forest/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/tropical-forest/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/tropical-forest/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/visible-and-near-infrared-spectroscopy/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/visible-and-near-infrared-spectroscopy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/visible-and-near-infrared-spectroscopy/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/author/aaron-k.-lee/</loc>
@@ -41,19 +551,6 @@
                 href="https://ccvasconcelos.github.io/en/author/antonio-guzman/"
                 />
   </url><url>
-    <loc>https://ccvasconcelos.github.io/en/authors/</loc>
-    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/authors/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/authors/"
-                />
-  </url><url>
     <loc>https://ccvasconcelos.github.io/en/author/barbara-neto-bradley/</loc>
     <lastmod>2025-10-31T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -65,32 +562,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ccvasconcelos.github.io/en/author/barbara-neto-bradley/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/</loc>
-    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/author/caroline-c.-vasconcelos/</loc>
-    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/caroline-c.-vasconcelos/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/caroline-c.-vasconcelos/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/author/charles-davis/</loc>
@@ -182,19 +653,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ccvasconcelos.github.io/en/author/eduardo-chacon-madrigal/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/author/flavia-m.-durgante/</loc>
-    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/flavia-m.-durgante/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/flavia-m.-durgante/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/tag/global-herbarium/</loc>
@@ -444,32 +902,6 @@
                 href="https://ccvasconcelos.github.io/en/tag/plant-functional-traits/"
                 />
   </url><url>
-    <loc>https://ccvasconcelos.github.io/en/publication_types/</loc>
-    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/publication_types/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/publication_types/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/publication/</loc>
-    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/publication/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/publication/"
-                />
-  </url><url>
     <loc>https://ccvasconcelos.github.io/en/author/richard-h.-ree/</loc>
     <lastmod>2025-10-31T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -546,19 +978,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ccvasconcelos.github.io/en/author/susan-ustin/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/tags/</loc>
-    <lastmod>2025-10-31T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tags/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/author/thomas-l.-p.-couvreur/</loc>
@@ -1237,19 +1656,6 @@
                 href="https://ccvasconcelos.github.io/en/publication/2025-vasconcelos-et-al-article-sysbot/"
                 />
   </url><url>
-    <loc>https://ccvasconcelos.github.io/en/author/florian-wittmann/</loc>
-    <lastmod>2025-05-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/florian-wittmann/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/florian-wittmann/"
-                />
-  </url><url>
     <loc>https://ccvasconcelos.github.io/en/tag/integrative-taxonomy/</loc>
     <lastmod>2025-05-30T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -1261,19 +1667,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ccvasconcelos.github.io/en/tag/integrative-taxonomy/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/author/jochen-schongart/</loc>
-    <lastmod>2025-05-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/jochen-schongart/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/jochen-schongart/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/author/jose-l.-c.-camargo/</loc>
@@ -1300,19 +1693,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ccvasconcelos.github.io/en/tag/leaf-spectroscopy/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/author/maria-t.-f.-piedade/</loc>
-    <lastmod>2025-05-30T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/maria-t.-f.-piedade/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/maria-t.-f.-piedade/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/author/mario-h.-terra-araujo/</loc>
@@ -1367,97 +1747,6 @@
                 href="https://ccvasconcelos.github.io/en/publication/2025-cavender-bares-et-al-preprint-ecoevorxiv/"
                 />
   </url><url>
-    <loc>https://ccvasconcelos.github.io/en/author/caroline-l.-mallmann/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/caroline-l.-mallmann/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/caroline-l.-mallmann/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/tag/field-spectra/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/field-spectra/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/field-spectra/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/tag/fresh-leaf/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/fresh-leaf/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/fresh-leaf/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/author/gisele-b.-mori/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/gisele-b.-mori/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/gisele-b.-mori/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/author/hilana-l.-hadlich/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/hilana-l.-hadlich/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/hilana-l.-hadlich/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/tag/inner-bark/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/inner-bark/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/inner-bark/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/author/layon-o.-demarchi/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/layon-o.-demarchi/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/layon-o.-demarchi/"
-                />
-  </url><url>
     <loc>https://ccvasconcelos.github.io/en/tag/linear-discriminant-analysis/</loc>
     <lastmod>2025-03-29T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -1471,45 +1760,6 @@
                 href="https://ccvasconcelos.github.io/en/tag/linear-discriminant-analysis/"
                 />
   </url><url>
-    <loc>https://ccvasconcelos.github.io/en/author/maira-l.-g.-conde/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/maira-l.-g.-conde/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/maira-l.-g.-conde/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/tag/outer-bark/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/outer-bark/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/outer-bark/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/author/priscila-a.-de-sa/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/priscila-a.-de-sa/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/priscila-a.-de-sa/"
-                />
-  </url><url>
     <loc>https://ccvasconcelos.github.io/en/publication/2025-hadlich-et-al-preprint-biorxiv/</loc>
     <lastmod>2025-03-29T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -1521,45 +1771,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ccvasconcelos.github.io/en/publication/2025-hadlich-et-al-preprint-biorxiv/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/tag/species-identification/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/species-identification/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/species-identification/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/tag/taxonomic-errors/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/taxonomic-errors/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/taxonomic-errors/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/tag/visible-and-near-infrared-spectroscopy/</loc>
-    <lastmod>2025-03-29T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/visible-and-near-infrared-spectroscopy/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/visible-and-near-infrared-spectroscopy/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/author/abel-m.-mendoza/</loc>
@@ -4487,6 +4698,32 @@
                 href="https://ccvasconcelos.github.io/en/author/emile-fonty/"
                 />
   </url><url>
+    <loc>https://ccvasconcelos.github.io/en/tag/current-as-lead/</loc>
+    <lastmod>2025-03-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/current-as-lead/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/current-as-lead/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/project/iapt-2025/</loc>
+    <lastmod>2025-03-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/project/iapt-2025/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/project/iapt-2025/"
+                />
+  </url><url>
     <loc>https://ccvasconcelos.github.io/en/tag/airborne-lidar/</loc>
     <lastmod>2025-02-27T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -4721,17 +4958,17 @@
                 href="https://ccvasconcelos.github.io/en/publication/2025-lima-et-al-preprint-biorxiv/"
                 />
   </url><url>
-    <loc>https://ccvasconcelos.github.io/en/tag/current-as-partner/</loc>
-    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
+    <loc>https://ccvasconcelos.github.io/en/project/tropecolnet/</loc>
+    <lastmod>2025-01-20T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/current-as-partner/"
+                href="https://ccvasconcelos.github.io/pt/project/tropecolnet/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/current-as-partner/"
+                href="https://ccvasconcelos.github.io/en/project/tropecolnet/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/project/iherbspec/</loc>
@@ -4745,19 +4982,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ccvasconcelos.github.io/en/project/iherbspec/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/project/</loc>
-    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/project/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/project/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/tag/morphometrics/</loc>
@@ -5462,6 +5686,19 @@
                 href="https://ccvasconcelos.github.io/en/project/hydrotraits/"
                 />
   </url><url>
+    <loc>https://ccvasconcelos.github.io/en/project/tree-growth-increment/</loc>
+    <lastmod>2022-09-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/project/tree-growth-increment/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/project/tree-growth-increment/"
+                />
+  </url><url>
     <loc>https://ccvasconcelos.github.io/en/tag/agrupamento-hierarquico/</loc>
     <lastmod>2021-06-07T17:03:52-04:00</lastmod>
     <xhtml:link
@@ -5501,19 +5738,6 @@
                 href="https://ccvasconcelos.github.io/en/tag/bootstrap/"
                 />
   </url><url>
-    <loc>https://ccvasconcelos.github.io/en/categories/</loc>
-    <lastmod>2021-06-07T17:03:52-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/categories/"
-                />
-  </url><url>
     <loc>https://ccvasconcelos.github.io/en/tag/dendrograma/</loc>
     <lastmod>2021-06-07T17:03:52-04:00</lastmod>
     <xhtml:link
@@ -5551,19 +5775,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ccvasconcelos.github.io/en/tag/dissimilaridade-de-gower/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/en/post/</loc>
-    <lastmod>2021-06-07T17:03:52-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/post/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/tag/r-markdown/</loc>
@@ -6203,19 +6414,6 @@
                 href="https://ccvasconcelos.github.io/en/tag/new-occurrence/"
                 />
   </url><url>
-    <loc>https://ccvasconcelos.github.io/en/tag/current-as-lead/</loc>
-    <lastmod>2018-07-01T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/current-as-lead/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/current-as-lead/"
-                />
-  </url><url>
     <loc>https://ccvasconcelos.github.io/en/project/doctorate/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -6240,6 +6438,32 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ccvasconcelos.github.io/en/privacy/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/project/forest-response/</loc>
+    <lastmod>2017-04-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/project/forest-response/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/project/forest-response/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/project/phenology/</loc>
+    <lastmod>2017-04-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/project/phenology/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/project/phenology/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/tag/controle-biologico/</loc>
@@ -6346,6 +6570,19 @@
                 href="https://ccvasconcelos.github.io/en/author/sheylla-s.-m.-s.-almeida/"
                 />
   </url><url>
+    <loc>https://ccvasconcelos.github.io/en/project/besans/</loc>
+    <lastmod>2015-07-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/project/besans/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/project/besans/"
+                />
+  </url><url>
     <loc>https://ccvasconcelos.github.io/en/project/master/</loc>
     <lastmod>2015-03-01T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -6359,6 +6596,32 @@
                 href="https://ccvasconcelos.github.io/en/project/master/"
                 />
   </url><url>
+    <loc>https://ccvasconcelos.github.io/en/project/ataic/</loc>
+    <lastmod>2014-12-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/project/ataic/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/project/ataic/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/project/carbono-cajari/</loc>
+    <lastmod>2012-08-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/project/carbono-cajari/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/project/carbono-cajari/"
+                />
+  </url><url>
     <loc>https://ccvasconcelos.github.io/en/project/florestam/</loc>
     <lastmod>2012-03-01T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -6370,6 +6633,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://ccvasconcelos.github.io/en/project/florestam/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/en/project/micocast/</loc>
+    <lastmod>2011-11-01T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/project/micocast/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/project/micocast/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/en/admin/</loc>

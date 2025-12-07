@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>visible and near-infrared spectroscopy | Caroline C. Vasconcelos</title>
+    <title>Visible and near-infrared spectroscopy | Caroline C. Vasconcelos</title>
     <link>https://ccvasconcelos.github.io/en/tag/visible-and-near-infrared-spectroscopy/</link>
       <atom:link href="https://ccvasconcelos.github.io/en/tag/visible-and-near-infrared-spectroscopy/index.xml" rel="self" type="application/rss+xml" />
-    <description>visible and near-infrared spectroscopy</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Sat, 29 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <description>Visible and near-infrared spectroscopy</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Wed, 19 Nov 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
-      <title>visible and near-infrared spectroscopy</title>
+      <title>Visible and near-infrared spectroscopy</title>
       <link>https://ccvasconcelos.github.io/en/tag/visible-and-near-infrared-spectroscopy/</link>
     </image>
+    
+    <item>
+      <title>Exploring the potential of field spectroscopy for tree species identification in different Amazonian forest ecosystems</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2025-hadlich-et-al-gecco/</link>
+      <pubDate>Wed, 19 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2025-hadlich-et-al-gecco/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Scaling up tree diversity inventories across Amazonian ecosystems using field spectroscopy</title>

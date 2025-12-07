@@ -5,7 +5,7 @@
     <link>https://ccvasconcelos.github.io/en/tag/current-as-lead/</link>
       <atom:link href="https://ccvasconcelos.github.io/en/tag/current-as-lead/index.xml" rel="self" type="application/rss+xml" />
     <description>Current-as-lead</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Sun, 01 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Sat, 01 Mar 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
       <title>Current-as-lead</title>
@@ -13,7 +13,21 @@
     </image>
     
     <item>
-      <title>Neotropical Chrysophylloideae</title>
+      <title>Spectral library of Ecclinusa (Sapotaceae)</title>
+      <link>https://ccvasconcelos.github.io/en/project/iapt-2025/</link>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/project/iapt-2025/</guid>
+      <description>&lt;h2 id=&#34;building-a-near-infrared-spectral-library-to-reveal-new-species-of-ecclinusa-sapotaceae-chrysophylloideae-in-south-america&#34;&gt;&lt;strong&gt;Building a near-infrared spectral library to reveal new species of Ecclinusa (Sapotaceae, Chrysophylloideae) in South America&lt;/strong&gt;&lt;/h2&gt;
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;div&gt;
+    Page under construction&amp;hellip;
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Integrative taxonomy in Neotropical Chrysophylloideae</title>
       <link>https://ccvasconcelos.github.io/en/project/doctorate/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
       <guid>https://ccvasconcelos.github.io/en/project/doctorate/</guid>
