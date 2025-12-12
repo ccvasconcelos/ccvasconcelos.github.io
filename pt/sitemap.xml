@@ -2,34 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ccvasconcelos.github.io/pt/authors/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/authors/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/authors/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/tag/bibliotecas-espectrais/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/bibliotecas-espectrais/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/bibliotecas-espectrais/"
-                />
-  </url><url>
     <loc>https://ccvasconcelos.github.io/pt/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
+    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -39,175 +13,6 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://ccvasconcelos.github.io/pt/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/author/caroline-c.-vasconcelos/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/author/caroline-c.-vasconcelos/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/author/caroline-c.-vasconcelos/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/categories/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/categories/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/tag/cites/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/cites/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/cites/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/post/conheca-nossos-pibics-2025/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/post/conheca-nossos-pibics-2025/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/post/conheca-nossos-pibics-2025/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/tag/ecclinusa/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/ecclinusa/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/ecclinusa/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/tag/espectroscopia/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/espectroscopia/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/espectroscopia/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/tag/herbario-inpa/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/herbario-inpa/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/herbario-inpa/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/tag/identificacao-de-especies/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/identificacao-de-especies/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/identificacao-de-especies/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/tag/iniciacao-cientifica/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/iniciacao-cientifica/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/iniciacao-cientifica/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/category/news/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/category/news/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/category/news/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/post/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/post/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/tag/projeto-spectrapop/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/projeto-spectrapop/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/projeto-spectrapop/"
-                />
-  </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/tags/</loc>
-    <lastmod>2025-12-06T23:43:02-04:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tags/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/pt/tag/current-as-partner/</loc>
@@ -239,6 +44,19 @@
                 href="https://ccvasconcelos.github.io/pt/project/"
                 />
   </url><url>
+    <loc>https://ccvasconcelos.github.io/pt/tags/</loc>
+    <lastmod>2025-11-30T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tags/"
+                />
+  </url><url>
     <loc>https://ccvasconcelos.github.io/pt/publication-type/2/</loc>
     <lastmod>2025-11-19T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -250,6 +68,32 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://ccvasconcelos.github.io/pt/publication-type/2/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/pt/authors/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/authors/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/authors/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/pt/author/caroline-c.-vasconcelos/</loc>
+    <lastmod>2025-11-19T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/author/caroline-c.-vasconcelos/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/author/caroline-c.-vasconcelos/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/pt/author/caroline-l.-mallmann/</loc>
@@ -5738,6 +5582,19 @@
                 href="https://ccvasconcelos.github.io/pt/tag/bootstrap/"
                 />
   </url><url>
+    <loc>https://ccvasconcelos.github.io/pt/categories/</loc>
+    <lastmod>2021-06-07T17:03:52-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/categories/"
+                />
+  </url><url>
     <loc>https://ccvasconcelos.github.io/pt/tag/dendrograma/</loc>
     <lastmod>2021-06-07T17:03:52-04:00</lastmod>
     <xhtml:link
@@ -5775,6 +5632,19 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://ccvasconcelos.github.io/pt/tag/dissimilaridade-de-gower/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/pt/post/</loc>
+    <lastmod>2021-06-07T17:03:52-04:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/post/"
                 />
   </url><url>
     <loc>https://ccvasconcelos.github.io/pt/tag/r-markdown/</loc>
@@ -6648,18 +6518,6 @@
                 href="https://ccvasconcelos.github.io/pt/project/micocast/"
                 />
   </url><url>
-    <loc>https://ccvasconcelos.github.io/pt/tag/other/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://ccvasconcelos.github.io/en/tag/other/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt"
-                href="https://ccvasconcelos.github.io/pt/tag/other/"
-                />
-  </url><url>
     <loc>https://ccvasconcelos.github.io/pt/project/collab/</loc>
     <xhtml:link
                 rel="alternate"
@@ -6670,6 +6528,18 @@
                 rel="alternate"
                 hreflang="pt"
                 href="https://ccvasconcelos.github.io/pt/project/collab/"
+                />
+  </url><url>
+    <loc>https://ccvasconcelos.github.io/pt/tag/other/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://ccvasconcelos.github.io/en/tag/other/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://ccvasconcelos.github.io/pt/tag/other/"
                 />
   </url>
 </urlset>
