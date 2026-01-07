@@ -5,12 +5,36 @@
     <link>https://ccvasconcelos.github.io/pt/author/caroline-c.-vasconcelos/</link>
       <atom:link href="https://ccvasconcelos.github.io/pt/author/caroline-c.-vasconcelos/index.xml" rel="self" type="application/rss+xml" />
     <description>Caroline C. Vasconcelos</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2025 Caroline C. Vasconcelos</copyright><lastBuildDate>Wed, 19 Nov 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2026 Caroline C. Vasconcelos</copyright><lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://ccvasconcelos.github.io/pt/author/caroline-c.-vasconcelos/avatar_hua35842b01ab09735fc0af7ddc3f6a6dc_350948_270x270_fill_q75_lanczos_center.jpeg</url>
       <title>Caroline C. Vasconcelos</title>
       <link>https://ccvasconcelos.github.io/pt/author/caroline-c.-vasconcelos/</link>
     </image>
+    
+    <item>
+      <title>Book Review: Guide to Amazonian Fruits, Seeds &amp; Seedlings</title>
+      <link>https://ccvasconcelos.github.io/pt/publication/2026-vasconcelos-calvi-article-torrey/</link>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/publication/2026-vasconcelos-calvi-article-torrey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modeling the current distribution of Pouteria decorticans (Sapotaceae) in the Amazon Basin</title>
+      <link>https://ccvasconcelos.github.io/pt/publication/2025-gama-et-al-article-oel/</link>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/publication/2025-gama-et-al-article-oel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dataset of paper &#34;Modeling the current distribution of Pouteria decorticans (Sapotaceae) in the Amazon Basin&#34;</title>
+      <link>https://ccvasconcelos.github.io/pt/publication/2025-vasconcelos-cunha-fair-zenodo/</link>
+      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/publication/2025-vasconcelos-cunha-fair-zenodo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Exploring the potential of field spectroscopy for tree species identification in different Amazonian forest ecosystems</title>
@@ -38,9 +62,9 @@
     
     <item>
       <title>IHerbSpec Protocol v1.0</title>
-      <link>https://ccvasconcelos.github.io/pt/publication/2025-iherbspec-zenodo/</link>
+      <link>https://ccvasconcelos.github.io/pt/publication/2025-iherbspec-fair-zenodo/</link>
       <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://ccvasconcelos.github.io/pt/publication/2025-iherbspec-zenodo/</guid>
+      <guid>https://ccvasconcelos.github.io/pt/publication/2025-iherbspec-fair-zenodo/</guid>
       <description></description>
     </item>
     
@@ -53,7 +77,7 @@
     </item>
     
     <item>
-      <title>Códigos R e conjuntos de dados utilizados no curso &#34;Espectroscopia de herbário com MicroNIR: teoria e prática&#34;</title>
+      <title>R codes and datasets used in the course &#34;Herbarium Spectroscopy with MicroNIR: theory and practice&#34;</title>
       <link>https://ccvasconcelos.github.io/pt/publication/2025-vasconcelos-durgante-fair-zenodo/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
       <guid>https://ccvasconcelos.github.io/pt/publication/2025-vasconcelos-durgante-fair-zenodo/</guid>

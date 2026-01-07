@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amazonian flora | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/en/tag/amazonian-flora/</link>
+      <atom:link href="https://ccvasconcelos.github.io/en/tag/amazonian-flora/index.xml" rel="self" type="application/rss+xml" />
+    <description>Amazonian flora</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2026 Caroline C. Vasconcelos</copyright><lastBuildDate>Fri, 26 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>Amazonian flora</title>
+      <link>https://ccvasconcelos.github.io/en/tag/amazonian-flora/</link>
+    </image>
+    
+    <item>
+      <title>Book Review: Guide to Amazonian Fruits, Seeds &amp; Seedlings</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2026-vasconcelos-calvi-article-torrey/</link>
+      <pubDate>Fri, 26 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2026-vasconcelos-calvi-article-torrey/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
