@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kelly Torralvo | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/en/author/kelly-torralvo/</link>
+      <atom:link href="https://ccvasconcelos.github.io/en/author/kelly-torralvo/index.xml" rel="self" type="application/rss+xml" />
+    <description>Kelly Torralvo</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2026 Caroline C. Vasconcelos</copyright><lastBuildDate>Tue, 21 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>Kelly Torralvo</title>
+      <link>https://ccvasconcelos.github.io/en/author/kelly-torralvo/</link>
+    </image>
+    
+    <item>
+      <title>Species recognition in herbaria and standing trees using an accessible portable spectrometer</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2026-durgante-et-al-preprint-ecoevorxiv/</link>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2026-durgante-et-al-preprint-ecoevorxiv/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

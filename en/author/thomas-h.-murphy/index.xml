@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thomas H. Murphy | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/en/author/thomas-h.-murphy/</link>
+      <atom:link href="https://ccvasconcelos.github.io/en/author/thomas-h.-murphy/index.xml" rel="self" type="application/rss+xml" />
+    <description>Thomas H. Murphy</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2026 Caroline C. Vasconcelos</copyright><lastBuildDate>Tue, 19 May 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>Thomas H. Murphy</title>
+      <link>https://ccvasconcelos.github.io/en/author/thomas-h.-murphy/</link>
+    </image>
+    
+    <item>
+      <title>A Protocol for Standardizing Measurements and Enabling Global Harmonization of Herbarium Leaf Reflectance Spectra</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2026-white-et-al-preprint-ecoevorxiv/</link>
+      <pubDate>Tue, 19 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2026-white-et-al-preprint-ecoevorxiv/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
