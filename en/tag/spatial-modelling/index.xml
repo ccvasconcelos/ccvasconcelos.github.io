@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spatial modelling | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/en/tag/spatial-modelling/</link>
+      <atom:link href="https://ccvasconcelos.github.io/en/tag/spatial-modelling/index.xml" rel="self" type="application/rss+xml" />
+    <description>spatial modelling</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2026 Caroline C. Vasconcelos</copyright><lastBuildDate>Tue, 14 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>spatial modelling</title>
+      <link>https://ccvasconcelos.github.io/en/tag/spatial-modelling/</link>
+    </image>
+    
+    <item>
+      <title>Environmental specialization decouples geographic range and habitat occupancy in Ragala ucuquirana-branca (Sapotaceae) across the Amazon Basin</title>
+      <link>https://ccvasconcelos.github.io/en/publication/2026-cunha-et-al-article-plecevo/</link>
+      <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/publication/2026-cunha-et-al-article-plecevo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

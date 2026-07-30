@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Amazonian tree species | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/pt/tag/amazonian-tree-species/</link>
+      <atom:link href="https://ccvasconcelos.github.io/pt/tag/amazonian-tree-species/index.xml" rel="self" type="application/rss+xml" />
+    <description>Amazonian tree species</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>pt-br</language><copyright>© 2026 Caroline C. Vasconcelos</copyright><lastBuildDate>Tue, 14 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>Amazonian tree species</title>
+      <link>https://ccvasconcelos.github.io/pt/tag/amazonian-tree-species/</link>
+    </image>
+    
+    <item>
+      <title>Environmental specialization decouples geographic range and habitat occupancy in Ragala ucuquirana-branca (Sapotaceae) across the Amazon Basin</title>
+      <link>https://ccvasconcelos.github.io/pt/publication/2026-cunha-et-al-article-plecevo/</link>
+      <pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/publication/2026-cunha-et-al-article-plecevo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Restricted occupancy and environmental specialization of Ragala ucuquirana-branca (Sapotaceae) across the Amazon Basin</title>
+      <link>https://ccvasconcelos.github.io/pt/publication/2026-cunha-et-al-preprint-arpha/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/pt/publication/2026-cunha-et-al-preprint-arpha/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
