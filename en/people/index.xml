@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>People | Caroline C. Vasconcelos</title>
+    <link>https://ccvasconcelos.github.io/en/people/</link>
+      <atom:link href="https://ccvasconcelos.github.io/en/people/index.xml" rel="self" type="application/rss+xml" />
+    <description>People</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2026 Caroline C. Vasconcelos</copyright><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://ccvasconcelos.github.io/media/icon_hud01bc5e4a8731c18442efb73e372c3f8_4419_512x512_fill_lanczos_center_2.png</url>
+      <title>People</title>
+      <link>https://ccvasconcelos.github.io/en/people/</link>
+    </image>
+    
+    <item>
+      <title>People</title>
+      <link>https://ccvasconcelos.github.io/en/people/people/</link>
+      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://ccvasconcelos.github.io/en/people/people/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
